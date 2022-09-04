@@ -24,7 +24,7 @@ tags:
     - [什么是异步](#什么是异步)
     - [基于任务的异步模式（TAP）](#基于任务的异步模式tap)
     - [Task](#task)
-      - [Task的相关内容](#task的相关内容)
+      - [异步怎么用(Task的相关内容)](#异步怎么用task的相关内容)
     - [async/await关键字](#asyncawait关键字)
       - [await方法做了什么](#await方法做了什么)
       - [什么是awaiter?](#什么是awaiter)
@@ -141,15 +141,17 @@ RuntimeContext是使用AsyncLocal, 而AsyncLocal实际上是使用了ExecutionCo
 
 
 # 异步编程
-> &ensp;以前用Nodejs,可能因为Node天然属性,只需要在意async和await传递,并不需要太关注异步编程。
-> &ensp;最近看C#服务器编程，基本都会出现Task、UniTask，ET还专门为此搞了个ETTask。  
-> &ensp;问题1：ET/Unity不是单线程的吗,为何还需要搞ETTask？答案是Task不是单线程,ETTask是单线程Task。  
-> &ensp;问题2：异步编程必须是多线程吗？不是的，我们更想让异步编程是单线程的。
+
+> &emsp;&emsp;以前用Nodejs,可能因为Node天然属性,只需要在意async和await传递,并不需要太关注异步编程。  
+> &emsp;&emsp;最近看C#服务器编程，基本都会出现Task、UniTask，ET还专门为此搞了个ETTask。    
+> &emsp;&emsp;问题1：ET/Unity不是单线程的吗,为何还需要搞ETTask？答案是Task不是单线程,ETTask是单线程Task。  
+> &emsp;&emsp;问题2：异步编程必须是多线程吗？不是的，我们更想让异步编程是单线程的。  
 
 ### 什么是异步
->&ensp;在异步程序中，程序代码不需要按照编写的顺序严格执行。有时需要在一个新的线程中运行一部分代码，有时无需创建新的线程，但为了更好地利用单个线程的能力，需要改变代码的执行顺序。  
->&ensp;当一个方法被调用时，调用者需要等待该方法执行完毕并返回才能继续执行，我们称这个方法是同步方法；当一个方法被调用时立即返回，并获取一个线程执行该方法内部的业务，调用者不用等待该方法执行完毕，我们称这个方法为异步方法。  
->&ensp;异步的好处在于非阻塞(调用线程不会暂停执行去等待子线程完成)，因此我们把一些不需要立即使用结果、较耗时的任务设为异步执行，可以提高程序的运行效率。net4.0在ThreadPool的基础上推出了Task类，微软极力推荐使用Task来执行异步任务，现在C#类库中的异步方法基本都用到了Task；net5.0推出了async/await，让异步编程更为方便
+
+>&emsp;&emsp;在异步程序中，程序代码不需要按照编写的顺序严格执行。有时需要在一个新的线程中运行一部分代码，有时无需创建新的线程，但为了更好地利用单个线程的能力，需要改变代码的执行顺序。  
+>&emsp;&emsp;当一个方法被调用时，调用者需要等待该方法执行完毕并返回才能继续执行，我们称这个方法是同步方法；当一个方法被调用时立即返回，并获取一个线程执行该方法内部的业务，调用者不用等待该方法执行完毕，我们称这个方法为异步方法。  
+>&emsp;&emsp;异步的好处在于非阻塞(调用线程不会暂停执行去等待子线程完成)，因此我们把一些不需要立即使用结果、较耗时的任务设为异步执行，可以提高程序的运行效率。net4.0在ThreadPool的基础上推出了Task类，微软极力推荐使用Task来执行异步任务，现在C#类库中的异步方法基本都用到了Task；net5.0推出了async/await，让异步编程更为方便
 
 ### [基于任务的异步模式（TAP）](https://docs.microsoft.com/zh-cn/dotnet/standard/asynchronous-programming-patterns/task-based-asynchronous-pattern-tap)
 
@@ -221,6 +223,7 @@ RuntimeContext是使用AsyncLocal, 而AsyncLocal实际上是使用了ExecutionCo
 ### Task
   
 >Task是在ThreadPool的基础上推出的，我们简单了解下ThreadPool。ThreadPool中有若干数量的线程，如果有任务需要处理时，会从线程池中获取一个空闲的线程来执行任务，任务执行完毕后线程不会销毁，而是被线程池回收以供后续任务使用。当线程池中所有的线程都在忙碌时，又有新任务要处理时，线程池才会新建一个线程来处理该任务，如果线程数量达到设置的最大值，任务会排队，等待其他任务释放线程后再执行。线程池能减少线程的创建，节省开销。
+
 ```C#
     /* ThreadPool相对于Thread来说可以减少线程的创建，有效减小系统开销；但是ThreadPool不能控制线程的执行顺序，我们也不能获取线程池内线程取消/异常/完成的通知，即我们不能有效监控和控制线程池中的线程 */
     static void Main(string[] args)
@@ -238,7 +241,7 @@ RuntimeContext是使用AsyncLocal, 而AsyncLocal实际上是使用了ExecutionCo
 ```
 > ThreadPool的弊端：我们不能控制线程池中线程的执行顺序，也不能获取线程池内线程取消/异常/完成的通知。net4.0在ThreadPool的基础上推出了Task，Task拥有线程池的优点，同时也解决了使用线程池不易控制的弊端。
 
-#### Task的相关内容
+#### 异步怎么用(Task的相关内容)
 
 - Task的创建：Task.Run/new Task/Task.Factory.StartNew
 
@@ -376,7 +379,9 @@ task.Wait()  表示等待task执行完毕，功能类似于thead.Join()；  Task
     主线程执行完毕！
     执行后续操作 */
 ```
+
 >上边的例子也可以通过 Task.Factory.ContinueWhenAll(Task[] tasks, Action continuationAction)  和 Task.Factory.ContinueWhenAny(Task[] tasks, Action continuationAction) 来实现
+
 ```C#
     static void Main(string[] args)
     {
@@ -699,16 +704,19 @@ Task中有一个专门的类 CancellationTokenSource  来取消任务执行
 
 
 #### await方法做了什么
+
 - [剖析C#异步方法](https://devblogs.microsoft.com/premier-developer/dissecting-the-async-methods-in-c/)  
 
     - 最开始是任务并行库（Task Parallel Library）（TPL），然后C#5引入async/await。
     - 让我们将“异步方法”定义为一个被上下文（contextual）关键字async所标记的方法。这并不意味着这个方法异步地执行。甚至这并不意味着这个方法是异步的。这个关键字的意思只是：编译器会对这个方法进行一些特殊的转换处理。
+    - 
 > “await”关键字告诉编译器在”async”标记的方法中插入一个可能的挂起/唤醒点。  
 逻辑上，这意味着当你写”await someObject;”时，编译器将生成代码来检查someObject代表的操作是否已经完成。如果已经完成，则从await标记的唤醒点处继续开始同步执行；如果没有完成，将为等待的someObject生成一个continue委托，当someObject代表的操作完成的时候调用continue委托。这个continue委托将控制权重新返回到”async”方法对应的await唤醒点处。  
 返回到await唤醒点处后，不管等待的someObject是否已经经完成，任何结果都可从Task中提取，或者如果someObject操作失败，发生的任何异常随Task一起返回或返回给SynchronizationContext。  
 在代码中，意味着当你写：  
 await someObject;   
-编译器会生成一个包含 MoveNext 方法的状态机类：  
+编译器会生成一个包含 MoveNext 方法的状态机类： 
+
 ```C#
     /* 我们看看这份异步代码,看完再看编译器为await做了什么 */
     class StockPrices
@@ -799,6 +807,7 @@ await someObject;
 ```
 
 #### 什么是awaiter?
+
 >虽然Task和Task<TResult>是两个非常普遍的等待类型(“awaitable”)，但这并不表示只有这两个的等待类型。
 “awaitable”可以是任何类型，它必须公开一个GetAwaiter() 方法并且返回有效的”awaiter”。这个GetAwaiter() 可能是一个实例方法（eg:Task或Task<TResult>的实例方法），或者可能是一个扩展方法
 
@@ -992,6 +1001,7 @@ await someObject;
     }
 ```
 - [单线程异步编程](https://github.com/egametang/ET/blob/master/Book/2.3%E5%8D%95%E7%BA%BF%E7%A8%8B%E5%BC%82%E6%AD%A5.md):我们在之前的例子中使用了Sleep来实现时间的等待，每一个计时器都需要使用一个线程，会导致线程切换频繁，这个实现效率很低，平常是不会这样做的。一般游戏逻辑中会设计一个单线程的计时器，我们这里做一个简单的实现，用来讲解单线程异步。
+
 ```C#
     class Program
     {
