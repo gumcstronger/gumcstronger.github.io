@@ -15,25 +15,27 @@ tags:
     - [静态构造函数](#静态构造函数)
 - [NuGet相关库](#nuget相关库)
     - [ConsoleAppFramework](#consoleappframework)
-- [Context](#context)
-    - [Wikipedia的解释](#wikipedia的解释)
-    - [现在的理解](#现在的理解)
-    - [SynchronizationContext(同步上下文)做什么？](#synchronizationcontext同步上下文做什么)
-    - [以Geek的RuntimeContext来看](#以geek的runtimecontext来看)
 - [异步编程](#异步编程)
     - [什么是异步](#什么是异步)
     - [基于任务的异步模式（TAP）](#基于任务的异步模式tap)
     - [Task](#task)
-      - [异步怎么用(Task的相关内容)](#异步怎么用task的相关内容)
+      - [Task的相关内容](#task的相关内容)
     - [async/await关键字](#asyncawait关键字)
       - [await方法做了什么](#await方法做了什么)
       - [什么是awaiter?](#什么是awaiter)
       - [await和Task.Wait一样吗？不一样](#await和taskwait一样吗不一样)
       - [task.Result和task.GetAwaiter().GetResult()有区别吗？](#taskresult和taskgetawaitergetresult有区别吗)
       - [“await”是如何关联到当前SynchronizationContext](#await是如何关联到当前synchronizationcontext)
-    - [ET中关于异步编程的介绍](#et中关于异步编程的介绍)
-    - [ETTASK](#ettask)
-    - [Geek](#geek)
+    - [Unity相关的](#unity相关的)
+      - [ET中关于异步编程的介绍](#et中关于异步编程的介绍)
+      - [Unity单线程为何能够异步](#unity单线程为何能够异步)
+      - [ETTASK](#ettask)
+      - [Geek](#geek)
+- [Context](#context)
+    - [Wikipedia的解释](#wikipedia的解释)
+    - [现在的理解](#现在的理解)
+    - [SynchronizationContext(同步上下文)做什么？](#synchronizationcontext同步上下文做什么)
+    - [以Geek的RuntimeContext来看](#以geek的runtimecontext来看)
 - [Actor](#actor)
     - [网上关于Actor的解释](#网上关于actor的解释)
     - [所以Actor到底做什么？](#所以actor到底做什么)
@@ -88,70 +90,17 @@ tags:
     }
 ```
 
-# Context
-
-> 以前在Nodejs开发时经常看到整个项目会包含一个唯一的“Context”上下文,一直直观的理解是当前项目(进程/线程/程序)运行时所有的数据or对象。  
-> 记得在Java开发时就经常出现Context，似乎万物皆是Context的样子，真是奇怪。
-
-### Wikipedia的解释 
-
->In computer science, a task context (process, thread ...) is the minimal set of data used by this task that must be saved to allow a task interruption at a given date and a continuation of this task at the point it has been interrupted and at an arbitrary future date. The concept of context assumes significance in the case of interruptible tasks, wherein upon being interrupted, the processor saves the context and proceeds to serve the Interrupt service routine. Thus the smaller the context, the smaller is the latency. These data are located in:
-
->Processor registers
-Memory used by the task
-On some operating systems, control registers used by the system to manage the task
-The storage memory (files) is not concerned by the "task context" in the case of a context switch, even if this can be stored for some uses (checkpointing).
-
->在计算机科学中，任务上下文（进程、线程……）是该任务使用的最小数据集，必须保存这些数据以允许在给定日期中断任务并在该点继续该任务中断并在任意未来日期。上下文的概念在可中断任务的情况下具有重要意义，其中在被中断时，处理器保存上下文并继续为中断服务程序提供服务。因此，上下文越小，延迟就越小。这些数据位于：
-处理器寄存器
-任务使用的内存
-在某些操作系统上，系统使用控制寄存器来管理任务。
-在上下文切换的情况下，存储内存（文件）与“任务上下文”无关，即使它可以存储用于某些用途（检查点）
-
-
-### 现在的理解
->Context是涉及中断情况下如进程线程时保存的数据对象。  
- 所以叫Context时应该是进程、线程等涉及中断异步类才能称呼使用或者称呼为上下文。
-
-
-### [SynchronizationContext(同步上下文)](https://devblogs.microsoft.com/pfxteam/executioncontext-vs-synchronizationcontext/)做什么？
->SynchronizationContext 只是一种抽象，它表示您想要在其中执行某些工作的特定环境。
->SynchronizationContext提供了一个虚Post方法，该方法只接收一个委托，并在任何地点，任何时间运行它，当然SynchronizationContext的实现要认为是合适的。WinForm提供了WindowsFormSynchronizationContext类，该类重写了Post方法来调用Control.BeginInvoke。WPF提供了DispatcherSynchronizationContext类，该类重写Post方法来调用Dispatcher.BeginInvoke，等等
-
-```C#
-    /* 专门针对WinForm编写组件 */
-    public static void DoWork(SynchronizationContext sc)
-    {
-        ThreadPool.QueueUserWorkItem(delegate
-        {
-            … // 在线程池中执行
-            
-            sc.Post(delegate
-            {
-                … // 在UI线程中执行
-            }, null);
-        });
-    }
-```
->我的理解ET用SynchronizationContext是为何线程安全，保证拿到正确的结果。
-
-### 以Geek的RuntimeContext来看
-
-RuntimeContext是使用AsyncLocal, 而AsyncLocal实际上是使用了ExecutionContext来作为线程本地存储
-
 
 # 异步编程
-
-> &emsp;&emsp;以前用Nodejs,可能因为Node天然属性,只需要在意async和await传递,并不需要太关注异步编程。  
-> &emsp;&emsp;最近看C#服务器编程，基本都会出现Task、UniTask，ET还专门为此搞了个ETTask。    
-> &emsp;&emsp;问题1：ET/Unity不是单线程的吗,为何还需要搞ETTask？答案是Task不是单线程,ETTask是单线程Task。  
-> &emsp;&emsp;问题2：异步编程必须是多线程吗？不是的，我们更想让异步编程是单线程的。  
+> &ensp;以前用Nodejs,可能因为Node天然属性,只需要在意async和await传递,并不需要太关注异步编程。
+> &ensp;最近看C#服务器编程，基本都会出现Task、UniTask，ET还专门为此搞了个ETTask。  
+> &ensp;问题1：ET/Unity不是单线程的吗,为何还需要搞ETTask？答案是Task不是单线程,ETTask是单线程Task。  
+> &ensp;问题2：异步编程必须是多线程吗？不是的，我们更想让异步编程是单线程的。
 
 ### 什么是异步
-
->&emsp;&emsp;在异步程序中，程序代码不需要按照编写的顺序严格执行。有时需要在一个新的线程中运行一部分代码，有时无需创建新的线程，但为了更好地利用单个线程的能力，需要改变代码的执行顺序。  
->&emsp;&emsp;当一个方法被调用时，调用者需要等待该方法执行完毕并返回才能继续执行，我们称这个方法是同步方法；当一个方法被调用时立即返回，并获取一个线程执行该方法内部的业务，调用者不用等待该方法执行完毕，我们称这个方法为异步方法。  
->&emsp;&emsp;异步的好处在于非阻塞(调用线程不会暂停执行去等待子线程完成)，因此我们把一些不需要立即使用结果、较耗时的任务设为异步执行，可以提高程序的运行效率。net4.0在ThreadPool的基础上推出了Task类，微软极力推荐使用Task来执行异步任务，现在C#类库中的异步方法基本都用到了Task；net5.0推出了async/await，让异步编程更为方便
+>&ensp;在异步程序中，程序代码不需要按照编写的顺序严格执行。有时需要在一个新的线程中运行一部分代码，有时无需创建新的线程，但为了更好地利用单个线程的能力，需要改变代码的执行顺序。  
+>&ensp;当一个方法被调用时，调用者需要等待该方法执行完毕并返回才能继续执行，我们称这个方法是同步方法；当一个方法被调用时立即返回，并获取一个线程执行该方法内部的业务，调用者不用等待该方法执行完毕，我们称这个方法为异步方法。  
+>&ensp;异步的好处在于非阻塞(调用线程不会暂停执行去等待子线程完成)，因此我们把一些不需要立即使用结果、较耗时的任务设为异步执行，可以提高程序的运行效率。net4.0在ThreadPool的基础上推出了Task类，微软极力推荐使用Task来执行异步任务，现在C#类库中的异步方法基本都用到了Task；net5.0推出了async/await，让异步编程更为方便
 
 ### [基于任务的异步模式（TAP）](https://docs.microsoft.com/zh-cn/dotnet/standard/asynchronous-programming-patterns/task-based-asynchronous-pattern-tap)
 
@@ -223,7 +172,6 @@ RuntimeContext是使用AsyncLocal, 而AsyncLocal实际上是使用了ExecutionCo
 ### Task
   
 >Task是在ThreadPool的基础上推出的，我们简单了解下ThreadPool。ThreadPool中有若干数量的线程，如果有任务需要处理时，会从线程池中获取一个空闲的线程来执行任务，任务执行完毕后线程不会销毁，而是被线程池回收以供后续任务使用。当线程池中所有的线程都在忙碌时，又有新任务要处理时，线程池才会新建一个线程来处理该任务，如果线程数量达到设置的最大值，任务会排队，等待其他任务释放线程后再执行。线程池能减少线程的创建，节省开销。
-
 ```C#
     /* ThreadPool相对于Thread来说可以减少线程的创建，有效减小系统开销；但是ThreadPool不能控制线程的执行顺序，我们也不能获取线程池内线程取消/异常/完成的通知，即我们不能有效监控和控制线程池中的线程 */
     static void Main(string[] args)
@@ -241,7 +189,7 @@ RuntimeContext是使用AsyncLocal, 而AsyncLocal实际上是使用了ExecutionCo
 ```
 > ThreadPool的弊端：我们不能控制线程池中线程的执行顺序，也不能获取线程池内线程取消/异常/完成的通知。net4.0在ThreadPool的基础上推出了Task，Task拥有线程池的优点，同时也解决了使用线程池不易控制的弊端。
 
-#### 异步怎么用(Task的相关内容)
+#### Task的相关内容
 
 - Task的创建：Task.Run/new Task/Task.Factory.StartNew
 
@@ -374,14 +322,12 @@ task.Wait()  表示等待task执行完毕，功能类似于thead.Join()；  Task
         Console.ReadKey();
     }
     /* 执行结果：
+    主线程执行完毕！
     线程1执行完毕
     线程2执行完毕
-    主线程执行完毕！
     执行后续操作 */
 ```
-
 >上边的例子也可以通过 Task.Factory.ContinueWhenAll(Task[] tasks, Action continuationAction)  和 Task.Factory.ContinueWhenAny(Task[] tasks, Action continuationAction) 来实现
-
 ```C#
     static void Main(string[] args)
     {
@@ -406,9 +352,9 @@ task.Wait()  表示等待task执行完毕，功能类似于thead.Join()；  Task
         Console.ReadKey();
     }
     /* 执行结果：
+    主线程执行完毕！
     线程1执行完毕
     线程2执行完毕
-    主线程执行完毕！
     执行后续操作 */
 ```
 
@@ -704,19 +650,16 @@ Task中有一个专门的类 CancellationTokenSource  来取消任务执行
 
 
 #### await方法做了什么
-
 - [剖析C#异步方法](https://devblogs.microsoft.com/premier-developer/dissecting-the-async-methods-in-c/)  
 
     - 最开始是任务并行库（Task Parallel Library）（TPL），然后C#5引入async/await。
     - 让我们将“异步方法”定义为一个被上下文（contextual）关键字async所标记的方法。这并不意味着这个方法异步地执行。甚至这并不意味着这个方法是异步的。这个关键字的意思只是：编译器会对这个方法进行一些特殊的转换处理。
-    - 
 > “await”关键字告诉编译器在”async”标记的方法中插入一个可能的挂起/唤醒点。  
 逻辑上，这意味着当你写”await someObject;”时，编译器将生成代码来检查someObject代表的操作是否已经完成。如果已经完成，则从await标记的唤醒点处继续开始同步执行；如果没有完成，将为等待的someObject生成一个continue委托，当someObject代表的操作完成的时候调用continue委托。这个continue委托将控制权重新返回到”async”方法对应的await唤醒点处。  
 返回到await唤醒点处后，不管等待的someObject是否已经经完成，任何结果都可从Task中提取，或者如果someObject操作失败，发生的任何异常随Task一起返回或返回给SynchronizationContext。  
 在代码中，意味着当你写：  
 await someObject;   
-编译器会生成一个包含 MoveNext 方法的状态机类： 
-
+编译器会生成一个包含 MoveNext 方法的状态机类：  
 ```C#
     /* 我们看看这份异步代码,看完再看编译器为await做了什么 */
     class StockPrices
@@ -807,7 +750,6 @@ await someObject;
 ```
 
 #### 什么是awaiter?
-
 >虽然Task和Task<TResult>是两个非常普遍的等待类型(“awaitable”)，但这并不表示只有这两个的等待类型。
 “awaitable”可以是任何类型，它必须公开一个GetAwaiter() 方法并且返回有效的”awaiter”。这个GetAwaiter() 可能是一个实例方法（eg:Task或Task<TResult>的实例方法），或者可能是一个扩展方法
 
@@ -874,209 +816,115 @@ await someObject;
 
 >如果SynchronizationContext和TaskScheduler都没有，无法迫使continue委托返回到原来的上下文，或者你使用”await task.ConfigureAwait(false)代替”await task;”，然后continue委托不会迫使返回到原来上下文并且将允许在系统认为合适的地方继续运行。这通常意味着要么以同步方式运行continue委托，无论等待的task在哪完成；要么使用ThreadPool中的线程运行continue委托。
 
-### ET中关于异步编程的介绍
+### Unity相关的
+
+
+
+#### ET中关于异步编程的介绍  
+
 - [简单粗暴的C#的协程](https://github.com/egametang/ET/blob/master/Book/2.1CSharp%E7%9A%84%E5%8D%8F%E7%A8%8B.md)：开个Thread,将阻塞放到该线程中,然后回调通过SynchronizationContext压回主线程中处理。如处理中有阻塞又需要开个Thread...
 
-```C#
-    class Program
-    {
-        private static int loopCount = 0;
-
-        private static void Main()
-        {
-            OneThreadSynchronizationContext _ = OneThreadSynchronizationContext.Instance;
-            
-            WaitTimeAsync(5000, WaitTimeFinishCallback);
-            
-            while (true)
-            {
-                OneThreadSynchronizationContext.Instance.Update();
-                
-                Thread.Sleep(1);
-                
-                ++loopCount;
-                if (loopCount % 10000 == 0)
-                {
-                    Console.WriteLine($"loop count: {loopCount}");
-                }
-            }
-        }
-
-        private static void WaitTimeAsync(int waitTime, Action action)
-        {
-            Thread thread = new Thread(()=>WaitTime(waitTime, action));
-            thread.Start();
-        }
-        
-        private static void WaitTimeFinishCallback()
-        {
-            Console.WriteLine($"WaitTimeAsync finsih loopCount的值是: {loopCount}");
-            WaitTimeAsync(4000, WaitTimeFinishCallback3);
-        }
-
-        /// <summary>
-        /// 在另外的线程等待
-        /// </summary>
-        private static void WaitTime(int waitTime, Action action)
-        {
-            Thread.Sleep(waitTime);
-            
-            // 将action扔回主线程执行
-            OneThreadSynchronizationContext.Instance.Post((o)=>action(), null);
-        }
-
-        /* 下面两个方法是因为action里面又需要阻塞 */
-        private static void WaitTimeFinishCallback3()
-        {
-            Console.WriteLine($"WaitTimeAsync finsih loopCount的值是: {loopCount}");
-            WaitTimeAsync(3000, WaitTimeFinishCallback2);
-        }
-        
-        private static void WaitTimeFinishCallback2()
-        {
-            Console.WriteLine($"WaitTimeAsync finsih loopCount的值是: {loopCount}");
-        }
-    }
-
-```
 - [C#的更好协程](https://github.com/egametang/ET/blob/master/Book/2.2%E6%9B%B4%E5%A5%BD%E7%9A%84%E5%8D%8F%E7%A8%8B.md) :C#帮我们把上面简单粗暴的回调形式改成同步的形式，返回Task，用await等待结果
 
-```C#
-    class Program
-    {
-        private static int loopCount = 0;
-        
-        static void Main(string[] args)
-        {
-            SynchronizationContext.SetSynchronizationContext(OneThreadSynchronizationContext.Instance);
-
-            Console.WriteLine($"主线程: {Thread.CurrentThread.ManagedThreadId}");
-            
-            Crontine();
-            
-            while (true)
-            {
-                OneThreadSynchronizationContext.Instance.Update();
-                
-                Thread.Sleep(1);
-                
-                ++loopCount;
-                if (loopCount % 10000 == 0)
-                {
-                    Console.WriteLine($"loop count: {loopCount}");
-                }
-            }
-        }
-
-        private static async void Crontine()
-        {
-            await WaitTimeAsync(5000);
-            Console.WriteLine($"当前线程: {Thread.CurrentThread.ManagedThreadId}, WaitTimeAsync finsih loopCount的值是: {loopCount}");
-            await WaitTimeAsync(4000);
-            Console.WriteLine($"当前线程: {Thread.CurrentThread.ManagedThreadId}, WaitTimeAsync finsih loopCount的值是: {loopCount}");
-            await WaitTimeAsync(3000);
-            Console.WriteLine($"当前线程: {Thread.CurrentThread.ManagedThreadId}, WaitTimeAsync finsih loopCount的值是: {loopCount}");
-        }
-        
-        /* 利用了TaskCompletionSource类替代了之前传入的Action参数，WaitTimeAsync方法返回了一个Task类型的结果。WaitTime中我们把action()替换成了tcs.SetResult(true),WaitTimeAsync方法前使用await关键字，这样可以将一连串的回调改成同步的形式。
-        （虽然...但对熟悉了Nodejs的人来说看了这两个方法就会觉得莫名其妙,完全就没有感觉有多简洁） */
-        private static Task WaitTimeAsync(int waitTime)
-        {
-            TaskCompletionSource<bool> tcs = new TaskCompletionSource<bool>();
-            Thread thread = new Thread(()=>WaitTime(waitTime, tcs));
-            thread.Start();
-            return tcs.Task;
-        }
-        
-        /// <summary>
-        /// 在另外的线程等待
-        /// </summary>
-        private static void WaitTime(int waitTime, TaskCompletionSource<bool> tcs)
-        {
-            Thread.Sleep(waitTime);
-            
-            // 将tcs扔回主线程执行
-            tcs.SetResult(true);
-        }
-    }
-```
 - [单线程异步编程](https://github.com/egametang/ET/blob/master/Book/2.3%E5%8D%95%E7%BA%BF%E7%A8%8B%E5%BC%82%E6%AD%A5.md):我们在之前的例子中使用了Sleep来实现时间的等待，每一个计时器都需要使用一个线程，会导致线程切换频繁，这个实现效率很低，平常是不会这样做的。一般游戏逻辑中会设计一个单线程的计时器，我们这里做一个简单的实现，用来讲解单线程异步。
 
+
+#### Unity单线程为何能够异步  
+  
 ```C#
-    class Program
-    {
-        private static int loopCount = 0;
-
-        private static long time;
-        private static TaskCompletionSource<bool> tcs;
-        
-        static void Main(string[] args)
-        {
-            Console.WriteLine($"主线程: {Thread.CurrentThread.ManagedThreadId}");
-
-            Crontine();
-            
-            while (true)
-            {
-                Thread.Sleep(1);
-
-                CheckTimerOut();
-                
-                ++loopCount;
-                if (loopCount % 10000 == 0)
-                {
-                    Console.WriteLine($"loop count: {loopCount}");
-                }
-            }
-        }
-        
-        private static async void Crontine()
-        {
-            await WaitTimeAsync(5000);
-            Console.WriteLine($"当前线程: {Thread.CurrentThread.ManagedThreadId}, WaitTimeAsync finsih loopCount的值是: {loopCount}");
-            await WaitTimeAsync(4000);
-            Console.WriteLine($"当前线程: {Thread.CurrentThread.ManagedThreadId}, WaitTimeAsync finsih loopCount的值是: {loopCount}");
-            await WaitTimeAsync(3000);
-            Console.WriteLine($"当前线程: {Thread.CurrentThread.ManagedThreadId}, WaitTimeAsync finsih loopCount的值是: {loopCount}");
-        }
-
-        private static void CheckTimerOut()
-        {
-            if (time == 0)
-            {
-                return;
-            }
-            long nowTicks = DateTime.Now.Ticks / 10000;
-            if (time > nowTicks)
-            {
-                return;
-            }
-
-            time = 0;
-            tcs.SetResult(true);
-        }
-        
-        private static Task WaitTimeAsync(int waitTime)
-        {
-            TaskCompletionSource<bool> t = new TaskCompletionSource<bool>();
-            time = DateTime.Now.Ticks / 10000 + waitTime;
-            tcs = t;
-            return t.Task;
-        }
+    private void Awake() {
+        Debug.LogWarning("Awake Start");
+        Test().Coroutine();
+        Debug.LogWarning("Awake End");
     }
+
+    public async ETTask Test() {
+        Debug.LogWarning("Test Start");
+        await Task.Delay(10000);
+        Debug.LogWarning("Test End");
+    }
+
+    public void Update() {
+        Debug.Log("Update");
+    }
+    /**结果：
+    Awake Start
+    Test Start
+    Awake End
+    Update
+    Update
+    ....
+    Test End
+    **/
 ```
+  
+> 从上面能看出await所在的方法会等待，但await方法外会继续执行，例如Update会继续执行。
+> ETTask.Coroutine()阻断了await的传染性，我们能看出来await所在的方法被阻塞了，方法外部不受阻塞继续执行所以操作空间来出来了
 
-
-
-### ETTASK   
+#### ETTASK   
 > ET的异步核心在于ETTask,我们看看ETTask做了什么  
 > 看ETTask能够理解Task的实现。
 
 
 
-### Geek
+#### Geek
 Geek的异步。
     
+
+
+
+
+# Context
+
+> 以前在Nodejs开发时经常看到整个项目会包含一个唯一的“Context”上下文,一直直观的理解是当前项目(进程/线程/程序)运行时所有的数据or对象。  
+> 记得在Java开发时就经常出现Context，似乎万物皆是Context的样子，真是奇怪。
+
+### Wikipedia的解释 
+
+>In computer science, a task context (process, thread ...) is the minimal set of data used by this task that must be saved to allow a task interruption at a given date and a continuation of this task at the point it has been interrupted and at an arbitrary future date. The concept of context assumes significance in the case of interruptible tasks, wherein upon being interrupted, the processor saves the context and proceeds to serve the Interrupt service routine. Thus the smaller the context, the smaller is the latency. These data are located in:
+
+>Processor registers
+Memory used by the task
+On some operating systems, control registers used by the system to manage the task
+The storage memory (files) is not concerned by the "task context" in the case of a context switch, even if this can be stored for some uses (checkpointing).
+
+>在计算机科学中，任务上下文（进程、线程……）是该任务使用的最小数据集，必须保存这些数据以允许在给定日期中断任务并在该点继续该任务中断并在任意未来日期。上下文的概念在可中断任务的情况下具有重要意义，其中在被中断时，处理器保存上下文并继续为中断服务程序提供服务。因此，上下文越小，延迟就越小。这些数据位于：
+处理器寄存器
+任务使用的内存
+在某些操作系统上，系统使用控制寄存器来管理任务。
+在上下文切换的情况下，存储内存（文件）与“任务上下文”无关，即使它可以存储用于某些用途（检查点）
+
+
+### 现在的理解
+>Context是涉及中断情况下如进程线程时保存的数据对象。  
+ 所以叫Context时应该是进程、线程等涉及中断异步类才能称呼使用或者称呼为上下文。
+
+
+### [SynchronizationContext(同步上下文)](https://devblogs.microsoft.com/pfxteam/executioncontext-vs-synchronizationcontext/)做什么？
+>SynchronizationContext 只是一种抽象，它表示您想要在其中执行某些工作的特定环境。
+>SynchronizationContext提供了一个虚Post方法，该方法只接收一个委托，并在任何地点，任何时间运行它，当然SynchronizationContext的实现要认为是合适的。WinForm提供了WindowsFormSynchronizationContext类，该类重写了Post方法来调用Control.BeginInvoke。WPF提供了DispatcherSynchronizationContext类，该类重写Post方法来调用Dispatcher.BeginInvoke，等等
+
+```C#
+    /* 专门针对WinForm编写组件 */
+    public static void DoWork(SynchronizationContext sc)
+    {
+        ThreadPool.QueueUserWorkItem(delegate
+        {
+            … // 在线程池中执行
+            
+            sc.Post(delegate
+            {
+                … // 在UI线程中执行
+            }, null);
+        });
+    }
+```
+>我的理解ET用SynchronizationContext是为何线程安全，保证拿到正确的结果。
+
+### 以Geek的RuntimeContext来看
+
+RuntimeContext是使用AsyncLocal, 而AsyncLocal实际上是使用了ExecutionContext来作为线程本地存储
+
 
 
 --- 
