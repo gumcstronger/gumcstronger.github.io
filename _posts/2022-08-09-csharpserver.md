@@ -21,15 +21,15 @@ tags:
     - [Task](#task)
       - [Task的相关内容](#task的相关内容)
     - [async/await关键字](#asyncawait关键字)
-      - [await方法做了什么](#await方法做了什么)
+      - [await方法做了什么(此处理解await为何调用GetResult)](#await方法做了什么此处理解await为何调用getresult)
       - [什么是awaiter?](#什么是awaiter)
       - [await和Task.Wait一样吗？不一样](#await和taskwait一样吗不一样)
       - [task.Result和task.GetAwaiter().GetResult()有区别吗？](#taskresult和taskgetawaitergetresult有区别吗)
       - [“await”是如何关联到当前SynchronizationContext](#await是如何关联到当前synchronizationcontext)
-    - [Unity相关的](#unity相关的)
+    - [相关框架中的使用](#相关框架中的使用)
       - [ET中关于异步编程的介绍](#et中关于异步编程的介绍)
       - [Unity单线程为何能够异步](#unity单线程为何能够异步)
-      - [ETTASK](#ettask)
+      - [ETTask](#ettask)
       - [Geek](#geek)
 - [Context](#context)
     - [Wikipedia的解释](#wikipedia的解释)
@@ -143,6 +143,7 @@ tags:
        }
     }
 ```
+
 - 区别于.NET2.0基于事件的异步模式 (EAP) 
 
 ```C#
@@ -172,6 +173,7 @@ tags:
 ### Task
   
 >Task是在ThreadPool的基础上推出的，我们简单了解下ThreadPool。ThreadPool中有若干数量的线程，如果有任务需要处理时，会从线程池中获取一个空闲的线程来执行任务，任务执行完毕后线程不会销毁，而是被线程池回收以供后续任务使用。当线程池中所有的线程都在忙碌时，又有新任务要处理时，线程池才会新建一个线程来处理该任务，如果线程数量达到设置的最大值，任务会排队，等待其他任务释放线程后再执行。线程池能减少线程的创建，节省开销。
+
 ```C#
     /* ThreadPool相对于Thread来说可以减少线程的创建，有效减小系统开销；但是ThreadPool不能控制线程的执行顺序，我们也不能获取线程池内线程取消/异常/完成的通知，即我们不能有效监控和控制线程池中的线程 */
     static void Main(string[] args)
@@ -187,6 +189,7 @@ tags:
     } 
     //结果不是按1，2，3，4，5，6，7，8，9，10来的
 ```
+
 > ThreadPool的弊端：我们不能控制线程池中线程的执行顺序，也不能获取线程池内线程取消/异常/完成的通知。net4.0在ThreadPool的基础上推出了Task，Task拥有线程池的优点，同时也解决了使用线程池不易控制的弊端。
 
 #### Task的相关内容
@@ -267,6 +270,7 @@ tags:
 ```
 
 - Task的阻塞方法 Task.Wait/Task.WaitAll/Task.WaitAny  
+
 >Thread的Join方法可以阻塞调用线程，但是有一些弊端：①如果我们要实现很多线程的阻塞时，每个线程都要调用一次Join方法；②如果我们想让所有的线程执行完毕(或者任一线程执行完毕)时，立即解除阻塞，使用Join方法不容易实现。Task提供了  Wait/WaitAny/WaitAll  方法，可以更方便地控制线程阻塞。  
 task.Wait()  表示等待task执行完毕，功能类似于thead.Join()；  Task.WaitAll(Task[] tasks)  表示只有所有的task都执行完成了再解除阻塞；  Task.WaitAny(Task[] tasks) 表示只要有一个task执行完毕就解除阻塞  
 
@@ -296,7 +300,8 @@ task.Wait()  表示等待task执行完毕，功能类似于thead.Join()；  Task
     }
 ```
 
-- Task的延续操作 Task.WhenAny/Task.WhenAll/Task.ContinueWith
+- Task的延续操作 Task.WhenAny/Task.WhenAll/Task.ContinueWith  
+  
 > 上边的Wait/WaitAny/WaitAll方法返回值为void，这些方法单纯的实现阻塞线程。我们现在想让所有task执行完毕(或者任一task执行完毕)后，开始执行后续操作，怎么实现呢？这时就可以用到WhenAny/WhenAll方法了，这些方法执行完成返回一个task实例。  task.WhenAll(Task[] tasks)  表示所有的task都执行完毕后再去执行后续的操作， task.WhenAny(Task[] tasks)  表示任一task执行完毕后就开始执行后续操作
 
 ```C#
@@ -327,7 +332,9 @@ task.Wait()  表示等待task执行完毕，功能类似于thead.Join()；  Task
     线程2执行完毕
     执行后续操作 */
 ```
->上边的例子也可以通过 Task.Factory.ContinueWhenAll(Task[] tasks, Action continuationAction)  和 Task.Factory.ContinueWhenAny(Task[] tasks, Action continuationAction) 来实现
+
+>上边的例子也可以通过 Task.Factory.ContinueWhenAll(Task[] tasks, Action continuationAction)  和 Task.Factory.ContinueWhenAny(Task[] tasks, Action continuationAction) 来实现  
+
 ```C#
     static void Main(string[] args)
     {
@@ -358,7 +365,8 @@ task.Wait()  表示等待task执行完毕，功能类似于thead.Join()；  Task
     执行后续操作 */
 ```
 
-- Task的任务取消: CancellationTokenSource
+- Task的任务取消: CancellationTokenSource  
+  
 >在Task前我们执行任务采用的是Thread,Thread怎么取消任务呢？一般流程是：设置一个变量来控制任务是否停止，如设置一个变量isStop，然后线程轮询查看isStop，如果isStop为true就停止  
 Task中有一个专门的类 CancellationTokenSource  来取消任务执行
 
@@ -420,8 +428,8 @@ Task中有一个专门的类 CancellationTokenSource  来取消任务执行
     /* 第5次执行在取消回调后打印，这是因为，执行取消的时候第5次任务已经通过了while()判断，任务已经执行中了 */
 ```
 
-- Task的异常
-
+- Task的异常  
+  
 ```C#
     /* 与Thread不一样，Task可以很方便的传播异常 如果你的task里面抛出了一个未处理的异常，那么该异常就会重新被抛出给：
     调用了wait()的地方
@@ -606,6 +614,7 @@ Task中有一个专门的类 CancellationTokenSource  来取消任务执行
 ```
 
 ### async/await关键字
+
 >在C#5.0中出现的 async和await ，让异步编程变得和同步编程一样简单
 
 ```C#
@@ -649,17 +658,17 @@ Task中有一个专门的类 CancellationTokenSource  来取消任务执行
 >上边的例子也写出了同步读取的方式，将main函数中的注释去掉即可同步读取文件内容。我们可以看到异步读取代码和同步读取代码基本一致。async/await让异步编码变得更简单，我们可以像写同步代码一样去写异步代码
 
 
-#### await方法做了什么
-- [剖析C#异步方法](https://devblogs.microsoft.com/premier-developer/dissecting-the-async-methods-in-c/)  
+#### await方法做了什么(此处理解await为何调用GetResult)
 
+- [剖析C#异步方法](https://devblogs.microsoft.com/premier-developer/dissecting-the-async-methods-in-c/)  
     - 最开始是任务并行库（Task Parallel Library）（TPL），然后C#5引入async/await。
     - 让我们将“异步方法”定义为一个被上下文（contextual）关键字async所标记的方法。这并不意味着这个方法异步地执行。甚至这并不意味着这个方法是异步的。这个关键字的意思只是：编译器会对这个方法进行一些特殊的转换处理。
+  
 > “await”关键字告诉编译器在”async”标记的方法中插入一个可能的挂起/唤醒点。  
-逻辑上，这意味着当你写”await someObject;”时，编译器将生成代码来检查someObject代表的操作是否已经完成。如果已经完成，则从await标记的唤醒点处继续开始同步执行；如果没有完成，将为等待的someObject生成一个continue委托，当someObject代表的操作完成的时候调用continue委托。这个continue委托将控制权重新返回到”async”方法对应的await唤醒点处。  
+> 逻辑上，这意味着当你写”await someObject;”时，编译器将生成代码来检查someObject代表的操作是否已经完成。如果已经完成，则从await标记的唤醒点处继续开始同步执行；如果没有完成，将为等待的someObject生成一个continue委托，当someObject代表的操作完成的时候调用continue委托。这个continue委托将控制权重新返回到”async”方法对应的await唤醒点处。  
 返回到await唤醒点处后，不管等待的someObject是否已经经完成，任何结果都可从Task中提取，或者如果someObject操作失败，发生的任何异常随Task一起返回或返回给SynchronizationContext。  
-在代码中，意味着当你写：  
-await someObject;   
-编译器会生成一个包含 MoveNext 方法的状态机类：  
+> 在代码中，意味着当你写：await someObject;编译器会生成一个包含 MoveNext 方法的状态机类：  
+
 ```C#
     /* 我们看看这份异步代码,看完再看编译器为await做了什么 */
     class StockPrices
@@ -750,6 +759,7 @@ await someObject;
 ```
 
 #### 什么是awaiter?
+
 >虽然Task和Task<TResult>是两个非常普遍的等待类型(“awaitable”)，但这并不表示只有这两个的等待类型。
 “awaitable”可以是任何类型，它必须公开一个GetAwaiter() 方法并且返回有效的”awaiter”。这个GetAwaiter() 可能是一个实例方法（eg:Task或Task<TResult>的实例方法），或者可能是一个扩展方法
 
@@ -790,19 +800,21 @@ await someObject;
 ```
 
 #### await和Task.Wait一样吗？不一样
-    >task.Wait()”是一个同步，可能阻塞的调用。它不会立刻返回到Wait()的调用者，直到这个任务进入最终状态，这意味着已进入RanToCompletion，Faulted，或Canceled完成状态。相比之下，”await task;”告诉编译器在”async”标记的方法内部插入一个隐藏的挂起/唤醒点，这样，如果等待的task没有完成，异步方法也会立马返回给调用者，当等待的任务完成时唤醒它从隐藏点处继续执行。当”await task;”会导致比较多应用程序无响应或死锁的情况下使用“task.Wait()”
-    - Task.Wait  
+
+- task.Wait()”是一个同步，可能阻塞的调用。它不会立刻返回到Wait()的调用者，直到这个任务进入最终状态，这意味着已进入RanToCompletion，Faulted，或Canceled完成状态。相比之下，”await task;”告诉编译器在”async”标记的方法内部插入一个隐藏的挂起/唤醒点，这样，如果等待的task没有完成，异步方法也会立马返回给调用者，当等待的任务完成时唤醒它从隐藏点处继续执行。当”await task;”会导致比较多应用程序无响应或死锁的情况下使用“task.Wait()”
+- Task.Wait  
     C#里，Task不是专为异步准备的，它表达的是一个线程，是工作在线程池里的一个线程。异步是线程的一种应用，多线程也是线程的一种应用。Wait，以及Status、IsCanceled、IsCompleted、IsFaulted等等，是给多线程准备的方法，跟异步没有半毛钱关系。当然你非要在异步中使用多线程的Wait或其它，从代码编译层面不会出错，但程序会。  
     Task.Wait()是一个同步方法，用于多线程中阻塞等待。  
     <br/>
-    - await  
+- await  
     意思1：在异步中，await表达的意思是：当前线程/方法中，await引导的方法出结果前，跳出当前线程/方法，从调用当前线程/方法的位置，去执行其它可能执行的线程/方法，并在引导的方法出结果后，把运行点拉回到当前位置继续执行；直到遇到下一个await，或线程/方法完成返回，跳回去刚才外部最后执行的位置继续执行。  
     意思2：等异步的运行结果。
 
-    - async  
+- async  
     在异步编程的规范中，async修饰的方法，仅仅表示这个方法在内部有可能采用异步的方式执行，CPU在执行这个方法时，会放到一个新的线程中执行。那这个方法，最终是否采用异步执行，不决定于是否用await方式调用这个方法，而决定于这个方法内部，是否有await方式的调用
 
 #### task.Result和task.GetAwaiter().GetResult()有区别吗？
+
 >有。但仅仅在任务以非成功状态完成的情况下。如果task是以RanToCompletion状态完成，那么这两个语句是等价的。然而，如果task是以Faulted或Canceled状态完成，task.Result将传播一个或多个异常封装而成的AggregateException对象；而”task.GetAwaiter().GetResult()”将直接传播异常(如果有多个任务，它只会传播其中一个)。  
 关于为什么会存在这个差异，请看[《异常处理》](https://docs.microsoft.com/zh-cn/dotnet/standard/parallel-programming/exception-handling-task-parallel-library)
 
@@ -816,9 +828,7 @@ await someObject;
 
 >如果SynchronizationContext和TaskScheduler都没有，无法迫使continue委托返回到原来的上下文，或者你使用”await task.ConfigureAwait(false)代替”await task;”，然后continue委托不会迫使返回到原来上下文并且将允许在系统认为合适的地方继续运行。这通常意味着要么以同步方式运行continue委托，无论等待的task在哪完成；要么使用ThreadPool中的线程运行continue委托。
 
-### Unity相关的
-
-
+### 相关框架中的使用
 
 #### ET中关于异步编程的介绍  
 
@@ -860,11 +870,34 @@ await someObject;
   
 > 从上面能看出await所在的方法会等待，但await方法外会继续执行，例如Update会继续执行。
 > ETTask.Coroutine()阻断了await的传染性，我们能看出来await所在的方法被阻塞了，方法外部不受阻塞继续执行所以操作空间来出来了
+> 自己再写个测试也能得知，Task.GetAwaiter或者Task.Result会阻塞所在方法。
 
-#### ETTASK   
+#### ETTask  
+
 > ET的异步核心在于ETTask,我们看看ETTask做了什么  
 > 看ETTask能够理解Task的实现。
 
+- ETTask如何实现，为何说是单线程的。
+
+>在 C# 中编写异步代码的时候，我们经常会选择将异步代码包含在一个Task中，这样调用者就能用await的方式实现异步调用。  
+
+>但是并不是只有Task才能await。Task背后明明是由线程池参与调度的，可是为什么 C# 的async/await却被说成是coroutine呢？  
+
+>因为你所await的东西不一定是Task，C# 中只要你的类中包含GetAwaiter()方法和bool IsCompleted属性，并且GetAwaiter()返回的东西包含一个GetResult()方法、一个bool IsCompleted属性和实现了INotifyCompletion，那么这个类的对象就是可以await的 。
+
+>所以实际上，ETTask并没有使用多线程(这样能够看出ET在框架层只是使用单线程而已，这里说的只是框架层，至于Unity加载AB包使用多线程不需要我们关注只需要WaitAll即可、网络方面使用了多线程而KService、TService通过ThreadSynchronizationContext.Post将处理逻辑压回主线程处理也不用考虑多线程问题)，只是通过某种实现将异步回调转换成同步的方式而已。
+
+- TimerComponent的实现
+
+> TimerComponent的WaitAsync()方法是ETTask最直观的用法。
+
+> 当await WaitAsync时，会创建一个TimeAction加入队列，同时创建一个ETTask进行await(阻塞当前方法,await WaitAsync所在方法也会阻塞)，而Update在每帧调用时判断到该TimeAction的时间到了，则SetResult。await WaitAsync则可以继续执行。
+
+> 此处吐槽下，从上面看我们知道WaitAsync是一个TimerManager，而NewOnceTimer、NewFrameTimer、NewRepeatedTimer是为了发布Callback应该叫TimerCallbackManager。这两种放到一个TimerComponent，有时候会混淆TimerComponent的作用。
+
+> TimerComponent的NewOnceTimer、NewFrameTimer、NewRepeatedTimer也很简单，只是时间到了就Callback而已。
+
+- CoroutineLockComponent的实现。
 
 
 #### Geek
