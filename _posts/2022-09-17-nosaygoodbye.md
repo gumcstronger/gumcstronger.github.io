@@ -1,7 +1,7 @@
 ---
 layout:     post
-title:      "不说再见"
-subtitle:   " \"不说再见\""
+title:      "可乐兑酒"
+subtitle:   " \"可乐兑酒\""
 date:       2022-09-17 01:00:00
 author:     "Gumc"
 header-img: "img/post-bg-2015.jpg"
@@ -32,7 +32,4 @@ tags:
 到底是命中注定了­<br/>
 只是一切无法善了­<br/>
 一切都不再重要了­<br/>
-可不可以见面就不说再见了­<br/>
-可不可以不要说再见了­<br/>
-不说再见了­<br/>
 </center>
