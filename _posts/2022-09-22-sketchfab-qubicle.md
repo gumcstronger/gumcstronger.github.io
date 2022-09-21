@@ -11,7 +11,7 @@ tags:
 ---
 
 - 下载模型
-    - [Sketchfab](https://sketchfab.com/)下载3D模型(包含scene.gltf、scene.bin、textures文件夹)
+    - [Sketchfab](https://sketchfab.com/)下载3D模型(.gltf格式，包含scene.gltf、scene.bin、textures文件夹)
 - 导入模型
     - Blender软件 - 文件/导入/glTF 2.0(.glb/gltf)，选中模型文件scene.gltf
 - 查看模型是否完整
