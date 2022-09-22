@@ -28,3 +28,13 @@ tags:
     - Ctrl + S
 - 导出qb格式文件
     - File - Save - Qubicle Binary QB...
+
+
+### 规格要求
+- Qubicle的size不能超过128*128*128
+
+
+### 问题
+ 
+- Blender导入模型后编辑模式不见了  
+  - 无法解决
