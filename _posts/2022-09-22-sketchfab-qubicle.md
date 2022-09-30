@@ -2,7 +2,7 @@
 layout:     post
 title:      "sketchfab下载的模型在Qubicle中使用"
 subtitle:   " \"sketchfab、Blender、Qubicle\""
-date:       2022-09-17 01:00:00
+date:       2022-09-22 01:00:00
 author:     "Gumc"
 header-img: "img/post-bg-2015.jpg"
 catalog: true
