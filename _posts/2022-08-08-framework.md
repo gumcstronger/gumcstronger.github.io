@@ -13,7 +13,7 @@ tags:
 
 > 看了ET和Geek两个双端框架，ET和Geek都并不太符合要求。猜测ET是用于mmo类的,Geek更用于轻度些的。
 
-# ET框架
+## ET框架
 
 ### 问题  
 
@@ -256,7 +256,7 @@ tags:
         - ETTask
             
 
-# Geek
+## Geek
 
 ### 目录
 - Bedrock.Framework     &emsp;该库似乎还是Alpha
