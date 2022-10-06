@@ -89,7 +89,7 @@ ba_track_id: 857a799c7d828e8797d499d32c7db0b8
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "辜敏聪，创业者，游戏开发者<br>"
+sidebar-about-description: "mc，创业者，游戏开发者<br>"
 sidebar-avatar: https://github.com/gumcstronger.png # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
