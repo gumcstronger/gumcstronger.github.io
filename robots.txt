@@ -1,5 +1,4 @@
 # robots.txt
 User-agent: *
-Disallow: 
 Disallow: /_posts/
 Sitemap: https://gumcstronger.github.io/feed.xml
