@@ -70,6 +70,22 @@
 
     <!-- ga & ba script hoook -->
     <script></script>
+    <!-- Baidu Tongji -->
+    {% if site.ba_track_id %}
+    <script>
+        // dynamic User by Hux
+        var _baId = '{{ site.ba_track_id }}';
+
+        // Originial
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?" + _baId;
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+    {% endif %}
 
     <!-- Google AdSense -->
     <!-- <script data-ad-client="ca-pub-6487568398225121" async
