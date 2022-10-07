@@ -1,4 +1,4 @@
-Hi, I am Mincong Gu 
+Hi, I am Mincong
 
 Graduated from [Sun Yat sen University](https://www.sysu.edu.cn/)
 
