@@ -7,7 +7,7 @@ author:     "Gumc"
 header-img: "img/post-bg-2015.jpg"
 catalog: true
 tags:
-    - 游戏开发
+    - 开发
     - Server
 ---
 ## C#语言相关
@@ -129,7 +129,7 @@ tags:
 ```
 
 - TAP模式
-  核心是Task和Task`<T>`，关键字是async和await。
+  核心是Task和Task `<T>`，关键字是async和await。
 
 ### Task
 
@@ -593,7 +593,7 @@ tags:
         //异步读取文件内容
         async static Task<string> GetContentAsync(string filename)
         {
-          
+        
             FileStream fs = new FileStream(filename, FileMode.Open);
             var bytes = new byte[fs.Length];
             //ReadAync方法异步读取内容，不阻塞线程
@@ -722,8 +722,8 @@ tags:
 
 #### 什么是awaiter?
 
-> 虽然Task和Task`<TResult>`是两个非常普遍的等待类型(“awaitable”)，但这并不表示只有这两个的等待类型。
-> “awaitable”可以是任何类型，它必须公开一个GetAwaiter() 方法并且返回有效的”awaiter”。这个GetAwaiter() 可能是一个实例方法（eg:Task或Task`<TResult>`的实例方法），或者可能是一个扩展方法
+> 虽然Task和Task `<TResult>`是两个非常普遍的等待类型(“awaitable”)，但这并不表示只有这两个的等待类型。
+> “awaitable”可以是任何类型，它必须公开一个GetAwaiter() 方法并且返回有效的”awaiter”。这个GetAwaiter() 可能是一个实例方法（eg:Task或Task `<TResult>`的实例方法），或者可能是一个扩展方法
 
 > “awaiter”是”awaitable”对象的GetAwaiter()方法返回的符合特定的模式的类型。”awaiter”必须实现System.Runtime.CompilerServices.INotifyCompletion接口（，并可选的实现System.Runtime.CompilerServices.ICriticalNotifyCompletion接口）。除了提供一个INotifyCompletion接口的OnCompleted方法实现（，可选提供ICriticalNotifyCompletion接口的UnsafeCompleted方法实现），还必须提供一个名为IsCompleted的Boolean属性以及一个无参的GetResult()方法。GetResult()返回void，如果”awaitable”代表一个void返回操作，或者它返回一个TResult，那么“awaitable”代表一个TResult返回操作。
 
@@ -777,7 +777,7 @@ tags:
 
 > 这完全取决于被等待的类型。对于给定的”awaitable”，编译器生成的代码最终会调用”awaiter”的OnCompleted()方法，并且传递将执行的continue委托。编译器生成的代码对SynchronizationContext一无所知，仅仅依赖当等待的操作完成时调用OnCompleted()方法时所提供的委托。这就是OnCompleted()方法，它负责确保委托在”正确的地方”被调用，”正确的地方”完全由”awaiter”决定。
 
-> 正在等待的任务(由Task和Task`<TResult>`的GetAwaiter方法分别返回的TaskAwaiter和TaskAwaiter`<TResult>`类型)的默认行为是在挂起前捕获当前的SynchronizationContext，然后等待task的完成，如果能捕获到当前的SynchronzationContext，调用continue委托将控制权返回到SynchronizationContext中。所以，例如，如果你在应用程序的UI线程上执行”await task;”，如果当前SynchronizationContext非空则将调用OnCompleted()，并且在任务完成时，将使用UI的SynchronizationContext传播continue委托返回到UI线程。
+> 正在等待的任务(由Task和Task `<TResult>`的GetAwaiter方法分别返回的TaskAwaiter和TaskAwaiter `<TResult>`类型)的默认行为是在挂起前捕获当前的SynchronizationContext，然后等待task的完成，如果能捕获到当前的SynchronzationContext，调用continue委托将控制权返回到SynchronizationContext中。所以，例如，如果你在应用程序的UI线程上执行”await task;”，如果当前SynchronizationContext非空则将调用OnCompleted()，并且在任务完成时，将使用UI的SynchronizationContext传播continue委托返回到UI线程。
 
 > 当你等待一个任务，如果没有当前SynchronizationContext，那么系统会检查当前的TaskScheduler，如果有，当task完成时将使用TaskScheduler调度continue委托。
 
@@ -892,7 +892,7 @@ Geek的异步。
         ThreadPool.QueueUserWorkItem(delegate
         {
             … // 在线程池中执行
-          
+        
             sc.Post(delegate
             {
                 … // 在UI线程中执行
@@ -1074,9 +1074,9 @@ RuntimeContext是使用AsyncLocal, 而AsyncLocal实际上是使用了ExecutionCo
 
   数据流编程模型与消息传递这一概念相关，其中程序的独立组件通过发送消息相互通信。 在应用组件间传播消息的一种方法是，调用 Post 和 DataflowBlock.SendAsync 方法，向目标数据流块发送消息（Post 同步运行，SendAsync 异步运行），再调用 Receive、ReceiveAsync 和 TryReceive 方法接收源数据流块发送的消息。 您可以通过向头节点（目标块）发送输入数据，从管道的终端节点或网络的终端节点（一个或多个源块）接收输出数据来使用数据流管道或网络组合使用这些方法。 您还可以使用 Choose 方法从提供的第一个拥有可用数据的源读取数据，并对该数据执行操作。
 
-  源数据流块通过调用方法 ITargetBlock`<TInput>`.OfferMessage 向目标数据流块提供数据。 目标块通过以下三种方式之一来回应提供的消息：它可以接受消息，拒绝消息或推迟消息。 当目标接受消息时，OfferMessage 方法会返回 Accepted。 当目标拒绝消息时，OfferMessage 方法会返回 Declined。 当目标要求它不再接收来自源的任何消息时，OfferMessage 会返回 DecliningPermanently。 预定义的源块类型在这些返回值接收后不会向链接的目标提供消息，并且它们会自动取消这些目标的链接。
+  源数据流块通过调用方法 ITargetBlock `<TInput>`.OfferMessage 向目标数据流块提供数据。 目标块通过以下三种方式之一来回应提供的消息：它可以接受消息，拒绝消息或推迟消息。 当目标接受消息时，OfferMessage 方法会返回 Accepted。 当目标拒绝消息时，OfferMessage 方法会返回 Declined。 当目标要求它不再接收来自源的任何消息时，OfferMessage 会返回 DecliningPermanently。 预定义的源块类型在这些返回值接收后不会向链接的目标提供消息，并且它们会自动取消这些目标的链接。
 
-  当目标块推迟消息以备日后使用时，OfferMessage 方法会返回 Postponed。 推迟消息的目标块可以稍后调用 ISourceBlock`<TOutput>`.ReserveMessage 方法，以尝试暂留所提供的消息。 此时，消息仍可用，并且可由该目标块使用，否则表明该消息已由另一个目标接收。 如果目标数据流块稍后需要消息或不再需要消息，它会分别调用 ISourceBlock`<TOutput>`.ConsumeMessage 或 ReleaseReservation 方法。 消息预留通常由以非贪婪模式运行的数据流块类型使用。 非贪婪模式将在本文档的后面详细介绍。 除了保留推迟的消息，目标块也可以使用 ISourceBlock`<TOutput>`.ConsumeMessage 方法来尝试直接使用推迟的消息。
+  当目标块推迟消息以备日后使用时，OfferMessage 方法会返回 Postponed。 推迟消息的目标块可以稍后调用 ISourceBlock `<TOutput>`.ReserveMessage 方法，以尝试暂留所提供的消息。 此时，消息仍可用，并且可由该目标块使用，否则表明该消息已由另一个目标接收。 如果目标数据流块稍后需要消息或不再需要消息，它会分别调用 ISourceBlock `<TOutput>`.ConsumeMessage 或 ReleaseReservation 方法。 消息预留通常由以非贪婪模式运行的数据流块类型使用。 非贪婪模式将在本文档的后面详细介绍。 除了保留推迟的消息，目标块也可以使用 ISourceBlock `<TOutput>`.ConsumeMessage 方法来尝试直接使用推迟的消息。
 
   ActionBlock是在单线程上执行的，出于性能原因希望使用多个专用线程来处理时，只要设置MaxDegreeOfParallelism来配置线程数量即可。
 - Dataflow学习：[具有TPL数据流和故障处理的C#作业队列](https://michaelscodingspot.com/c-job-queues-part-3-with-tpl-dataflow-and-failure-handling/)
@@ -1095,7 +1095,7 @@ RuntimeContext是使用AsyncLocal, 而AsyncLocal实际上是使用了ExecutionCo
        - ExecuteTime
          这些特性在AgentGenerator生成代码时使用
      - BaseActor.cs
-       - ActionBlock`<WorkWrapper>` actionBlock;   &emsp;这里看WorkWrapper是Message
+       - ActionBlock `<WorkWrapper>` actionBlock;   &emsp;这里看WorkWrapper是Message
        - InnerRun()  &emsp;其中调用了wrapper.DoTask()，类似例子中的Handle
      - WorkerActor.cs  &emsp;继承自BaseActor，某种参与者Actor
      - WorkWrapper.cs  &emsp;类似例子中的Message,还有ActionWrapper、FuncWrapper、ActionAsyncWrapper、FuncAsyncWrapper
@@ -1251,7 +1251,7 @@ namespace ClassLibrary1
                 url = "http://passport.cnblogs.com" + new Regex("id=\"c_login_logincaptcha_CaptchaImage\" src=\"(.*?)\"").Match(result).Groups[1].Value;
                 response = httpClient.GetAsync(new Uri(url)).Result;
                 Write("amosli.png", response.Content.ReadAsByteArrayAsync().Result);
-              
+            
                 Console.WriteLine("输入图片验证码：");
                 String imgCode = "wupve";//验证码写到本地了，需要手动填写
                 imgCode =  Console.ReadLine();
@@ -1276,7 +1276,7 @@ namespace ClassLibrary1
             } while (result.Contains("验证码错误，麻烦您重新输入"));
 
             Console.WriteLine("登录成功！");
-          
+        
             //用完要记得释放
             httpClient.Dispose();
         }

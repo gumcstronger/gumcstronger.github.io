@@ -8,7 +8,6 @@ header-img: "img/post-bg-2015.jpg"
 catalog: true
 tags:
     - 生活
-    - 人生
 ---
 &emsp;&emsp;又一夜无眠，写点日记记录下点流水帐。
 
