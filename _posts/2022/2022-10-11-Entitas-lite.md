@@ -1,5 +1,5 @@
 ---
-layout:     post
+开发layout:     post
 title:      "Entitas-Lite常见问题"
 subtitle:   " \"Entitas-Lite是没有代码生成器的Entitas\""
 date:       2022-10-07 04:03:00
@@ -7,7 +7,7 @@ author:     "Gumc"
 header-img: "img/post-bg-2015.jpg"
 catalog: true
 tags:
-    - 生活
+    - 开发
 ---
 ## DebugSystem在Editor查看时崩溃
 
@@ -37,7 +37,6 @@ namespace Entitas.VisualDebugging.Unity.Editor {
     }
 }
 ```
-
 
 ## ReactiveSystem的OnAdded/OnRemoved
 
