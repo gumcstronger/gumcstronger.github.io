@@ -92,7 +92,7 @@ System.InvalidOperationException: Collection was modified; enumeration operation
 
 将foreach()改成for()避免在事件时RemoveListener导致错误。
 
-## 使用Entitas会带来的问题
+## 使用Entitas使用问题
 
 * System具体做哪些内容(从官方例子Match-One看)
   * System根据Entity对Comp的操作，触发修改其他Comp，也就行根据数据变化修改数据。所以逻辑也写在System，如果该逻辑可能在多处使用，再凑出来叫XXXLogic或XXXUtility.cs（守望先锋开发者用Utility，Entitas官方案例用Logic）静态类静态方法使用。
