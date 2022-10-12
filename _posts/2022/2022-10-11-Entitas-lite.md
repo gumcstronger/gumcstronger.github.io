@@ -2,7 +2,7 @@
 开发layout:     post
 title:      "Entitas-Lite常见问题"
 subtitle:   " \"Entitas-Lite是没有代码生成器的Entitas\""
-date:       2022-10-07 04:03:00
+date:       2022-10-11 09:03:00
 author:     "Gumc"
 header-img: "img/post-bg-2015.jpg"
 catalog: true
@@ -88,7 +88,7 @@ System.InvalidOperationException: Collection was modified; enumeration operation
   at Entitas.Entity+ListenerSystem`1[T].OnAdded (System.Collections.Generic.List`1[T] entities) [0x00047] in
 ```
 
-这部分跟我新增的ListenerSystem`<T>`事件有关。
+这部分跟我新增的ListenerSystem `<T>`事件有关。
 
 将foreach()改成for()避免在事件时RemoveListener导致错误。
 
