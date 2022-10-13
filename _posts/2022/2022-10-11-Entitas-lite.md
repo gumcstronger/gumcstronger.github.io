@@ -92,6 +92,12 @@ System.InvalidOperationException: Collection was modified; enumeration operation
 
 将foreach()改成for()避免在事件时RemoveListener导致错误。
 
+## Context.Remove<>不存在。
+
+Context.Add时，SingleEntity代表一个Comp一个Entity，如果删除Com，Entity不删除，则会导致Entity不断增加。
+
+考虑新增Context.Remove方法，而其中需要调用Context.DestroyEntity
+
 ## 使用Entitas使用问题
 
 * System具体做哪些内容(从官方例子Match-One看)
