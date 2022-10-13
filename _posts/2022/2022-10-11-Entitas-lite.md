@@ -120,7 +120,7 @@ System.InvalidOperationException: Collection was modified; enumeration operation
     * ScoreLabelController 根据ScoreComp的变化修改分数
 * 如使用Unity的碰撞交互会导致代码跟Unity挂钩严重，无法实现数据和可视化分离。
   * 直观的想法有两个：
-  * 一是需要碰撞检测时再调用Unity的方法，这样代码在服务器就无法运行。
-  * 二是实现自己的碰撞检测，但就需要为所有Unity GameObject生成对应的数据。
+    * 一是需要碰撞检测时再调用Unity的方法，这样代码在服务器就无法运行。
+    * 二是实现自己的碰撞检测，但就需要为所有Unity GameObject生成对应的数据。
   * 大概思路是
-    * Unity获得数据，例如两个立方体数据or导航地形网格，然后在逻辑中继续计算。
+    * Unity获得数据，例如两个立方体数据or导航地形网格，然后在逻辑中继续计算。这需要在数据层就有碰撞检测等逻辑，不能直接使用Unity的接口。
