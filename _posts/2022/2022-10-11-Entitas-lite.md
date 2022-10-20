@@ -130,3 +130,5 @@ Context.Add时，SingleEntity代表一个Comp一个Entity，如果删除Com，En
     * 二是实现自己的碰撞检测，但就需要为所有Unity GameObject生成对应的数据。
   * 大概思路是
     * Unity获得数据，例如两个立方体数据or导航地形网格，然后在逻辑中继续计算。这需要在数据层就有碰撞检测等逻辑，不能直接使用Unity的接口。
+* 不要为了监听增加没有数据的Comp，监听部分，如果需要绑定Entity使用则使用IListener，不需要则使用EventManager。
+  * 例如：UI事件。
