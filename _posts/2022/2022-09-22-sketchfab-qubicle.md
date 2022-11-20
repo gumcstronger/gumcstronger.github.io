@@ -36,6 +36,6 @@ tags:
 
 - Sketchfab下载gltf后没有texture贴图文件，使用blender转成obj后qubicle导入没有颜色。
   - 因为该gltf文件使用了程序化贴图，并没有烘培出贴图使用。
-  - 使用Simple烘培出贴图，并在纹理属性中选择烘培出来的图片
+  - 使用Simplebake烘培出贴图，并在纹理属性中选择烘培出来的图片
 - Blender导入模型后编辑模式不见了
   - 无法解决
