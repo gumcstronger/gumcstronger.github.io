@@ -7,7 +7,7 @@ author:     "Gumc"
 header-img: "img/post-bg-2015.jpg"
 catalog: true
 tags:
-    - 开源
+    - 游戏开发
 ---
 ## 渲染流水线
 
