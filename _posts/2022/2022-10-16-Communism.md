@@ -1,7 +1,7 @@
 ---
 layout:     post
-title:      "中国走资本主义？"
-subtitle:   " \"社会主义？""
+title:      "中国是资本主义么"
+subtitle:   " \"社会主义？\""
 date:       2022-10-16 19:03:00
 author:     "Gumc"
 header-img: "img/post-bg-2015.jpg"
