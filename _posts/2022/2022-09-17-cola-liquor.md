@@ -8,7 +8,7 @@ header-img: "img/post-bg-2015.jpg"
 catalog: true
 tags:
     - 生活
-    - 诗歌
+    - 诗与歌
 ---
 
 > 这两天<寂静之声>不断循环，孤独感不断袭来
