@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "《对不起，我们错过了你》"
-subtitle:   " \"里面的母亲爆粗时都好温柔""
+subtitle:   " \"里面的母亲爆粗时都好温柔\""
 date:       2023-02-13 00:30:00
 author:     "Gumc"
 header-img: "img/post-bg-2015.jpg"
