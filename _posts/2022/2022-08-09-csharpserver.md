@@ -7,7 +7,6 @@ author:     "Gumc"
 header-img: "img/post-bg-2015.jpg"
 catalog: true
 tags:
-    - 开发
     - Server
 ---
 ## C#语言相关
@@ -593,7 +592,7 @@ tags:
         //异步读取文件内容
         async static Task<string> GetContentAsync(string filename)
         {
-        
+      
             FileStream fs = new FileStream(filename, FileMode.Open);
             var bytes = new byte[fs.Length];
             //ReadAync方法异步读取内容，不阻塞线程
@@ -763,7 +762,7 @@ tags:
 #### await和Task.Wait一样吗？不一样
 
 - task.Wait()”是一个同步，可能阻塞的调用。它不会立刻返回到Wait()的调用者，直到这个任务进入最终状态，这意味着已进入RanToCompletion，Faulted，或Canceled完成状态。相比之下，”await task;”告诉编译器在”async”标记的方法内部插入一个隐藏的挂起/唤醒点，这样，如果等待的task没有完成，异步方法也会立马返回给调用者，当等待的任务完成时唤醒它从隐藏点处继续执行。当”await task;”会导致比较多应用程序无响应或死锁的情况下使用“task.Wait()”
-- Task.WaitC#里，Task不是专为异步准备的，它表达的是一个线程，是工作在线程池里的一个线程。异步是线程的一种应用，多线程也是线程的一种应用。Wait，以及Status、IsCanceled、IsCompleted、IsFaulted等等，是给多线程准备的方法，跟异步没有半毛钱关系。当然你非要在异步中使用多线程的Wait或其它，从代码编译层面不会出错，但程序会。Task.Wait()是一个同步方法，用于多线程中阻塞等待。`<br/>`
+- Task.WaitC#里，Task不是专为异步准备的，它表达的是一个线程，是工作在线程池里的一个线程。异步是线程的一种应用，多线程也是线程的一种应用。Wait，以及Status、IsCanceled、IsCompleted、IsFaulted等等，是给多线程准备的方法，跟异步没有半毛钱关系。当然你非要在异步中使用多线程的Wait或其它，从代码编译层面不会出错，但程序会。Task.Wait()是一个同步方法，用于多线程中阻塞等待。<br/>
 - await意思1：在异步中，await表达的意思是：当前线程/方法中，await引导的方法出结果前，跳出当前线程/方法，从调用当前线程/方法的位置，去执行其它可能执行的线程/方法，并在引导的方法出结果后，把运行点拉回到当前位置继续执行；直到遇到下一个await，或线程/方法完成返回，跳回去刚才外部最后执行的位置继续执行。意思2：等异步的运行结果。
 - async
   在异步编程的规范中，async修饰的方法，仅仅表示这个方法在内部有可能采用异步的方式执行，CPU在执行这个方法时，会放到一个新的线程中执行。那这个方法，最终是否采用异步执行，不决定于是否用await方式调用这个方法，而决定于这个方法内部，是否有await方式的调用
@@ -892,7 +891,7 @@ Geek的异步。
         ThreadPool.QueueUserWorkItem(delegate
         {
             … // 在线程池中执行
-        
+      
             sc.Post(delegate
             {
                 … // 在UI线程中执行
@@ -1251,7 +1250,7 @@ namespace ClassLibrary1
                 url = "http://passport.cnblogs.com" + new Regex("id=\"c_login_logincaptcha_CaptchaImage\" src=\"(.*?)\"").Match(result).Groups[1].Value;
                 response = httpClient.GetAsync(new Uri(url)).Result;
                 Write("amosli.png", response.Content.ReadAsByteArrayAsync().Result);
-            
+          
                 Console.WriteLine("输入图片验证码：");
                 String imgCode = "wupve";//验证码写到本地了，需要手动填写
                 imgCode =  Console.ReadLine();
@@ -1276,7 +1275,7 @@ namespace ClassLibrary1
             } while (result.Contains("验证码错误，麻烦您重新输入"));
 
             Console.WriteLine("登录成功！");
-        
+      
             //用完要记得释放
             httpClient.Dispose();
         }

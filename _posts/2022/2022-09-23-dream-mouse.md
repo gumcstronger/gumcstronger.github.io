@@ -7,10 +7,8 @@ author:     "Gumc"
 header-img: "img/post-bg-2015.jpg"
 catalog: true
 tags:
-    - 生活
     - 做梦
 ---
-
 &emsp;&emsp;刚刚做了个梦，梦见自己去了个类似餐馆的地方，里面有个门，门里有个想像在祭拜某个人or神。
 
 &emsp;&emsp;我看了一眼，祭拜的石像活着在说话，然后他就赐给我一个活老鼠，让我把老鼠吃了，忘了吃完就会实现什么。

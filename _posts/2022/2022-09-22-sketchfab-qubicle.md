@@ -7,7 +7,7 @@ author:     "Gumc"
 header-img: "img/post-bg-2015.jpg"
 catalog: true
 tags:
-    - 美术
+    - 游戏开发
 ---
 - 下载模型
   - [Sketchfab](https://sketchfab.com/)下载3D模型(.gltf格式，包含scene.gltf、scene.bin、textures文件夹)

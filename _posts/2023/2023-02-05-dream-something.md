@@ -7,7 +7,6 @@ author:     "Gumc"
 header-img: "img/post-bg-2015.jpg"
 catalog: true
 tags:
-    - 生活
     - 做梦
 ---
 梦见自己春节在家里

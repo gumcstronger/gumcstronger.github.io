@@ -7,7 +7,6 @@ author:     "Gumc"
 header-img: "img/post-bg-2015.jpg"
 catalog: true
 tags:
-    - 生活
     - 做梦
 ---
 早上做了个梦，梦得很奇怪。

@@ -7,12 +7,9 @@ author:     "Gumc"
 header-img: "img/post-bg-2015.jpg"
 catalog: true
 tags:
-    - 生活
     - 诗与歌
 ---
-
 > 这两天<寂静之声>不断循环，孤独感不断袭来
-
 
 <center>
 曾经坚定以为以后绝不喝酒了­<br/>

@@ -8,7 +8,6 @@ header-img: "img/post-bg-2015.jpg"
 catalog: true
 tags:
     - 游戏开发
-    - Unity
 ---
 GI = 直接光照 （主要方向光，主要灯光）+ 间接光照（弹射光照，非重要灯光）+ 环境光照 + 反射光（区域反射，环境反射）。
 
@@ -32,11 +31,8 @@ Unity的Lighting - Environment下：
 
 ### Photon mapping（Off-line?）
 
-
 ## Ambient Occlusion
 
-
 ## Reflection / Refraction / Scattering
-
 
 ## Shadow

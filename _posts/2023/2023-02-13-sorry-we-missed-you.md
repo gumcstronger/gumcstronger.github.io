@@ -7,8 +7,6 @@ author:     "Gumc"
 header-img: "img/post-bg-2015.jpg"
 catalog: true
 tags:
-    - 生活
-    - 人生
     - 电影
 ---
 晚上看了《对不起，我们错过了你》，说这是一个悲惨世界也不为过，但这也是万千的现实。

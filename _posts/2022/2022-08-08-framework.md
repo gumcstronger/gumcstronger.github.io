@@ -7,7 +7,6 @@ author:     "Gumc"
 header-img: "img/post-bg-2015.jpg"
 catalog: true
 tags:
-    - 开发
     - Server
 ---
 > 看了ET和Geek两个双端框架，ET和Geek都并不太符合要求。猜测ET是用于mmo类的,Geek更用于轻度些的。
@@ -232,10 +231,11 @@ tags:
 
         ---
 
+
         - twoQueues     &emsp;继承Load、Update、LateUpdateSystem中的一个;
         - allEntities   &emsp;这部分与其他数据有所不同，不是LoadHotfix的时候,而是手动RegisterSystem的时候添加
         - RegisterSystem()&emsp;添加到AllEntities和twoQueues
-        - typesystems   &emsp;含有ObjectSystemAttribute特性的XXXComponentSystem,这些会继承LoadSystem、AwakeSystem、DestroySystem、UpdateSystem、LateUpdateSystem、GetComponentSystem、DestroySystem、DeserializeSystem、AddComponentSystem中的一个,typesystems的结构是：Dictionary<typeof(XXXComponent), Dictionary<typeof(ObjectSystem), List`<XXXComponentSystem>`>>
+        - typesystems   &emsp;含有ObjectSystemAttribute特性的XXXComponentSystem,这些会继承LoadSystem、AwakeSystem、DestroySystem、UpdateSystem、LateUpdateSystem、GetComponentSystem、DestroySystem、DeserializeSystem、AddComponentSystem中的一个,typesystems的结构是：Dictionary<typeof(XXXComponent), Dictionary<typeof(ObjectSystem), List `<XXXComponentSystem>`>>
         - Deserialize() &emsp;运行Component的含有ObjectSystemAttribute特性的DeserializeSystem.Run()
         - GetComponent()&emsp;运行Component的含有ObjectSystemAttribute特性的GetComponentSystem.Run()
         - AddComponent()&emsp;运行Component的含有ObjectSystemAttribute特性的AddComponentSystem.Run()
