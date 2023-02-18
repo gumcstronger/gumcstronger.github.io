@@ -7,7 +7,7 @@ author:     "Gumc"
 header-img: "img/post-bg-2015.jpg"
 catalog: true
 tags:
-    - 社会
+    - 社会与科学
 ---
 从小读书都知道，中国是走社会主义，社会主义的目标是共产主义，即使没办法实现共产主义，我们的目标也是实现初步的社会主义。
 

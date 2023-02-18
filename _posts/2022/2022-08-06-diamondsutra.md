@@ -7,7 +7,7 @@ author:     "Gumc"
 header-img: "img/post-bg-2015.jpg"
 catalog: true
 tags:
-    - 佛经
+    - 读书
 ---
 
 第一品 法会因由分

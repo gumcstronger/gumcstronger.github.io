@@ -7,7 +7,7 @@ author:     "Gumc"
 header-img: "img/post-bg-2015.jpg"
 catalog: true
 tags:
-    - 佛经
+    - 读书
 ---
 
 观自在菩萨，行深般若波罗蜜多时，照见五蕴皆空，度一切苦厄。
