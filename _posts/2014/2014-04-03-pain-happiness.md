@@ -2,7 +2,7 @@
 layout:     post
 title:      "读《痛并快乐着》"
 subtitle:   " \"痛并快乐着­\""
-date:       2014-04-01 13:38:00
+date:       2014-04-03 13:38:00
 author:     "Gumc"
 header-img: "img/post-bg-2015.jpg"
 catalog: true
