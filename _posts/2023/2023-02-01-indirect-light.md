@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "Unity光照"
+title:      "Unity光照笔记"
 subtitle:   " \"Global Illumination\""
 date:       2023-02-01 20:00:00
 author:     "Gumc"
