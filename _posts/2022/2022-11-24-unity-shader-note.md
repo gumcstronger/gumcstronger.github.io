@@ -9,6 +9,10 @@ catalog: true
 tags:
     - 游戏开发
 ---
+## shader学习入门链接
+
+* [building a graph](https://catlikecoding.com/unity/tutorials/basics/)
+
 ## 渲染流水线
 
 应用阶段(Application Stage)  ：输出渲染图元
@@ -952,7 +956,6 @@ Unity为了解决渲染顺序的问题提供了渲染队列render queue解决方
 | **ShaderLab：CanUseSpriteAtlas 子着色器标签**    | 是                     | 是                           | 是                                         | 是                                                                                                                                              |
 | **ShaderLab：PreviewType 子着色器标签**          | 是                     | 是                           | 是                                         | 是                                                                                                                                              |
 
-
 | **签名** | **值** | **功能**                                        |
 | -------------- | ------------ | ----------------------------------------------------- |
 | [queue name]   | Background   | 指定背景渲染队列。                                    |
@@ -1002,7 +1005,6 @@ SubShader {
 ### 开启深度写入的半透明
 
 上面的透明代码由于关闭深度写入会造成错误排序，一种解决办法是使用两个Pass来渲染模型，第一个开启深度写入，但不输出颜色，目的仅仅是为了将该模型的深度值写入深度缓冲中。第二个Pass进行侦察的透明度混合，由于上一个Pass已经得到逐像素的正确深度信息，该Pass就可以按照像素级别的深度排序结果进行透明渲染。但这种方法的缺点在于多一个Pass会对性能造成一定影响。
-
 
 ### ShaderLab的混合命令
 
