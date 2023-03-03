@@ -1011,3 +1011,39 @@ SubShader {
 ### 双面渲染的透明效果
 
 ## 更复杂的光照
+
+## 常见知识点整理
+
+### Shader中的 mul()函数 或 Shader Graph中的Multiply节点
+
+| mul(M, N) | 计算两个矩阵相乘，如果 M 为 AxB 阶矩阵，N 为 BxC 阶矩阵，则返回 AxC 阶矩阵。下面两个函数为其重载函数 |
+| --------- | ---------------------------------------------------------------------------------------------------- |
+| mul(M, v) | 计算矩阵和向量相乘，得到一个向量（代表对v进行矩阵变换）                                              |
+| mul(v, M) | 计算向量和矩阵相乘                                                                                   |
+
+```
+v2f vert(appdata v) 
+{
+    v2f o;
+    float3 worldPos = mul(UNITY_MATRIX_MVP, v.vertex);//从模型的本地空间转化为投影空间坐标，等同UnityObjectToClipPos(v.vertex)
+    float3 worldPos = mul(_Object2World, v.vertex).xyz;//从模型的本地空间转化为世界空间矩阵
+    return o;
+}
+```
+
+UNITY_MATRIX_MVP	模型矩阵 * 相机矩阵 * 投影矩阵，通常用于把顶点/方向向量从模型空间转换到裁剪空间
+UNITY_MATRIX_MV	模型矩阵 * 相机矩阵
+UNITY_MATRIX_V	相机矩阵
+UNITY_MATRIX_P	投影矩阵
+UNITY_MATRIX_T_MV	模型到相机空间矩阵取转置
+UNITY_MATRIX_IT_MV	模型到相机空间矩阵取转置的逆
+_Object2World	物体到世界（模型矩阵）
+_World2Object	世界到物体
+
+### saturate()函数
+
+当你想将颜色值规范到0~1之间时，你可能会想到使用saturate函数（saturate(x)的作用是如果x取值小于0，则返回值为0。如果x取值大于1，则返回值为1。若x在0到1之间，则直接返回x的值.），当然saturate也可以使用变量的swizzled版本，比如saturate(somecolor.rgb);
+
+```
+surface.Albedo.rg = saturate(input.worldPos.xy * 0.5 + 0.5);   // 限制颜色以确保它们保持在 0–1 范围内
+```
