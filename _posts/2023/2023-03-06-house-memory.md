@@ -2,7 +2,7 @@
 layout:     post
 title:      "一度搬家时"
 subtitle:   "\"搬一个地方，删一段记忆\""
-date:       2023-02-26 23:30:00
+date:       2023-03-06 23:30:00
 author:     "Gumc"
 header-img: "img/post-bg-2015.jpg"
 catalog: true
