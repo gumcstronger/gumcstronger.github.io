@@ -1,4 +1,4 @@
-嗨，我是敏聪
+嗨，我是啊聪
 
 本科毕业于[SYSU](https://www.sysu.edu.cn/)
 
