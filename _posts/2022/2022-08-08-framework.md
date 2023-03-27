@@ -76,6 +76,10 @@ tags:
         - Router
 
           - RouterAddressComponentSystem.cs   &emsp;
+          - RouterHelper.cs
+            - CreateRouterSession
+              - GetRouterAddress
+                - Connect
         - Scene
 
           - M2C_StartSceneChangeHandler.cs    &emsp;继承于AMHandler,消息事件
