@@ -1,3 +1,3 @@
 # robots.txt
 User-agent: *
-# Sitemap: https://gumcstronger.github.io/feed.xml
+Sitemap: https://gumcstronger.github.io/feed.xml
