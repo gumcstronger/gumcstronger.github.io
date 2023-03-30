@@ -9,7 +9,7 @@ catalog: true
 tags:
     - Server
 ---
-> 看了ET和Geek两个双端框架，ET和Geek都并不太符合要求。猜测ET是用于mmo类的,Geek更用于轻度些的。
+> 看了ET和Geek两个双端框架，ET和Geek都并不太符合要求。猜测ET是用于mmo类的。这里是一些注释笔记。
 
 ## ET框架
 
@@ -47,10 +47,6 @@ tags:
     - Benchmark：连接内网和测试服务器承受力。加载有内网组件NetInnerComponent，服务器承受力测试组件BenchmarkComponent。
 
 ### 目录
-
-#### Core
-
-##### Analyzer
 
 #### Codes
 
@@ -105,7 +101,11 @@ tags:
   - Watcher
 - Module
   - Actor
+    - AMActorHandler 处理进程间通信send消息(不需要返回值)的继承AMActorHandler
+    - AMActorRpcHandler 处理进程间通信rpc消息(需要返回值)的继承AMActorRpcHandler
   - ActorLocation
+    - AMActorLocationHandler 与AMActorHandler类似，
+    - AMActorLocationRpcHandler 与AMActorRpcHandler类似
   - AOI
   - Console
   - DB
@@ -153,14 +153,14 @@ tags:
 
 ###### Client
 
-    - Demo
-      - AI
-      - Helper
-      - Ping
-        - PingComponent.cs
-      - Router
-      - Session
-      - Unit
+- Demo
+  - AI
+  - Helper
+  - Ping
+    - PingComponent.cs
+  - Router
+  - Session
+  - Unit
 
 ###### Generate          工具自动生成的代码
 
@@ -174,191 +174,186 @@ tags:
 
 ###### Server
 
-    - Demo
-      - Gate
-        - PlayerComponent.cs用于Gate网关服务器,保存玩家信息(Player:Account、UnitId)
-        - GateSessionComponent.cs用于Gate网关服务器,保存所有Gate里的玩家的Session的Key
-      - Map
-      - Robot
-      - Watcher
-    - Module
-      - Acotr
-      - ActorLocation
+- Demo
 
-    - ActorLocationSenderComponent.cs用于Gate网关服务器,向Map内的指定玩家发送消息，如果发送失败，则向Location服务器索要新的地址。
-        - LocationComponent.cs 用于Location地址服务器，保存了所有玩家的地址（Key是玩家的Id，Value是玩家的InstanceId），如果玩家在切换Map的时候，要把这里锁住。
-      - AOI
-      - Console
-      - DB
-      - Http
-      - MessageInner
+  - Gate
+    - PlayerComponent.cs 用于Gate网关服务器,保存玩家信息(Player:Account、UnitId)
+    - GateSessionComponent.cs用于Gate网关服务器,保存所有Gate里的玩家的Session的Key
+  - Map
+  - Robot
+  - Watcher
+- Module
 
-    - NetInnerComponent.csGate网关服务器,与Realm和Map服务器通讯,注意，Map并不与玩家直接通讯，全都由Gate转发。
-      - RobotCase
-      - Router
+  - Actor
+  - ActorLocation
+    - ActorLocationSenderComponent.cs 用于Gate网关服务器,向Map内的指定玩家发送消息，如果发送失败，则向Location服务器索要新的地址。
+    - LocationComponent.cs 用于Location地址服务器，保存了所有玩家的地址（Key是玩家的Id，Value是玩家的InstanceId），如果玩家在切换Map的时候，要把这里锁住。
+  - AOI
+  - Console
+  - DB
+  - Http
+  - Message
+    - AMRpcHandler 处理需要返回的请求集成AMRpcHandler
+    - NetInnerComponent.cs Gate网关服务器,与Realm和Map服务器通讯,注意，Map并不与玩家直接通讯，全都由Gate转发。
+  - RobotCase
+  - Router
 
 ###### Share
 
-    - Module
-      - Actor
-        - ActorMessageSenderComponent.cs s用于Map常见服务器与Gate通讯。这里可以获得ActorId，而ActorId是找到对应Map的关键信息：IdGenerater.AppId。对于开房间的游戏来说，一个Map服务器可能会有很多个房间。
-      - ActorLocation
-      - AI
-        - AIComponent.cs    “客户端挂在ClientScene上，服务端挂在Unit上”
-      - Config
-      - CoroutineLock
-      - ETTask
-      - Log
-      - Message
-      - Move
-      - Numeric
-      - ObjectWait
-      - Recast
-      - Scene
-      - Timer
-      - Unit
+- Module
+  - Actor
+    - ActorMessageSenderComponent.cs s用于Map常见服务器与Gate通讯。这里可以获得ActorId，而ActorId是找到对应Map的关键信息：IdGenerater.AppId。对于开房间的游戏来说，一个Map服务器可能会有很多个房间。
+  - ActorLocation
+  - AI
+    - AIComponent.cs    客户端挂在ClientScene上，服务端挂在Unit上
+  - Config
+  - CoroutineLock
+  - ETTask
+  - Log
+  - Message
+    - AMHandler.cs	不需要返回的继承AMHandler
+  - Move
+  - Numeric
+  - ObjectWait
+  - Recast
+  - Scene
+  - Timer
+  - Unit
 
 ##### ModelView
 
 ###### Client
 
-    - Demo
-      - Canera
-      - Config
-      - Global
-      - Opera
-      - UI
-      - Unit
-    - Module
-      - Resource
-      - UI
+- Demo
+  - Canera
+  - Config
+  - Global
+  - Opera
+  - UI
+  - Unit
+- Module
+  - Resource
+  - UI
 
-- Proto 消息类
+<!-- #### Proto 消息类
   - InnerMessage.proto
   - MongoMessage.proto
   - OuterMessage.proto
-- Unity/Assets/Script
-  - Core
-    - Entity 其实目录应该叫Scene,即唯一的Entity
-      - Scene.cs
-    - Event
-      - IEvent.cs
-      - AEvent.cs
-    - Helper                其实融合了Utility和Extension扩展方法,如果是我就拆了它,放到Tools
-    - Log                   Log里面又调用了Game.ILog,正常会用GameFramework的Helper那样耦合会更低一些,也是放到Tools比较合适
-    - Method                为了运行ET.Client.Entry而专门实现的。也应该放到Tools比较合适
-    - Network               A是基类, T是TCP, K是KCP, W是WebSocket
-      - AChannel.cs
-      - KChannel.cs
-      - TChannel.cs
-      - WChannel.cs
-      - AService.cs
-      - KService.cs
-      - TService.cs       监听客户端的连接请求，有客户端请求过来是，建立新的socket保持客户端与服务端之间通信
-      - WService.cs
-    - Object
-      - EventSystem.cs    实际包含Event、CallBack、Feature(管理System)
 
-        - allTypes      即Hotfix.dll的所有类型
-        - types         即有XXAttribute对应的类型
+- Unity/Assets/Script -->
 
-        ---
+#### Core
+
+##### Analyzer
+
+##### Helper
+
+其实融合了Utility和Extension扩展方法,如果是我就拆了它,放到Tools
+
+- ProcessHelper.cs   根据路径和参数，运行一个进程
+
+##### Method
+
+为了运行ET.Client.Entry而专门实现的。也应该放到Tools比较合适
+
+##### Module
+
+###### Config
+
+###### CoroutineLock
+
+###### Entity
+
+- Entity 其实目录应该叫Scene,即唯一的Entity
+  - Scene.cs
+
+###### EventSystem
+
+- Event
+
+  - IEvent.cs
+  - AEvent.cs
+- EventSystem.cs    实际包含Event、CallBack、Feature(管理System)
+
+  - allTypes      即Hotfix.dll的所有类型
+  - types         即有XXAttribute对应的类型
+
+  ---
 
 
-        - twoQueues     继承Load、Update、LateUpdateSystem中的一个;
-        - allEntities   这部分与其他数据有所不同，不是LoadHotfix的时候,而是手动RegisterSystem的时候添加
-        - RegisterSystem()添加到AllEntities和twoQueues
-        - typesystems   含有ObjectSystemAttribute特性的XXXComponentSystem,这些会继承LoadSystem、AwakeSystem、DestroySystem、UpdateSystem、LateUpdateSystem、GetComponentSystem、DestroySystem、DeserializeSystem、AddComponentSystem中的一个,typesystems的结构是：Dictionary<typeof(XXXComponent), Dictionary<typeof(ObjectSystem), List `<XXXComponentSystem>`>>
-        - Deserialize() 运行Component的含有ObjectSystemAttribute特性的DeserializeSystem.Run()
-        - GetComponent()运行Component的含有ObjectSystemAttribute特性的GetComponentSystem.Run()
-        - AddComponent()运行Component的含有ObjectSystemAttribute特性的AddComponentSystem.Run()
-        - Awake()       运行Component的含有ObjectSystemAttribute特性的AwakeSystem.Run()
-        - Load()        运行Component的含有ObjectSystemAttribute特性的LoadSystem.Run()
-        - Destroy()     运行Component的含有ObjectSystemAttribute特性的DestroySystem.Run()
-        - Update()      运行Component的含有ObjectSystemAttribute特性的UpdateSystem.Run()
-        - LateUpdate()  运行Component的含有ObjectSystemAttribute特性的LateUpdateSystem.Run()
+  - twoQueues     继承Load、Update、LateUpdateSystem中的一个;
+  - allEntities   这部分与其他数据有所不同，不是LoadHotfix的时候,而是手动RegisterSystem的时候添加
+  - RegisterSystem()添加到AllEntities和twoQueues
+  - typesystems   含有ObjectSystemAttribute特性的XXXComponentSystem,这些会继承LoadSystem、AwakeSystem、DestroySystem、UpdateSystem、LateUpdateSystem、GetComponentSystem、DestroySystem、DeserializeSystem、AddComponentSystem中的一个,typesystems的结构是：Dictionary<typeof(XXXComponent), Dictionary<typeof(ObjectSystem), List `<XXXComponentSystem>`>>
+  - Deserialize() 运行Component的含有ObjectSystemAttribute特性的DeserializeSystem.Run()
+  - GetComponent()运行Component的含有ObjectSystemAttribute特性的GetComponentSystem.Run()
+  - AddComponent()运行Component的含有ObjectSystemAttribute特性的AddComponentSystem.Run()
+  - Awake()       运行Component的含有ObjectSystemAttribute特性的AwakeSystem.Run()
+  - Load()        运行Component的含有ObjectSystemAttribute特性的LoadSystem.Run()
+  - Destroy()     运行Component的含有ObjectSystemAttribute特性的DestroySystem.Run()
+  - Update()      运行Component的含有ObjectSystemAttribute特性的UpdateSystem.Run()
+  - LateUpdate()  运行Component的含有ObjectSystemAttribute特性的LateUpdateSystem.Run()
 
-        ---
+  ---
 
-        - allEvents      含有EventAttribute特性的,即所有XXXChange_XXX
-        - PublishAsync() 同步函数,事件通知,触发所有继承AEvent的Run()方法
-        - Publish()      异步函数
+  - allEvents      含有EventAttribute特性的,即所有XXXChange_XXX
+  - PublishAsync() 同步函数,事件通知,触发所有继承AEvent的Run()方法
+  - Publish()      异步函数
 
-        ---
+  ---
 
-        - allCallbacks   含CallbackAttribute特性的
-        - Callback()     触发回调的Run()方法
-      - Entity.cs          Entity,XXXComponent也是继承于Entity
-      - ProcessHelper.cs   根据路径和参数，运行一个进程
-    - ThreadSynchronizationContext.cs 将其他线程中的回调统一放在主线程中进行处理,只在TChannel、TService上用到,因为SocketAsyncEventArgs的OnComplete回调是在新线程上处理，需要压回主线程处理。
-  - ThirdParty
-    - ETTask
+  - allCallbacks   含CallbackAttribute特性的
+  - Callback()     触发回调的Run()方法
 
-## Geek
+###### IdGenerator
 
-### 目录
+###### Log
 
-- Bedrock.Framework     该库似乎还是Alpha
-- GeekServer.App
-  - Config
-  - Logic
-    - Bag
-      - BagComp.cs    背包数据,需要存储到DB所以是继承StateComponent
-    - Common
-    - Login
-      - LoginComp.cs  登录数据,需要查询DB所以继承QueryComponent
-    - Role
-      - RoleComp      玩家基础数据,继承StateComponent
-    - Server
-      - ServerComp.cs 服务器数据
-    - GameLoop.cs       服务器的循环?
-- GeekServer.CodeGenerator  代码生成工具
-  - Agent
-  - Sate
-  - Template
-  - Utils
-- GeekServer.Core
-  - Actor
-  - Callback
-  - Component
-  - Entity
-  - Events
-  - Hotfix
-  - Net
-    - Http
-      - HttpTool.cs  使用System.Net.Http.HttpClient能够同时在客户端与服务端同时使用的 HTTP 组件（比如处理 HTTP 标头和消息）， 为客户端和服务端提供一致的编程模型。主要用来给服务器错误关闭前发送通知。
-    - GameServer.cs
-  - Serialize
-  - Storage
-  - Timer
-  - Utils
-- GeekServer.Generate
-- GeekServer.Hotfix
-- GeekServer.Proto
-- GeekServer.Serialize
-- GeekServer.Test
-- GeekServer.xUnit
-- Tools
-  - ExcelGen
-  - Geek.MsgPackTool
-- UnityDemo/Assets/Scripts
-  - Framework
-    - Actor
-    - Bedrock
-    - Event
-    - Net
-    - Serialize
-    - Utils
-  - Generate
-    - Config
-    - Proto
-  - Logic
-  - MessagePack
+Log里面又调用了Game.ILog,正常会用GameFramework的Helper那样耦合会更低一些,也是放到Tools比较合适
 
-### MessagePackTool
+###### Network
 
-> 由于C#的MessagePack通过运行时动态生成IL来序列化自定义对象，从而为每种类型创建自定义的、高度优化的格式化程序。但Unity IL2CPP等严格AOT环境禁止生成运行时代码，所以MessagePackTool提供了一种提前运行代码生成器的方法。
-> MessagePackTool核心在于增加项目通过配置读取输入输出配置,然后调用MessagePack提供的mpc工具生成
+A是基类, T是TCP, K是KCP, W是WebSocket
+
+- AChannel.cs
+- KChannel.cs
+- TChannel.cs
+- WChannel.cs
+- AService.cs
+- KService.cs
+- TService.cs       监听客户端的连接请求，有客户端请求过来是，建立新的socket保持客户端与服务端之间通信
+- WService.cs
+
+###### ObjectPool
+
+###### Options
+
+###### Synchronization
+
+###### Time
+
+###### Timer
+
+##### Object
+
+##### Serialize
+
+##### Singleton
+
+##### Other
+
+- ThreadSynchronizationContext.cs 将其他线程中的回调统一放在主线程中进行处理,只在TChannel、TService上用到,因为SocketAsyncEventArgs的OnComplete回调是在新线程上处理，需要压回主线程处理。
+
+#### ThirdParty
+
+##### ETTask
+
+##### Kcp
+
+##### protobuf-net
+
+##### Recast
+
 
 <!-- 
 ## ET和Geek对比
