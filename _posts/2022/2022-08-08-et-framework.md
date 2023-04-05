@@ -212,6 +212,7 @@ tags:
   - Log
   - Message
     - AMHandler.cs	不需要返回的继承AMHandler
+    - Session.cs Session.send/call后会调用AMRpchandler.Handler，然后通过NetService.SendMessage发送请求。而通过NetService.UpdateInMainThread接收返回值，然后调用NetClientComponent的OnRead，通知NetClientComponentOnRead，继续通知Session.Response，在session.OnResponse设置Task.tcs.SetResult，这时候await会结束并且获得返回值。
   - Move
   - Numeric
   - ObjectWait
@@ -353,7 +354,6 @@ A是基类, T是TCP, K是KCP, W是WebSocket
 ##### protobuf-net
 
 ##### Recast
-
 
 <!-- 
 ## ET和Geek对比
