@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "《国王查理德》"
+title:      "电影《国王查理德》"
 subtitle:   "\"千万不要放弃幻想\""
 date:       2023-06-04 22:22:00
 author:     "Gumc"
