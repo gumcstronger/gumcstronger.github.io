@@ -10,8 +10,9 @@ tags:
     - 游戏开发
 ---
 - 下载模型
-  - [Sketchfab](https://sketchfab.com/)下载3D模型(.gltf格式，包含scene.gltf、scene.bin、textures文件夹)
+  - [Sketchfab](https://sketchfab.com/)下载3D模型(.gltf格式，包含scene.gltf、scene.bin、textures文件夹)（如果不能下载，可使用[sketchfab-ripper](https://github.com/jiutian1137/sketchfab-ripper/tree/main)下载。）
   - Blender软件看效果。如果有贴图但没有颜色，则点击右上角 - Viewport Shading - Texture(代表Color from texture而不是material)，则能够正常显示模型贴图颜色
+  - 如不能下载，则使用[sketchfab-ripper](https://github.com/jiutian1137/sketchfab-ripper/tree/main)进行下载，并转化为voxel后手动填色。
 - 处理.obj格式
   - 情况一：只包含一张贴图
     - Blender软件 - 文件/导入/glTF 2.0(.glb/gltf)，选中模型文件scene.gltf
@@ -25,7 +26,7 @@ tags:
     - 下载fbx，将fbx导入Unity，点击Extract Materials，生成模型。
     - 然后使用[Magicavoxel Tools Free](https://assetstore.unity.com/packages/tools/utilities/magicavoxel-tools-free-146116)将mesh转化成voxel
 - 体素化
-  - 情况一：如模型本来是体素模型，只是obj格式。则通过Qubicle处理即可。
+  - 情况一：如模型本来是体素模型，只是obj格式。则通过Qubicle处理即可。（有时候Qubicle效果更好，有时候在线体素化器效果更好更好）
 
     - Qubicle处理
       Voxelize/Create Voxelizer... - 弹窗点Ok - Voxelize/Load Mesh - 选中scene.obj
