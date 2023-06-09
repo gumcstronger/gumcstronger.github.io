@@ -10,9 +10,9 @@ tags:
     - 游戏开发
 ---
 - 下载模型
-  - [Sketchfab](https://sketchfab.com/)下载3D模型(.gltf格式，包含scene.gltf、scene.bin、textures文件夹)（如果不能下载，可使用[sketchfab-ripper](https://github.com/jiutian1137/sketchfab-ripper/tree/main)下载。）
-  - Blender软件看效果。如果有贴图但没有颜色，则点击右上角 - Viewport Shading - Texture(代表Color from texture而不是material)，则能够正常显示模型贴图颜色
-  - 如不能下载，则使用[sketchfab-ripper](https://github.com/jiutian1137/sketchfab-ripper/tree/main)进行下载，并转化为voxel后手动填色。
+  - [Sketchfab](https://sketchfab.com/)下载3D模型(.gltf格式，包含scene.gltf、scene.bin、textures文件夹)（如果不能下载，可使用[sketchfab-ripper](https://github.com/jiutian1137/sketchfab-ripper/tree/main)下载，并转化为voxel后手动填色）
+    - Blender软件看效果。如果有贴图但没有颜色，则点击右上角 - Viewport Shading - Texture(代表Color from texture而不是material)，则能够正常显示模型贴图颜色
+  - [Unity商店](https://assetstore.unity.com/)下载3D模型，如是voxel的则可以直接使用。需要再处理则可以通过qubicle转化为obj和全贴图（不能用magicavoxel，因为magicavoxel转化后的贴图只是color palette)
 - 处理.obj格式
   - 情况一：只包含一张贴图
     - Blender软件 - 文件/导入/glTF 2.0(.glb/gltf)，选中模型文件scene.gltf
