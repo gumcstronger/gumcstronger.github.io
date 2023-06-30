@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "Minecraft日记"
+title:      "Minecraft笔记"
 subtitle:   "\"Minecraft\""
 date:       2023-06-27 12:08:00
 author:     "Gumc"
