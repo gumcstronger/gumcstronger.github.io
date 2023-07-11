@@ -45,7 +45,11 @@ tags:
 
 * 下载Minecraft Launcher并购买Minecraft正版
 * 下载[Build The Earth安装器](https://buildtheearth.net/faq),并运行install
-* 
+
+## 导出模型
+
+* 使用structure block
+  * 按T，输入命令行：/give @a minecraft-structure
 
 ## 常用指令
 
@@ -55,4 +59,5 @@ tags:
   * 将filename.schem放到.minecraft/versions/版本/config/worldedit/schematics中
   * //schem load [文件名如JP-Shibuya] [文件格式如schem]
   * //paste
-* 待定
+* 修改模式：
+  * /gamemode (adventure / creative / spectator / survival)
