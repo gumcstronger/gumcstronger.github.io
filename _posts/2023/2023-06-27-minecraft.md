@@ -26,6 +26,9 @@ tags:
   * 管理员身份运行cmd
   * 输入命令: mklink /j "C:\Users\\[用户名]\AppData\Roaming\\.minecraft" "D:\Data\Game\Minecraft\\.minecraft"
   * 当提示为 Junction created for xxx<<===>>xxx，并且目录下出现一个快捷方式图标的.minecraft文件夹，就表示成功了
+* minecraft存档路径
+  * Java版：C:\Users\\[用户名]\Appdata\Roaming\.minecarft\saves
+  * Bedrock版：C:\Users\\[用户名]AppData\Local\Packages\Microsoft.MinecraftUWP_8wekyb3d8bbwe\LocalState\games\com.mojang\minecraftWorlds
 
 ## 安装Mod
 
@@ -46,10 +49,14 @@ tags:
 * 下载Minecraft Launcher并购买Minecraft正版
 * 下载[Build The Earth安装器](https://buildtheearth.net/faq),并运行install
 
-## 导出模型
+## Other
 
-* 使用structure block
+* 使用structure block导出3d模型
+  * 注意：Java版不存在, Bedrock版才有，且市场模板会禁用Export功能
   * 按T，输入命令行：/give @a minecraft-structure
+* 使用Mineways导出3d模型
+  * [Mineways](https://www.realtimerendering.com/erich/minecraft/public/mineways/index.html) 将minecraft map导出为.obj(bedrock版使用minecraft的structure block, Java版通过Amulet转化Bedrock版)
+* 使用[je2be](https://github.com/kbinani/je2be-core)将java版本地图转化为bedrock版本地图
 
 ## 常用指令
 
