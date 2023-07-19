@@ -49,6 +49,10 @@ tags:
 * 下载Minecraft Launcher并购买Minecraft正版
 * 下载[Build The Earth安装器](https://buildtheearth.net/faq),并运行install
 
+## Java Map 转 Bedrock
+
+* [chunker](https://chunker.app/)
+
 ## Other
 
 * 使用structure block导出3d模型
