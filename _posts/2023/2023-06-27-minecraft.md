@@ -74,4 +74,7 @@ tags:
   * /gamemode (adventure / creative / spectator / survival)
 
 # 网站
+
 [modrinth](https://modrinth.com/) 含有一些模组,建筑不错。
+
+[resourcepack](https://resourcepack.net/) 资源不错
