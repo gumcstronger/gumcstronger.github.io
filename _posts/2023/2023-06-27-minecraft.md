@@ -78,3 +78,14 @@ tags:
 [modrinth](https://modrinth.com/) 含有一些模组,建筑不错。
 
 [resourcepack](https://resourcepack.net/) 资源不错
+
+[planetminecraft](https://www.planetminecraft.com/texture-pack/tim10erys-realistic-128x/) 内容极多
+
+# 资源包
+
+* [Brixel](https://resourcepack.net/brixel-resource-pack/#gsc.tab=0) 问题是64x64的太粗糙，高清的要5美刀。 ![图片](https://resourcepack.net/fl/images/2022/06/Brixel-Resource-Pack-for-Minecraft-textures-2-1-840x473.jpg)
+* [minebricks](https://resourcepack.net/minebricks-resource-pack/#gsc.tab=0) 乐高形状 ![图片](https://resourcepack.net/fl/images/2021/04/MineBricks-Resource-Pack-for-minecraft-textures-lego-3-840x473.jpg)
+* [coven](https://resourcepack.net/coven-resource-pack/#gsc.tab=0) 精美的 ![图片](https://resourcepack.net/fl/images/2023/08/COVEN-Resource-Pack1-2-840x449.jpg)
+* [sketch-hand-drawn](https://resourcepack.net/sketch-hand-drawn-resource-pack/#gsc.tab=0) 手绘草图 ![图片](https://resourcepack.net/fl/images/2014/01/Sketch-Hand-Drawn-Resource-Pack-for-minecraft-1.jpg)
+* [optimum-realism](https://resourcepack.net/optimum-realism-resource-pack/#gsc.tab=0) 写实的 ![图片](https://resourcepack.net/fl/images/2022/01/Optimum-Realism-Resource-Pack-for-minecraft-new-r17-6-840x473.jpg)
+* [meteor](https://resourcepack.net/meteor-lmx-resource-pack/#gsc.tab=0) 高光 ![图片](https://resourcepack.net/fl/images/2020/10/Meteor-LMX-Resource-Pack-for-minecraft-textures-9-840x464.jpg)
