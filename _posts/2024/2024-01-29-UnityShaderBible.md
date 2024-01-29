@@ -152,7 +152,7 @@ Fig. 1.0.1b
 
 #### 3.2.2 | ShaderLab深度写入
 
-<detail><summary>原文</summary>
+`<detail><summary>`原文 `</summary>`
 
 This command controls the writing of the surface pixels of an object to the Z-Buffer, that is, it allows us to ignore or respect the depth distance between the camera and an object. ZWrite has two values, which are: On and Off, where "On" corresponds to its default value. We generally use this command when working with transparencies, e.g., when we activate the Blending options.
 
@@ -183,12 +183,43 @@ Fig. 3.2.2a
 This effect occurs when trying to render a pixel at the end of the rendering pipeline. Since the Z-Buffer cannot determine which element is behind the other, it produces flickering lines that change shape depending on the camera's position.
 
 To correct this issue, we simply need to disable the Z-Buffer using the "ZWrite off" command.
-</detail>
+`</detail>`
 
+深度写入这个命令控制了物体表面像素写入 Z 缓冲（深度缓冲）的这一过程。它允许我们忽略或写入物体与相机间的深度。深度写入有两个可以设置的值，分别是开启（On）和关闭（Off），默认值为开启。我们通常在处理透明度时（例如混合）会关闭深度写入。
+
+* **ZWrite Off** 处理透明度时
+* **ZWrite On** 默认值
+
+为什么我们需要在处理透明度时禁用 Z 缓冲？主要是因为半透明像素叠加（深度冲突）的问题。当我们处理半透明物体时，GPU 通常不知道哪个物体位于另一个物体前面，因此当我们在场景中移动摄像机时，像素之间会产生奇怪的重叠效果。要解决这个问题，我们只需将**深度写入**命令设置为“ **关闭（Off）** ”，停用 Z 缓冲区即可：
+
+```text
+Shader "InspectorPath/shaderName" 
+{
+    Properties { … } 
+    SubShader 
+    { 
+        Tags { "Queue"="Transparent" "RenderType"="Transparent" } 
+        Blend SrcAlpha OneMinusSrcAlpha 
+        ZWrite Off 
+    } 
+}
+```
+
+深度冲突（Z-fighting）发生在两个或多个物体具有相同的深度时，导致 Z 缓冲中的值完全相同。
+
+[https://picx.zhimg.com/80/v2-f16fe9a84f37cb76f4808e66cb3c24e8.png](https://link.zhihu.com/?target=https%3A//picx.zhimg.com/80/v2-f16fe9a84f37cb76f4808e66cb3c24e8_720w.png)
+
+![](https://pic3.zhimg.com/80/v2-66d8a9d1bed11ea11c8d6ea3f4d3e27a_720w.webp)
+
+Fig. 3.2.2a
+
+接着，当尝试在渲染管线末端渲染这些像素时，就会出现上图所示的这种效果。由于 Z 缓冲无法确定究竟哪个物体位于另一个物体的后面，就会产生这些闪烁的线条。线条的形状会根据摄像机的位置而改变。
+
+想修复这个问题，我们只需要用命令关闭深度写入（ZWrite off）、禁用 Z 缓冲区即可。
 
 #### 3.2.3 | ShaderLab深度测试
 
-<detail><summary>原文</summary>
+`<detail><summary>`原文 `</summary>`
 
 ZTest controls how Depth Testing should be performed and is generally used in multi-pass shaders to generate differences in colors and depths. This property has seven different values, which are:
 
@@ -247,6 +278,7 @@ Shader "InspectorPath/shaderName"
     } 
 }
 ```
+
 </detail>
 
 深度测试（ZTest）通常用于在有多 pass 的着色器中生成颜色和深度差异。该属性有七个不同的值，分别是：
