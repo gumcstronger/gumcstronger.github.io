@@ -91,12 +91,19 @@ Fig. 1.0.1b
 ### Unity中的Shader
 
 #### 2.0.1 | 什么是着色器(shader)？
+
 #### 2.0.2 | 编程语言介绍
+
 #### 2.0.3 | 着色器的种类
+
 #### 2.0.4 | 标准表面着色器
+
 #### 2.0.5 | 无光照着色器
+
 #### 2.0.6 | 屏幕特效着色器
+
 #### 2.0.7 | 计算着色器
+
 #### 2.0.8 | 光线追踪着色器
 
 ### 属性、命令与函数
@@ -104,60 +111,237 @@ Fig. 1.0.1b
 #### 3.0.1 | 顶点/片元着色器的结构
 
 #### 3.0.2 | ShaderLab着色器
+
 #### 3.0.3 | ShaderLab的属性
+
 #### 3.0.4 | 数字与滑条类型
+
 #### 3.0.5 | 颜色与向量类型
+
 #### 3.0.6 | 纹理类型
+
 #### 3.0.7 | 自定义材质属性绘制器
+
 #### 3.0.8 | MPD开关
+
 #### 3.0.9 | MPD关键词枚举
+
 #### 3.1.0 | MPD枚举
+
 #### 3.1.1 | MPD指数滑条与整数范围
+
 #### 3.1.2 | MPD空白与标题
+
 #### 3.1.3 | ShaderLab子着色器
+
 #### 3.1.4 | ShaderLab标签
+
 #### 3.1.5 | 队列标签
+
 #### 3.1.6 | 渲染类型标签
+
 #### 3.1.7 | SubShader混合
+
 #### 3.1.8 | SubShader透明度遮罩
+
 #### 3.1.9 | SubShader颜色遮罩
+
 #### 3.2.0 | SubShader剔除与深度测试
+
 #### 3.2.1 | ShaderLab剔除
+
 #### 3.2.2 | ShaderLab深度写入
+
 #### 3.2.3 | ShaderLab深度测试
+
+
+<detail><summary>原文</summary>
+ZTest controls how Depth Testing should be performed and is generally used in multi-pass shaders to generate differences in colors and depths. This property has seven different values, which are:
+
+* **Less.**
+* **Greater.**
+* **LEqual.**
+* **GEqual.**
+* **Equal.**
+* **NotEqual.**
+* **Always.**
+
+Which they correspond to a comparison operation.
+
+ **ZTest Less** : (<) Draws the objects in front. It ignores objects that are at the same distance or behind the shader object.
+
+ **ZTest Greater** : (>) Draws the objects behind. It does not draw objects that are at the same distance or in front of the shader object.
+
+**ZTest LEqual:** (≤) Default value. Draws the objects that are in front of or at the same distance. It does not draw objects behind the shader object.
+
+ **ZTest GEqual** : (≥) Draws the objects behind or at the same distance. Does not draw objects in front of the shader object.
+
+ **ZTest Equal** : (==) Draws objects that are at the same distance. Does not draw objects in front of or behind the shader object.
+
+ **ZTest NotEqual** : (! =) Draws objects that are not at the same distance. Does not draw objects that are the same distance from the shader object.
+
+ **ZTest Always** : Draws all pixels, regardless of the distance of the objects relative to the camera.
+
+To understand this command, we will do the following exercise: Let's suppose we have two objects in our scene; a Cube and a Sphere. The Sphere is in front of the Cube relative to the camera, and the pixel depth is as expected.
+
+![](https://pic2.zhimg.com/80/v2-5d1e61a5bead5a789e43ab0455d8e6cd_720w.webp)
+
+Fig. 3.2.3a
+
+If we position the Sphere behind the Cube then again, the depth values will be as expected, why? Because the **Z-Buffer** is storing depth values for each pixel on the screen. The depth values are calculated concerning the proximity of an object to the camera.
+
+![](https://pic1.zhimg.com/80/v2-e66caf7c13912e77a77604c8aef3f9d0_720w.webp)
+
+Fig. 3.2.3b
+
+Now, what would happen if we activated ZTest Always? In this case, Depth Testing would not be done, therefore, all pixels would appear at the same depth on screen.
+
+![](https://pic4.zhimg.com/80/v2-e647e9872767f75cf77b2653e329babf_720w.webp)
+
+Fig. 3.2.3c
+
+Its syntax is the following:
+
+```text
+Shader "InspectorPath/shaderName" 
+{ 
+    Properties { … } 
+    SubShader 
+    { 
+        Tags { "Queue"="Transparent" "RenderType"="Transparent" } 
+        ZTest LEqual 
+    } 
+}
+```
+</detail>
+
+
+深度测试（ZTest）通常用于在有多 pass 的着色器中生成颜色和深度差异。该属性有七个不同的值，分别是：
+
+* **Less.**
+* **Greater.**
+* **LEqual.**
+* **GEqual.**
+* **Equal.**
+* **NotEqual.**
+* **Always.**
+
+它们与比较操作相对应。
+
+ **ZTest Less** : (<) 绘制位于现有几何体前面的几何体。不绘制位于现有几何体相同距离或后面的几何体。
+
+ **ZTest Greater** : (>) 绘制位于现有几何体后面的几何体。不绘制位于现有几何体相同距离或前面的几何体。
+
+**ZTest LEqual:** (≤) 默认值。绘制位于现有几何体前面或相同距离的几何体。不绘制位于现有几何体后面的几何体。
+
+ **ZTest GEqual** : (≥) 绘制位于现有几何体后面或相同距离的几何体。不绘制位于现有几何体前面的几何体。
+
+ **ZTest Equal** : (==) 绘制位于现有几何体相同距离的几何体。不绘制位于现有几何体前面的或后面的几何体。
+
+ **ZTest NotEqual** : (! =) 绘制不位于现有几何体相同距离的几何体。不绘制位于现有几何体相同距离的几何体。
+
+ **ZTest Always** : 不进行深度测试。绘制所有几何体，无论距离如何。
+
+为了理解深度测试，我们将做以下练习： 假设场景中有两个物体（一个立方体和一个球体），相对于摄像机而言球体位于立方体的前方，像素深度符合预期。
+
+[https://picx.zhimg.com/80/v2-931e73ae4283caf9412196eaf837b81f.png](https://link.zhihu.com/?target=https%3A//picx.zhimg.com/80/v2-931e73ae4283caf9412196eaf837b81f_720w.png)
+
+![](https://pic2.zhimg.com/80/v2-5d1e61a5bead5a789e43ab0455d8e6cd_720w.webp)
+
+Fig. 3.2.3a
+
+如果我们将球体放置在立方体后面，深度值也和我们预期的一样，为什么呢？因为** Z 缓冲**存储的是屏幕上每个像素的深度值，深度值是根据物体与相机之间的深度距离计算得出的。
+
+[https://picx.zhimg.com/80/v2-6fd2325002b2b6e0ee9147786b789b31.png](https://link.zhihu.com/?target=https%3A//picx.zhimg.com/80/v2-6fd2325002b2b6e0ee9147786b789b31_720w.png)
+
+![](https://pic1.zhimg.com/80/v2-e66caf7c13912e77a77604c8aef3f9d0_720w.webp)
+
+Fig. 3.2.3b
+
+现在，如果我们将深度测试设置成“总是（Always）”会发生什么呢？在这种情况下，深度测试并不会发生，所有像素在屏幕上显示的深度是相同的。
+
+[https://picx.zhimg.com/80/v2-18f4d71f1a5a95de290e65bcf96155c5.png](https://link.zhihu.com/?target=https%3A//picx.zhimg.com/80/v2-18f4d71f1a5a95de290e65bcf96155c5_720w.png)
+
+![](https://pic4.zhimg.com/80/v2-e647e9872767f75cf77b2653e329babf_720w.webp)
+
+Fig. 3.2.3c
+
+深度测试的语法如下所示：
+
+```text
+Shader "InspectorPath/shaderName" 
+{ 
+    Properties { … } 
+    SubShader 
+    { 
+        Tags { "Queue"="Transparent" "RenderType"="Transparent" } 
+        ZTest LEqual 
+    } 
+}
+```
+
 #### 3.2.4 | ShaderLab模板
+
 #### 3.2.5 | ShaderLab Pass
+
 #### 3.2.6 | CGPROGRAM/ENDCG
+
 #### 3.2.7 | 数据类型
+
 #### 3.2.8 | Cg/HLSL编程
+
 #### 3.2.9 | Cg/HLSL Include
+
 #### 3.3.0 | Cg/HLSL顶点输入&输出
+
 #### 3.3.1 | Cg/HLSL变量与连接向量
+
 #### 3.3.2 | Cg/HLSL顶点着色器
+
 #### 3.3.3 | Cg/HLSL片元着色器
+
 #### 3.3.4 | ShaderLab回退
 
 ### 其他概念与实现
 
 #### 4.0.1 | 着色器和材质的关系，好有一比啊~
+
 #### 4.0.2 | 我们的第一个Cg/HLSL着色器
+
 #### 4.0.3 | 为Cg/HLSL着色器加上透明度
+
 #### 4.0.4 | HLSL函数的结构
+
 #### 4.0.5 | Shader Debug
+
 #### 4.0.6 | 添加URP兼容
+
 #### 4.0.7 | 内置函数
+
 #### 4.0.8 | Abs函数
+
 #### 4.0.9 | Ceil函数
+
 #### 4.1.0 | Clamp函数
+
 #### 4.1.1 | Sin与Cos函数
+
 #### 4.1.2 | Tan函数
+
 #### 4.1.3 | Exp、Exp2与Pow函数
+
 #### 4.1.4 | Floor函数
+
 #### 4.1.5 | Step与SmoothStep函数
+
 #### 4.1.6 | Length函数
+
 #### 4.1.7 | Frac函数
+
 #### 4.1.8 | Lerp函数
+
 #### 4.1.9 | Min与Max函数
+
 #### 4.2.0 | 时间与动画
 
 ## 第二章 | 光照、阴影与表面
@@ -165,44 +349,67 @@ Fig. 1.0.1b
 ### 章节介绍
 
 #### 5.0.1 | 配置输入与输出
+
 #### 5.0.2 | 向量
+
 #### 5.0.3 | 点乘
+
 #### 5.0.4 | 叉乘
 
 ### 表面
 
 #### 6.0.1 | 法线贴图
+
 #### 6.0.2 | DXT压缩
+
 #### 6.0.3 | TBN矩阵
 
 ### 光照
 
 #### 7.0.1 | 光照模型
+
 #### 7.0.2 | 环境光颜色
+
 #### 7.0.3 | 漫反射
+
 #### 7.0.4 | 镜面反射
+
 #### 7.0.5 | 环境反射
+
 #### 7.0.6 | 菲涅尔效应
+
 #### 7.0.7 | 标准表面着色器的结构
+
 #### 7.0.8 | 标准表面着色器的输入与输出
 
 ### 阴影
 
 #### 8.0.1 | 阴影映射
+
 #### 8.0.2 | 阴影投射
+
 #### 8.0.3 | 阴影贴图
+
 #### 8.0.4 | 阴影实现
+
 #### 8.0.5 | 内置渲染管线下的阴影贴图优化
+
 #### 8.0.6 | 通用渲染管线下的阴影映射
 
 ### Shader Graph
 
 #### 9.0.1 | 什么是Shader Graph
+
 #### 9.0.2 | 准备Shader Graph环境
+
 #### 9.0.3 | 界面分析
+
 #### 9.0.4 | 我们的第一个Shader Graph
+
 #### 9.0.5 | Graph检查器
+
 #### 9.0.6 | 节点
+
 #### 9.0.7 | 用户自定义函数
 
 ## 第三章 | 计算着色器、光线追踪与球体追踪
@@ -210,17 +417,23 @@ Fig. 1.0.1b
 ### 高级概念
 
 #### 10.0.1 | 计算着色器的结构
+
 #### 10.0.2 | 我们的第一个计算着色器
+
 #### 10.0.3 | UV坐标与贴图
+
 #### 10.0.4 | 缓冲
 
 ### 球体追踪
 
 #### 11.0.1 | 用球体追踪实现函数
+
 #### 11.0.2 | 纹理投影
+
 #### 11.0.3 | 曲面间平滑
 
 ### 光线追踪
 
 #### 12.0.1 | 在HDRP中配置光线追踪
+
 #### 12.0.2 | 在场景中使用光线追踪
