@@ -142,6 +142,251 @@ Fig. 1.0.1b
 
 #### 3.1.7 | SubShader混合
 
+<details> 
+<summary>原文</summary>
+
+Blending is the process of mixing two pixels into one. Its command is compatible with both *Built-in RP* and  *Scriptable RP* .
+
+*Blending* occurs in a stage called " **merging** " which combines the final color of a pixel (those pixels that have been processed in the fragment shader stage) with its depth. This stage, which occurs at the end of the render pipeline; after the  **fragment shader stage** , is where the stencil-buffer, z-buffer and color blending are executed.
+
+By default, this property is not written in our shader since it is an optional function and is used mainly when we work with transparent objects, e.g., when we must draw a pixel with a low opacity level in front of another.
+
+Its default value is "Blend Off", but we can activate it to generate different types of Blending, like those that appear in photoshop.
+
+Its syntax is as follows:
+
+```text
+Blend [SourceFactor] [DestinationFactor]
+```
+
+" **Blend** " is a function that requires two values called "factors" for its operation and based on an equation it will be the final color that we will obtain on-screen. According to the official documentation in Unity, the equation that defines the value of the Blending is as follows:
+
+> B = SrcFactor * SrcValue [OP] DstFactor * DstValue.
+
+To understand this operation, we must consider the following: The **fragment shader stage** occurs first and then, as an optional process; the  **merging stage** .
+
+**"SrcValue"** (source value), which has been processed in the  **fragment shader stage** , corresponds to the pixel’s RGB color output.
+
+**"DstValue"** (destination value) corresponds to the RGB color that has been written in the "destination buffer", better known as "render target" (SV_Target). When the Blending options are not active in our shader, SrcValue overwrites DstValue. However, if we activate this operation, both colors are mixed to get a new color, which overwrites the previous DstValue.
+
+**"SrcFactor"** (source factor) and "DstFactor" (destination factor) are vectors of three dimensions that vary depending on their configuration. Their main function is to modify the SrcValue and DstValue values to achieve interesting effects.
+
+Some factors that we can find in the Unity documentation are:
+
+* **Off** , disables Blending options.
+* **One** , (1, 1, 1).
+* **Zero** , (0, 0, 0).
+* **SrcColor** is equal to the RGB values of the SrcValue.
+* **SrcAlpha** is equal to the Alpha value of the SrcValue.
+* **OneMinusSrcColor** , 1 minus the RGB values of the SrcValue (1 - R, 1 - G, 1 - B).
+* **OneMinusSrcAlpha** , 1 minus the Alpha of SrcValue (1 - A, 1 - A, 1- A).
+* **DstColor** is equal to the RGB values of the DstValue.
+* **DstAlpha** is equal to the Alpha value of the DstValue.
+* **OneMinusDstColor** , 1 minus the RGB values of the DstValue (1 - R, 1 - G, 1 - B).
+* **OneMinusDstAlpha** , 1 minus the Alpha of the DstValue (1 - A, 1 - A, 1- A).
+
+It is worth mentioning that the Blending of the Alpha channel is carried out in the same way in which we process the RGB color of a pixel, but it is done in an independent process because it is not used frequently. Likewise, by not performing this process, the writing on the render target is optimized.
+
+Let's exemplify the above explanation as follows.
+
+Let's say we have an RGB color pixel with the values [0.5R, 0.45G, 0.35B]. This color has been processed by the ** fragment shader stage** , therefore it corresponds to the  *DstValue* . Now, we multiply this value by the "*SrcFactor*  **One** " which equals [1, 1, 1]. Every number multiplied by "1" results in the same value, therefore, the result between the *SrcFactor* and the *DstValue* is the same as its initial value.
+
+> B = **[0.5R, 0.45G, 0.35B]** [OP] DstFactor * DstValue.
+
+"OP" refers to the operation that we are going to perform. By default, it is set to "Add".
+
+> B = [0.5R, 0.45G, 0.35B] + DstFactor * DstValue.
+
+Once we have obtained the value of the first operation, it is overwritten by DstValue, therefore, is set to the same color [0.5R, 0.45G, 0.35B]. So, we will multiply this color by the "*DstFactor*  **DstColor** ", which is equal to the current value we have in the  *DstFactor* .
+
+> DstFactor [0.5R, 0.45G, 0.35B] * DstValue [0.5R, 0.45G, 0.35B] = [0.25R, 0.20G, 0.12B].
+
+Finally, the output color for the pixel is.
+
+> B = [0.5R, 0.45G, 0.35B] + [0.25R, 0.20G, 0.12B].
+> B = [0.75R, 0.65G, 0.47B]
+
+If we want to activate Blending in our shader, we must use the **Blend **command followed by **SrcFactor** and then  **DstFactor** .
+
+Its syntax is the following:
+
+```text
+Shader "InspectorPath/shaderName" 
+{ 
+    Properties { … } 
+    SubShader 
+    { 
+        Tags { "Queue"="Transparent" "RenderType"="Transparent" } 
+        Blend SrcAlpha OneMinusSrcAlpha 
+    } 
+}
+```
+
+If we want to use Blending in our shader, it will be necessary to add and modify the * "Render Queue"* . As we already know, the default value of the *"Queue"* tag is  *"Geometry"* , which means that our object will appear opaque. If we want our object to look transparent, then we must first change the *"Queue"* to *"Transparent"* and then add some kind of blending.
+
+The most common types of blending are the following:
+
+* **Blend SrcAlpha OneMinusSrcAlpha** Common transparent blending
+* **Blend One One** Additive blending color
+* **Blend OneMinusDstColor One** Mild additive blending color
+* **Blend DstColor Zero** Multiplicative blending color
+* **Blend DstColor SrcColor** Multiplicative blending x2
+* **Blend SrcColor One** Blending overlay
+* **Blend OneMinusSrcColor One** Soft light blending
+* **Blend Zero OneMinusSrcColor** Negative color blending
+
+A different way to configure our Blending is through the dependency "UnityEngine.Rendering. BlendMode". This line of code allows us to change, from the inspector, the Blending of an object in the material. To set it up, first we must add the *"Toggle Enum"* to our properties and then declare both the SrcFactor and the DstFactor.
+
+Its syntax is as follows:
+
+```text
+[Enum(UnityEngine.Rendering.BlendMode)] 
+    _SrcBlend ("Source Factor", Float) = 1 
+[Enum(UnityEngine.Rendering.BlendMode)] 
+    _DstBlend ("Destination Factor", Float) = 1
+```
+
+```text
+Shader "InspectorPath/shaderName" 
+{ 
+    Properties 
+    { 
+        [Enum(UnityEngine.Rendering.BlendMode)] 
+        _SrcBlend ("SrcFactor", Float) = 1 
+        [Enum(UnityEngine.Rendering.BlendMode)] 
+        _DstBlend ("DstFactor", Float) = 1 
+    }
+    SubShader 
+    { 
+        Tags { "Queue"="Transparent" "RenderType"="Transparent" } 
+        Blend [_SrcBlend] [_DstBlend] 
+    } 
+}
+```
+
+Blending options can be written in different fields: within the **SubShader** field or the **Pass** field, the position will depend on the number of passes and the final result that we need.
+
+</details>
+
+混合（Blending）是将两个像素处理成一个的过程，是内置渲染管线（Built-in）与可编程渲染管线（SRP）都兼容的一种命令。
+
+*混合 *发生在“ **合并（merging）** ”的阶段，它将像素的最终颜色（在片元着色器阶段处理后的像素）与像素的深度结合在一起。这个阶段位于渲染管线的末端，在**片元着色器阶段**之后，是执行模版缓冲（stencil-buffer）、深度缓冲（z-buffer）和颜色混合（color blending）的地方。
+
+混合属性不会被写在新建的默认着色器里，因为这是一个通常被使用在透明物体中的可选功能，比如说当我们必须在一个像素前绘制另一个不透明度较低的像素时。
+
+混合的默认值是“Blend Off”（不开启混合），但我们可以通过设置它来实现不同类型的颜色混合效果，就像在 Photoshop 中的混合效果那样。
+
+混合的语法如下所示：
+
+```text
+Blend [SourceFactor] [DestinationFactor]
+```
+
+“ **混合** ”是一个函数，需要两个输入，经过一个计算公式得到屏幕上的最终颜色。根据 Unity 的官方文档，定义 混合结果的值的等式如下：
+
+> B = SrcFactor * SrcValue [OP] DstFactor * DstValue.
+
+为了理解这个公式，我们需要记住这个顺序： 首先是 **片元着色器阶段** ，然后是可选的 **合并阶段** 。
+
+**"SrcValue"** (源颜色）代表的是经过**片元着色器**处理的像素的RGB值。
+
+**"DstValue"** (目标颜色) 代表的是已经写入“目标缓冲”的像素的RGB值，目标缓冲更常见的名字是渲染目标（SV_Target）。当我们没有在着色器中设置混合选项时，源颜色会直接覆盖目标值。如果我们设置了混合，源颜色与目标颜色就会混合产生一个新的颜色，再覆盖先前的目标颜色。
+
+**"SrcFactor"** (源系数) and " **DstFactor** " (目标系数) 都是一个三维向量，它们主要的功能是修改源颜色和目标颜色来实现有趣的效果。
+
+我们能在Unity官方文档（[ShaderLab 命令：Blend - Unity 手册](https://link.zhihu.com/?target=https%3A//docs.unity3d.com/cn/2021.2/Manual/SL-Blend.html)）找到一些系数：
+
+* **Off** , 禁用混合选项。
+* **One** , (1, 1, 1)。
+* **Zero** , (0, 0, 0)。
+* **SrcColor** 等于源颜色的RGB值。
+* **SrcAlpha** 等于源颜色的透明度。
+* **OneMinusSrcColor** , 1 - 源颜色的RGB值 (1 - R, 1 - G, 1 - B)。
+* **OneMinusSrcAlpha** , 1 - 源颜色的透明度 (1 - A, 1 - A, 1- A)。
+* **DstColor** 等于目标颜色的RGB值。
+* **DstAlpha** 等于目标颜色的透明度。
+* **OneMinusDstColor** , 1 - 目标颜色的RGB值 (1 - R, 1 - G, 1 - B)。
+* **OneMinusDstAlpha** , 1 - 目标颜色的透明度 (1 - A, 1 - A, 1- A)。
+
+值得一提的是，透明度（Alpha）通道的混合与 RGB 颜色混合的方式相同，但由于不常用，所以是在一个独立的流程中完成的。如果不执行透明度混合，写入渲染目标上的过程也会得到优化。
+
+让我们来理解理解上面的这段话。
+
+假设我们现在有一个RGB值为 [0.5R, 0.45G, 0.35B] 的像素，已经经过**片元着色器**的处理，所以这个像素现在就是我们的源颜色。现在，我们把这个源颜色乘上系数“*SrcFactor * **One** ”（即 [1, 1, 1]），由于每个数字乘以 “1” 的结果都是它本身，因此，源系数和源颜色之间的结果就等于 [0.5R, 0.45G, 0.35B] 。
+
+> B = **[0.5R, 0.45G, 0.35B]** [OP] DstFactor * DstValue.
+
+“OP”指的是我们要执行的操作，一般默认设为加法（Add），如下所示：
+
+> B = [0.5R, 0.45G, 0.35B] + DstFactor * DstValue.
+
+到这一步之后，再来看看已经写入颜色缓冲中的目标颜色（假设为 [0.5R、0.45G、0.35B]）。让我们将目标系数设置成“*DstFactor*  **DstColor** ”，该系数等于当前目标颜色的 RGB 值，则有：
+
+> DstFactor [0.5R, 0.45G, 0.35B] * DstValue [0.5R, 0.45G, 0.35B] = [0.25R, 0.20G, 0.12B].
+
+所以最后输出的像素颜色是：
+
+> B = [0.5R, 0.45G, 0.35B] + [0.25R, 0.20G, 0.12B].
+> B = [0.75R, 0.65G, 0.47B]
+
+如果我们想要在着色器中开启混合，我们就需要使用到**混合**指令、**源系数**和 **目标系数** ，语法如下所示：
+
+```text
+Shader "InspectorPath/shaderName" 
+{ 
+    Properties { … } 
+    SubShader 
+    { 
+        Tags { "Queue"="Transparent" "RenderType"="Transparent" } 
+        Blend SrcAlpha OneMinusSrcAlpha 
+    } 
+}
+```
+
+如果我们想在着色器里使用混合就必须添加和配置“ *渲染队列（Render Queue）* ”。我们已经学习过默认的“ *队列（Queue）* ”标签是“ *几何（Geometry）* ”，代表我们的物体是不透明的。如果我们想要让物体看起来有透明的感觉，就需要把“队列”标签设置为“ *透明（Transparent）* ”，再设置混合选项。
+
+最常见的几种混合命令如下所示：
+
+* **Blend SrcAlpha OneMinusSrcAlpha** 传统透明度混合
+* **Blend One One** 加法
+* **Blend OneMinusDstColor One** 软加法
+* **Blend DstColor Zero** 乘法
+* **Blend DstColor SrcColor** 2x 乘法
+* **Blend SrcColor One** 叠加
+* **Blend OneMinusSrcColor One** 柔光
+* **Blend Zero OneMinusSrcColor** 反色
+
+另一种配置混合的方式是通过“UnityEngine.Rendering. BlendMode”，它允许我们从检查器中更改材质的混合效果。但首先，我们必须在属性中添加 " *Toggle Enum* "，然后声明源系数和目标系数。
+
+语法如下所示：
+
+```text
+[Enum(UnityEngine.Rendering.BlendMode)] 
+    _SrcBlend ("Source Factor", Float) = 1 
+[Enum(UnityEngine.Rendering.BlendMode)] 
+    _DstBlend ("Destination Factor", Float) = 1
+```
+
+```text
+Shader "InspectorPath/shaderName" 
+{ 
+    Properties 
+    { 
+        [Enum(UnityEngine.Rendering.BlendMode)] 
+        _SrcBlend ("SrcFactor", Float) = 1 
+        [Enum(UnityEngine.Rendering.BlendMode)] 
+        _DstBlend ("DstFactor", Float) = 1 
+    }
+    SubShader 
+    { 
+        Tags { "Queue"="Transparent" "RenderType"="Transparent" } 
+        Blend [_SrcBlend] [_DstBlend] 
+    } 
+}
+```
+
+混合选项可以写在**子着色器**或** Pass** 语义块中，具体写在哪里取决于 pass 的数量和我们最终想要取得的结果。
+
 #### 3.1.8 | SubShader透明度遮罩
 
 #### 3.1.9 | SubShader颜色遮罩
@@ -152,7 +397,7 @@ Fig. 1.0.1b
 
 #### 3.2.2 | ShaderLab深度写入
 
-<detail><summary>原文</summary>
+`<detail><summary>`原文 `</summary>`
 
 This command controls the writing of the surface pixels of an object to the Z-Buffer, that is, it allows us to ignore or respect the depth distance between the camera and an object. ZWrite has two values, which are: On and Off, where "On" corresponds to its default value. We generally use this command when working with transparencies, e.g., when we activate the Blending options.
 
@@ -183,7 +428,7 @@ Fig. 3.2.2a
 This effect occurs when trying to render a pixel at the end of the rendering pipeline. Since the Z-Buffer cannot determine which element is behind the other, it produces flickering lines that change shape depending on the camera's position.
 
 To correct this issue, we simply need to disable the Z-Buffer using the "ZWrite off" command.
-</detail>
+`</detail>`
 
 深度写入这个命令控制了物体表面像素写入 Z 缓冲（深度缓冲）的这一过程。它允许我们忽略或写入物体与相机间的深度。深度写入有两个可以设置的值，分别是开启（On）和关闭（Off），默认值为开启。我们通常在处理透明度时（例如混合）会关闭深度写入。
 
@@ -219,7 +464,7 @@ Fig. 3.2.2a
 
 #### 3.2.3 | ShaderLab深度测试
 
-<detail><summary>原文</summary>
+`<detail><summary>`原文 `</summary>`
 
 ZTest controls how Depth Testing should be performed and is generally used in multi-pass shaders to generate differences in colors and depths. This property has seven different values, which are:
 
