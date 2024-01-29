@@ -16,7 +16,7 @@ tags:
 #### 1.0.1 | 多边形物体的属性
 
 <details>
-  <summary>原文</summary>
+<summary>原文</summary>
 Years ago, when I was just starting my studies about shaders in Unity, it was challenging to understand much of the content I found in the books for several factors. I still remember that day of studies, wishing to understand the operation of the semantics POSITION[n]; however, when I managed to find its definition, I found the following statement:
 
 Vertex position in object-space.
