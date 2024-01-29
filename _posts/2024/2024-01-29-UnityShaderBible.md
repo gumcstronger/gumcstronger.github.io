@@ -152,8 +152,41 @@ Fig. 1.0.1b
 
 #### 3.2.2 | ShaderLab深度写入
 
-#### 3.2.3 | ShaderLab深度测试
+<detail><summary>原文</summary>
 
+This command controls the writing of the surface pixels of an object to the Z-Buffer, that is, it allows us to ignore or respect the depth distance between the camera and an object. ZWrite has two values, which are: On and Off, where "On" corresponds to its default value. We generally use this command when working with transparencies, e.g., when we activate the Blending options.
+
+* **ZWrite Off** For transparency.
+* **ZWrite On** Default value.
+
+Why should we disable the Z-Buffer when working with transparencies? Mainly because of the translucent pixel overlay (Z-fighting). When we work with semi-transparent objects, it is common that the GPU does not know which object lies in front of another, producing an overlapping effect between pixels when we move the camera in the scene. To fix this problem, we must simply deactivate the Z-Buffer by turning the **ZWrite** command to " **Off** " as the following example shows:
+
+```text
+Shader "InspectorPath/shaderName" 
+{
+    Properties { … } 
+    SubShader 
+    { 
+        Tags { "Queue"="Transparent" "RenderType"="Transparent" } 
+        Blend SrcAlpha OneMinusSrcAlpha 
+        ZWrite Off 
+    } 
+}
+```
+
+The Z-fighting occurs when we have two or more objects at the same distance from the camera, causing identical values in the Z-Buffer.
+
+![](https://pic3.zhimg.com/80/v2-66d8a9d1bed11ea11c8d6ea3f4d3e27a_720w.webp)
+
+Fig. 3.2.2a
+
+This effect occurs when trying to render a pixel at the end of the rendering pipeline. Since the Z-Buffer cannot determine which element is behind the other, it produces flickering lines that change shape depending on the camera's position.
+
+To correct this issue, we simply need to disable the Z-Buffer using the "ZWrite off" command.
+</detail>
+
+
+#### 3.2.3 | ShaderLab深度测试
 
 <detail><summary>原文</summary>
 ZTest controls how Depth Testing should be performed and is generally used in multi-pass shaders to generate differences in colors and depths. This property has seven different values, which are:
@@ -214,7 +247,6 @@ Shader "InspectorPath/shaderName"
 }
 ```
 </detail>
-
 
 深度测试（ZTest）通常用于在有多 pass 的着色器中生成颜色和深度差异。该属性有七个不同的值，分别是：
 
