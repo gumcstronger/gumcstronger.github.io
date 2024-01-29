@@ -17,7 +17,6 @@ tags:
 
 <details>
   <summary>原文</summary>
-  <pre><code>
 Years ago, when I was just starting my studies about shaders in Unity, it was challenging to understand much of the content I found in the books for several factors. I still remember that day of studies, wishing to understand the operation of the semantics POSITION[n]; however, when I managed to find its definition, I found the following statement:
 
 `Vertex position in object-space.
@@ -32,9 +31,7 @@ The word polygon comes from Greek and is composed of poly (many) and gnow (angle
 A primitive is a three-dimensional geometric object formed by polygons and is used as a predefined object in different development software. Within Unity, Maya or Blender, we can find other primitives. The most common are: Spheres, Boxes, Quads, Cylinders and Capsules. These objects are different in shape but have similar properties; all have vertices, tangents, normals, UV coordinates and color, which are stored within a data type called “mesh”.`
 
 `We can access all these properties independently within a shader and keep them in vectors (e.g. float4 pos: POSITION [n]). It is beneficial because we can modify their values and thus generate exciting effects. To understand this concept much better, we will give a small definition of the properties of a polygonal object.
-  `
-
-code
+</details>
 
 #### `1.0.2 | 顶点`
 
