@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "Unity Shader Bible翻译学习"
+title:      "[转]Unity Shader Bible翻译学习"
 subtitle:   " \"Unity Shader Bible翻译学习\""
 date:       2024-01-25 01:30:00
 author:     "Gumc"
@@ -31,6 +31,7 @@ Fig. 1.0.1a
 A primitive is a three-dimensional geometric object formed by polygons and is used as a predefined object in different development software. Within Unity, Maya or Blender, we can find other primitives. The most common are: Spheres, Boxes, Quads, Cylinders and Capsules. These objects are different in shape but have similar properties; all have vertices, tangents, normals, UV coordinates and color, which are stored within a data type called “mesh”.
 
 We can access all these properties independently within a shader and keep them in vectors (e.g. float4 pos: POSITION [n]). It is beneficial because we can modify their values and thus generate exciting effects. To understand this concept much better, we will give a small definition of the properties of a polygonal object.
+
 </details>
 
 许多年前，当我刚开始学习 Unity 中的着色器时，有几个原因导致我难以理解书本上的内容。我仍然记得有一天，我希望理解语义 POSITION[n] 的操作，但关于它的介绍只有短短一句：
