@@ -397,7 +397,8 @@ Shader "InspectorPath/shaderName"
 
 #### 3.2.2 | ShaderLab深度写入
 
-<detail><summary>原文 </summary>
+<detail>
+<summary>原文</summary>
 
 This command controls the writing of the surface pixels of an object to the Z-Buffer, that is, it allows us to ignore or respect the depth distance between the camera and an object. ZWrite has two values, which are: On and Off, where "On" corresponds to its default value. We generally use this command when working with transparencies, e.g., when we activate the Blending options.
 
@@ -464,7 +465,8 @@ Fig. 3.2.2a
 
 #### 3.2.3 | ShaderLab深度测试
 
-<detail><summary>原文 </summary>
+<detail>
+<summary>原文</summary>
 
 ZTest controls how Depth Testing should be performed and is generally used in multi-pass shaders to generate differences in colors and depths. This property has seven different values, which are:
 
