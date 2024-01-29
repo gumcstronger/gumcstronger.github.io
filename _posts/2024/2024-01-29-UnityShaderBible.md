@@ -397,7 +397,7 @@ Shader "InspectorPath/shaderName"
 
 #### 3.2.2 | ShaderLab深度写入
 
-<detail>
+<details>
 <summary>原文</summary>
 
 This command controls the writing of the surface pixels of an object to the Z-Buffer, that is, it allows us to ignore or respect the depth distance between the camera and an object. ZWrite has two values, which are: On and Off, where "On" corresponds to its default value. We generally use this command when working with transparencies, e.g., when we activate the Blending options.
@@ -429,7 +429,7 @@ Fig. 3.2.2a
 This effect occurs when trying to render a pixel at the end of the rendering pipeline. Since the Z-Buffer cannot determine which element is behind the other, it produces flickering lines that change shape depending on the camera's position.
 
 To correct this issue, we simply need to disable the Z-Buffer using the "ZWrite off" command.
-</detail>
+</details>
 
 深度写入这个命令控制了物体表面像素写入 Z 缓冲（深度缓冲）的这一过程。它允许我们忽略或写入物体与相机间的深度。深度写入有两个可以设置的值，分别是开启（On）和关闭（Off），默认值为开启。我们通常在处理透明度时（例如混合）会关闭深度写入。
 
@@ -465,7 +465,7 @@ Fig. 3.2.2a
 
 #### 3.2.3 | ShaderLab深度测试
 
-<detail>
+<details>
 <summary>原文</summary>
 
 ZTest controls how Depth Testing should be performed and is generally used in multi-pass shaders to generate differences in colors and depths. This property has seven different values, which are:
@@ -526,7 +526,7 @@ Shader "InspectorPath/shaderName"
 }
 ```
 
-</detail>
+</details>
 
 深度测试（ZTest）通常用于在有多 pass 的着色器中生成颜色和深度差异。该属性有七个不同的值，分别是：
 
