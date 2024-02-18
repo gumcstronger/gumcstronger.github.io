@@ -11,12 +11,6 @@ tags:
 ---
 ## 启动器
 
-### 启动器PCL
-
-* 下载[PCL](https://github.com/Hex-Dragon/PCL2)
-* 解压到D:/Data/Game中
-* 打开Plain Craft Launcher 2
-
 ### 官方启动器Minecraft Launcher（推荐）
 
 * 进入Minecraft Store，搜索Minecraft并支付89元购买官方版本，下载Minecraft Launcher并运行
@@ -29,6 +23,18 @@ tags:
 * minecraft存档路径
   * Java版：C:\Users\\[用户名]\Appdata\Roaming\.minecarft\saves
   * Bedrock版：C:\Users\\[用户名]AppData\Local\Packages\Microsoft.MinecraftUWP_8wekyb3d8bbwe\LocalState\games\com.mojang\minecraftWorlds
+
+### 启动器PCL
+
+* 下载[PCL](https://github.com/Hex-Dragon/PCL2)
+* 解压到D:/Data/Game中
+* 打开Plain Craft Launcher 2
+
+### 启动器HMCL
+
+* 下载[HMCL](https://github.com/Hex-Dragon/PCL2)
+* 解压到D:/Data/Game中
+* 打开
 
 ## 安装Mod
 
@@ -73,7 +79,7 @@ tags:
 * 修改模式：
   * /gamemode (adventure / creative / spectator / survival)
 
-# 网站
+## 网站
 
 [modrinth](https://modrinth.com/) 含有一些模组,建筑不错。
 
@@ -81,7 +87,11 @@ tags:
 
 [planetminecraft](https://www.planetminecraft.com/texture-pack/tim10erys-realistic-128x/) 内容极多
 
-# 资源包
+## Schematics
+
+[minecraft-schematics](https://www.minecraft-schematics.com/schematic/235/download/) 我的世界原理图
+
+## 资源包
 
 * [Brixel](https://resourcepack.net/brixel-resource-pack/#gsc.tab=0) 问题是64x64的太粗糙，高清的要5美刀。 ![图片](https://resourcepack.net/fl/images/2022/06/Brixel-Resource-Pack-for-Minecraft-textures-2-1-840x473.jpg)
 * [minebricks](https://resourcepack.net/minebricks-resource-pack/#gsc.tab=0) 乐高形状 ![图片](https://resourcepack.net/fl/images/2021/04/MineBricks-Resource-Pack-for-minecraft-textures-lego-3-840x473.jpg)
@@ -89,3 +99,9 @@ tags:
 * [sketch-hand-drawn](https://resourcepack.net/sketch-hand-drawn-resource-pack/#gsc.tab=0) 手绘草图 ![图片](https://resourcepack.net/fl/images/2014/01/Sketch-Hand-Drawn-Resource-Pack-for-minecraft-1.jpg)
 * [optimum-realism](https://resourcepack.net/optimum-realism-resource-pack/#gsc.tab=0) 写实的 ![图片](https://resourcepack.net/fl/images/2022/01/Optimum-Realism-Resource-Pack-for-minecraft-new-r17-6-840x473.jpg)
 * [meteor](https://resourcepack.net/meteor-lmx-resource-pack/#gsc.tab=0) 高光 ![图片](https://resourcepack.net/fl/images/2020/10/Meteor-LMX-Resource-Pack-for-minecraft-textures-9-840x464.jpg)
+
+## Minecraft Unity
+
+* [MarkovCraft](https://github.com/DevBobcorn/MarkovCraft) 生成建筑
+* **[Theircraft](https://github.com/wetstreet/Theircraft)** Minecraft Unity重建
+* **[CornCraft](https://github.com/DevBobcorn/CornCraft)** Minecraft Unity重建
