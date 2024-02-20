@@ -87,9 +87,37 @@ tags:
 
 [planetminecraft](https://www.planetminecraft.com/texture-pack/tim10erys-realistic-128x/) 内容极多
 
-## Schematics
-
 [minecraft-schematics](https://www.minecraft-schematics.com/schematic/235/download/) 我的世界原理图
+
+[MсBuild](https://mcbuild.org/) 原理图和原理图编辑工具
+
+## Minecraft Object/Schematic 外部工具
+
+* [mineways](https://www.realtimerendering.com/erich/minecraft/public/mineways/) minecraft导出obj
+* [Amulet-Map-Editor](https://github.com/Amulet-Team/Amulet-Map-Editor) minecraft地图编辑器，只能打开世界存档，无法打开litmatics和schematic
+* [voxedit](https://github.com/vengi-voxel/vengi) 导入很多格式文件转化为vox  [voxconvert](https://github.com/vengi-voxel/vengi) 将obj转化为vox
+
+---
+
+* 将新版的.schem文件转化为旧版的.schematic文件
+
+---
+
+* [cubical.xyz](https://cubical.xyz/) schematic在线编辑、创建、查看器，但似乎只能加载schematic
+* [Dovetail](https://github.com/Offroaders123/Dovetail) Litematics和NBT数据查看，无法可视化，无法查看schematic
+* NBT Explorer 类似Dovetail的数据编辑器，可以查看schematic
+* NBT Studio 同NBT Explorer类似的数据编辑器
+* [FileToVox](https://github.com/Zarbuz/FileToVox) 将文件转化为vox
+* [Jmc2obj](https://github.com/jmc2obj/j-mc-2-obj)同mineways但不太好用
+* [MagicaVoxel Viewer ](https://ephtracy.github.io/index.html?page=mv_renderer) 交互式路径跟踪渲染器，并没有导出vox功能
+* [付费软件] [avoyd ](https://www.avoyd.com/home.html) 导入minecraft导出obj或vox
+* [很久不维护][mcedit2](https://github.com/mcedit/mcedit2) minecraft编辑工具
+* [Lite2Edit](https://github.com/GoldenDelicios/Lite2Edit) Litematics转化为schematic的工具
+* [NBTExplorer](https://github.com/jaquadro/NBTExplorer) level.dat、schematic、NBT编辑工具
+* [NBTEditor](https://github.com/Howaner/NBTEditor) 编辑 .dat 和 .schematic 文件
+* [ObjToSchematic](https://github.com/LucasDower/ObjToSchematic) 3D .obj 模型转换为 Minecraft 结构
+* [ambient-geometry](https://github.com/HunterTTP/ambient-geometry) 3D 立方体构建
+* [schem-app](https://github.com/lukassteinwender/schem-app) 将新版本1.13+的.schem 文件转换为旧的 .schematic 文件
 
 ## Minecraft Unity
 
