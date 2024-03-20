@@ -8,7 +8,6 @@ header-img: "img/post-bg-2015.jpg"
 catalog: true
 tags:
     - 做梦
-    - 持续更新
 ---
 ## 2月4号
 

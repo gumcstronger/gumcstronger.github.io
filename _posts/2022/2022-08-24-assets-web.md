@@ -7,7 +7,7 @@ author:     "Gumc"
 header-img: "img/post-bg-2015.jpg"
 catalog: true
 tags:
-    - 持续更新
+    - 游戏开发
 ---
 ## 3D资源
 
