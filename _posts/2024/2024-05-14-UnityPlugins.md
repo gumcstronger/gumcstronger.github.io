@@ -52,6 +52,8 @@ tags:
 
 #### Shader
 
+* [付费] [Lux URP Essentials](https://assetstore.unity.com/packages/vfx/shaders/lux-urp-essentials-150355)
+
 #### Native
 
 * [付费] [Cross Platform Native Plugins](https://assetstore.unity.com/packages/tools/integration/cross-platform-native-plugins-essential-kit-mobile-ios-android-140111) Android/iOS原生平台功能
