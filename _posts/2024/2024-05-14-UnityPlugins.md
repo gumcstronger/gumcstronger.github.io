@@ -19,6 +19,17 @@ tags:
 
 #### Art
 
+##### All:
+
+* [kenney](https://kenney.nl/assets/) 卡通3d/2D、UI、Audio、Texture
+* [kaykit](https://kaylousberg.itch.io/) 卡通资源包。使用过:[中世纪建造者包](https://kaylousberg.itch.io/kaykit-medieval-builder-pack)(Hex) 六边形、树、城堡
+
+##### 3D
+
+* [Low-Poly Medieval Market](https://assetstore.unity.com/packages/3d/environments/low-poly-medieval-market-262473) 树、草、鱼肉菜
+
+##### UI
+
 * [付费] [GUI Pro - Simple Casual](https://assetstore.unity.com/packages/2d/gui/icons/gui-pro-simple-casual-203399) 简单休闲游戏UI
 * [付费] [GUI Pro - Casual Game](https://assetstore.unity.com/packages/2d/gui/gui-pro-casual-game-176695) 休闲游戏UI(类似皇室冲突)
 
@@ -31,6 +42,7 @@ tags:
 #### Camera
 
 * [UnityRuntimePreviewGenerator](https://github.com/yasirkula/UnityRuntimePreviewGenerator) 动态渲染图片
+* [付费] [Touch Camera Pro](https://assetstore.unity.com/packages/tools/camera/touch-camera-pro-2024-easy-mobile-desktop-camera-controller-194808#content) 摄像机工具
 
 #### Input
 
@@ -51,6 +63,12 @@ tags:
 * [UniRate](https://github.com/renanwolf/UniRate) Unity帧率管理
 
 #### Shader
+
+##### Standard
+
+* [GeneLit](https://github.com/momoma-null/GeneLit)  比Unity标准着色器更美观、更准确的渲染
+
+##### URP
 
 * [付费] [Lux URP Essentials](https://assetstore.unity.com/packages/vfx/shaders/lux-urp-essentials-150355)
 
