@@ -23,6 +23,8 @@ tags:
 
 * [kenney](https://kenney.nl/assets/) 卡通3d/2D、UI、Audio、Texture
 * [kaykit](https://kaylousberg.itch.io/) 卡通资源包。使用过:[中世纪建造者包](https://kaylousberg.itch.io/kaykit-medieval-builder-pack)(Hex) 六边形、树、城堡
+* [voxel-character-models-vox](https://opengameart.org/content/voxel-character-models-vox) 体素角色
+* [400 Free Voxel Models for Creating](https://www.megavoxels.com/news/400-free-voxel-models-for-creating-voxel-art-and-games/) 体素角色
 
 ##### 3D
 
@@ -32,6 +34,13 @@ tags:
 
 * [付费] [GUI Pro - Simple Casual](https://assetstore.unity.com/packages/2d/gui/icons/gui-pro-simple-casual-203399) 简单休闲游戏UI
 * [付费] [GUI Pro - Casual Game](https://assetstore.unity.com/packages/2d/gui/gui-pro-casual-game-176695) 休闲游戏UI(类似皇室冲突)
+
+##### Music
+
+* [Angels Demons FREE](https://assetstore.unity.com/packages/audio/music/orchestral/angels-demons-free-42583) 天使和恶魔音乐
+* [Infinite Drums (free)](https://assetstore.unity.com/packages/audio/music/orchestral/infinite-drums-free-77343) 战鼓音乐
+* [Ove Melaa](https://opengameart.org/content/oves-essential-game-audio-pack-collection-160-files-updated) 游戏音乐
+* [8Bit Sfx One Shot](https://assetstore.unity.com/packages/audio/sound-fx/8bit-sfx-one-shot-264526) 音效
 
 #### Unity Extension
 
