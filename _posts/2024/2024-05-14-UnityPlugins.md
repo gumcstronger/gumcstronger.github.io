@@ -52,6 +52,8 @@ tags:
 
 * [UnityRuntimePreviewGenerator](https://github.com/yasirkula/UnityRuntimePreviewGenerator) 动态渲染图片
 * [付费] [Touch Camera Pro](https://assetstore.unity.com/packages/tools/camera/touch-camera-pro-2024-easy-mobile-desktop-camera-controller-194808#content) 摄像机工具
+* [Mighty DevOps](https://assetstore.unity.com/packages/tools/utilities/mighty-devops-minimap-bookmarks-screenshots-and-more-267512)  场景导航和项目完成提供免费的迷你地图
+* [Multi Screenshot](https://assetstore.unity.com/packages/tools/utilities/multi-screenshot-249566) Editor截图
 
 #### Input
 
@@ -88,6 +90,8 @@ tags:
 #### Other
 
 * [UnityHexGrid](https://github.com/inca/UnityHexGrid/tree/master) 六边形
+* [隐私协议生成工具](https://app-privacy-policy-generator.firebaseapp.com/#)
+* [UnityAppIcon](https://github.com/shellyHBG/UnityAppIcon) Unity设置AppIcon
 
 ## 教程
 
