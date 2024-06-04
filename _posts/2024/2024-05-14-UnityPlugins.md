@@ -35,8 +35,11 @@ tags:
 * [付费] [GUI Pro - Simple Casual](https://assetstore.unity.com/packages/2d/gui/icons/gui-pro-simple-casual-203399) 简单休闲游戏UI
 * [付费] [GUI Pro - Casual Game](https://assetstore.unity.com/packages/2d/gui/gui-pro-casual-game-176695) 休闲游戏UI(类似皇室冲突)
 
-##### Music
+##### Music/Sound
 
+* [pixabay](https://pixabay.com/music/search/slow/) 音效效果都不错
+* [mixkit](https://mixkit.co/free-sound-effects/click/) 音效效果都不错
+* 其他：
 * [Angels Demons FREE](https://assetstore.unity.com/packages/audio/music/orchestral/angels-demons-free-42583) 天使和恶魔音乐
 * [Infinite Drums (free)](https://assetstore.unity.com/packages/audio/music/orchestral/infinite-drums-free-77343) 战鼓音乐
 * [Ove Melaa](https://opengameart.org/content/oves-essential-game-audio-pack-collection-160-files-updated) 游戏音乐
