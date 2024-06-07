@@ -45,36 +45,40 @@ tags:
 * [Ove Melaa](https://opengameart.org/content/oves-essential-game-audio-pack-collection-160-files-updated) 游戏音乐
 * [8Bit Sfx One Shot](https://assetstore.unity.com/packages/audio/sound-fx/8bit-sfx-one-shot-264526) 音效
 
-#### Unity Extension
+#### Plugin
+
+##### Unity Extension
 
 * [Serialized Dictionary Lite](https://assetstore.unity.com/packages/tools/utilities/serialized-dictionary-lite-110992) Unity序列化Dictionary
 * [Unity.mathx](https://github.com/ltmx/Unity.mathx) Unity.Mathematics 扩展
 * [EasyEntitas](https://github.com/sonilyan/EasyEntitas) Entitas的无代码生成版本([Entitas-Lite](https://github.com/rocwood/Entitas-Lite)优化版本)
 
-#### Camera
+##### Camera && Input
 
 * [UnityRuntimePreviewGenerator](https://github.com/yasirkula/UnityRuntimePreviewGenerator) 动态渲染图片
 * [付费] [Touch Camera Pro](https://assetstore.unity.com/packages/tools/camera/touch-camera-pro-2024-easy-mobile-desktop-camera-controller-194808#content) 摄像机工具
 * [Mighty DevOps](https://assetstore.unity.com/packages/tools/utilities/mighty-devops-minimap-bookmarks-screenshots-and-more-267512)  场景导航和项目完成提供免费的迷你地图
 * [Multi Screenshot](https://assetstore.unity.com/packages/tools/utilities/multi-screenshot-249566) Editor截图
-
-#### Input
-
 * [Fingers-Lite](https://assetstore.unity.com/packages/tools/input-management/fingers-lite-free-finger-touch-gestures-for-unity-64276) 输入插件([开源](https://github.com/DigitalRuby/FingersGestures)) / [付费版] [Fingers](https://assetstore.unity.com/packages/tools/input-management/fingers-touch-gestures-for-unity-41076)
 
-#### Tween
+##### Tween
 
 * [UniTween](https://github.com/gmhevinci/UniFramework/blob/main/UniFramework/UniTween) UniFramework.Tween
 * [Mini Tween Free](https://assetstore.unity.com/packages/tools/animation/mini-tween-free-281591) Mini Tween 方便Editor调试看效果
 
-#### Voxel
+##### Voxel
 
 * [付费] [Voxel toolkit](https://assetstore.unity.com/packages/tools/modeling/voxel-toolkit-magicavoxel-importer-247538) Vox导入插件
 
-#### Debug
+##### Debug
 
 * [UnityRuntimeInspector](https://github.com/yasirkula/UnityRuntimeInspector) 节点查看
 * [UniRate](https://github.com/renanwolf/UniRate) Unity帧率管理
+
+##### Other
+
+* [Tutorial Fade Image](https://github.com/Akinat0/TUTORIAL_FADE/tree/master) 新手引导镂空效果
+* [Guide](https://github.com/GREAT1217/Unity_FunctionTest/tree/master) 新手引导
 
 #### Shader
 
