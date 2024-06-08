@@ -79,6 +79,7 @@ tags:
 
 * [Tutorial Fade Image](https://github.com/Akinat0/TUTORIAL_FADE/tree/master) 新手引导镂空效果
 * [Guide](https://github.com/GREAT1217/Unity_FunctionTest/tree/master) 新手引导
+* [付费] [Tutorial Master 2](https://assetstore.unity.com/packages/tools/game-toolkits/tutorial-master-2-65443) 
 
 #### Shader
 
