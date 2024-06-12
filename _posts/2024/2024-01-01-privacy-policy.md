@@ -9,7 +9,6 @@ catalog: true
 tags:
     - 开源
 ---
-
 # Privacy Policy Template
 
 Welcome to [Your Website Name] (hereinafter referred to as "the Website"). In order to provide you with a secure and seamless experience while using the various services and information on our website, we are committed to protecting your privacy rights. Please read the following information carefully:
@@ -55,11 +54,3 @@ To provide you with the best service, our website may place and access cookies o
 ## 7. Amendment of Privacy Policy
 
 This website's Privacy Policy may be revised as needed, and the revised terms will be posted on the website.
-
----------
-
-> Basic information source: [Government Website Template and Content Management Guidelines](https://www.webguide.nat.gov.tw/cp.aspx?n=554)
-
-> If you need an English version of the template, you can refer to the [MDN Privacy Policy Development Guide](https://developer.mozilla.org/en-US/docs/Mozilla/Marketplace/Publishing/Privacy_policies) and https://github.com/flamsmark/privacy-policy-template.
-
-> This document has been translated using OpenAI.
