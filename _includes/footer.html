@@ -121,7 +121,7 @@
 </script>
 
 <!-- Google Analytics -->
-{% if site.ga_track_id %}
+<!-- {% if site.ga_track_id %}
 <script>
     // dynamic User by Hux
     var _gaId = '{{ site.ga_track_id }}';
@@ -138,7 +138,30 @@
     ga('create', _gaId, _gaDomain);
     ga('send', 'pageview');
 </script>
-{% endif %}
+{% endif %} -->
+<script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+        apiKey: "AIzaSyDqLj5o8i8PledskfjzB3936nvJuQ62dbE",
+        authDomain: "gumcstronger-6e914.firebaseapp.com",
+        projectId: "gumcstronger-6e914",
+        storageBucket: "gumcstronger-6e914.appspot.com",
+        messagingSenderId: "13518480537",
+        appId: "1:13518480537:web:48a541cbad083726218408",
+        measurementId: "G-ZTDXVESCNY"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+</script>
 
 <!-- Side Catalog -->
 {% unless page.no-catalog %}
