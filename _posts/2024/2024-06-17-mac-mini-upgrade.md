@@ -28,3 +28,11 @@ OpenCore Legacy Patcher安装Sonoma流程：[OpenCore Legacy Patcher](https://do
 * U盘启动器不能被写过，如有的U盘中被写入部分只读信息，则无法制作启动盘（花费了我大半天时间）
 * Sonoma需要32G的U盘，如U盘只有16G，可先使用Ventura走完整个流程然后再升级到Sonoma
 * 如是加装SSD再安装Sonoma，可先在SSD上普通系统，然后再使用OpenCore Legacy Patcher，可以加快电脑速度加快流程。
+* ReportCrash可能导致死循环，Crash然后Report，而Report又Crash。可以禁用ReportCrash
+  ```
+  launchctl unload -w /System/Library/LaunchAgents/com.apple.ReportCrash.plist
+  sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.ReportCrash.Root.plist
+  ```
+* 如需要重置，需要先卸载OpenCore Legacy Patcher，重置NVRAM，删除EFI分区，不然无法重新安装原先的系统。
+  * 如果系统已经卸载，则可以进入安装或恢复，打开终端，输入：diskutil list 可以看到对应的磁盘
+  * 然后输入diskutil eraseDisk JHFS+ XXXX MBR diskX  (将XXXX替换成希望的命名，diskX为实际磁盘标识符例如disk0)
