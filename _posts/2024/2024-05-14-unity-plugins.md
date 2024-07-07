@@ -22,7 +22,7 @@ tags:
 ##### All:
 
 * [kenney](https://kenney.nl/assets/) 卡通3d/2D、UI、Audio、Texture
-* [kaykit](https://kaylousberg.itch.io/) 卡通资源包。使用过:[中世纪建造者包](https://kaylousberg.itch.io/kaykit-medieval-builder-pack)(Hex) 六边形、树、城堡
+* [kaykit](https://kaylousberg.com/#3D) 卡通资源包。使用过:[中世纪建造者包](https://kaylousberg.itch.io/kaykit-medieval-builder-pack)(Hex) 六边形、树、城堡
 * [voxel-character-models-vox](https://opengameart.org/content/voxel-character-models-vox) 体素角色
 * [400 Free Voxel Models for Creating](https://www.megavoxels.com/news/400-free-voxel-models-for-creating-voxel-art-and-games/) 体素角色
 
@@ -52,6 +52,11 @@ tags:
 * [Serialized Dictionary Lite](https://assetstore.unity.com/packages/tools/utilities/serialized-dictionary-lite-110992) Unity序列化Dictionary
 * [Unity.mathx](https://github.com/ltmx/Unity.mathx) Unity.Mathematics 扩展
 * [EasyEntitas](https://github.com/sonilyan/EasyEntitas) Entitas的无代码生成版本([Entitas-Lite](https://github.com/rocwood/Entitas-Lite)优化版本)
+
+##### Editor Tool
+
+* [gltf-exporter](https://github.com/Plattar/gltf-exporter) 导出/导入gltf
+* [Scene OBJ Exporter ](https://assetstore.unity.com/packages/tools/utilities/scene-obj-exporter-22250#content) 导出obj
 
 ##### Security
 
@@ -85,7 +90,12 @@ tags:
 * [Guide](https://github.com/GREAT1217/Unity_FunctionTest/tree/master) 新手引导
 * [付费] [Tutorial Master 2](https://assetstore.unity.com/packages/tools/game-toolkits/tutorial-master-2-65443)
 
-#### Shader
+#### Render
+
+##### GI / Shadow
+
+* [PlanarShadow-URP](https://github.com/czy-moyu/PlanarShadow-URP/tree/main) / [PlannarShadowForUnity](https://github.com/ozlael/PlannarShadowForUnity) 平面阴影
+* [付费] [Corgi Cached Shadows (for URP)](https://assetstore.unity.com/packages/tools/particles-effects/corgi-cached-shadows-for-urp-246936) 实时缓存阴影
 
 ##### Standard
 
@@ -94,10 +104,15 @@ tags:
 ##### URP
 
 * [付费] [Lux URP Essentials](https://assetstore.unity.com/packages/vfx/shaders/lux-urp-essentials-150355)
+* [付费] [Toony Colors Pro 2](https://assetstore.unity.com/packages/vfx/shaders/toony-colors-pro-2-8105)  风格化的着色器和工具
+* [付费] [COLR – Coloring Redefined](https://assetstore.unity.com/packages/vfx/shaders/colr-coloring-redefined-57591#description) 颜色着色器（无灯光所以高效，休闲游戏推荐使用）
+* [planar-reflections-unity](https://github.com/eldskald/planar-reflections-unity) 平面反射组件
+* [URP (LWRP)-Shaders](https://github.com/marcozakaria/URP-LWRP-Shaders/tree/master) URP shader
+* [动画进度条着色器图](https://github.com/MirzaBeig/Animated-Progress-Bar-Shader-Graph) 动画进度条,只使用shader
 
 #### Native
 
-* [付费] [Cross Platform Native Plugins](https://assetstore.unity.com/packages/tools/integration/cross-platform-native-plugins-essential-kit-mobile-ios-android-140111) Android/iOS原生平台功能
+* [付费] [Cross Platform Native Plugins](https://assetstore.unity.com/packages/tools/integration/*cross-platform-native-plugins-essential-kit-mobile-ios-android-140111) Android/iOS原生平台功能
 
 #### Other
 
