@@ -97,6 +97,10 @@ tags:
 
 #### Render
 
+##### Fx
+
+* [付费] [Confetti Fx 2](https://assetstore.unity.com/packages/vfx/particles/confetti-fx-2-170027#content)
+
 ##### GI / Shadow
 
 * [PlanarShadow-URP](https://github.com/czy-moyu/PlanarShadow-URP/tree/main) / [PlannarShadowForUnity](https://github.com/ozlael/PlannarShadowForUnity) 平面阴影
