@@ -59,7 +59,6 @@ tags:
       - 如遇到问题，可以尝试修改scene.mtl中map_Kd、map_d的路径，用vscode打开scene.mtl,将其中的"c:\\****\\textures\\xxx.png"修改为"\\textures\\xxx.png"（此处贴图做法是指向缓存文件的绝对路径，改为指向最早下载模型的贴图的相对路径）
   - 情况三：模型不是体素模型，而是low poly、卡通甚至写实，则使用[在线体素化器](http://voxelizer.coohex.com/)或[在线体素化器](https://drububu.com/miscellaneous/voxelizer/?out=obj)将obj转化成voxel，然后通过magicavoxel进行调整
   - 再不行使用voxelizer
-  
 - [从图片中提取有限调色板](https://sketchbooky.wordpress.com/2020/09/23/some-tools-for-extracting-a-limited-colour-palette-from-a-picture/)
 
 ## Unity美术效果
@@ -70,3 +69,15 @@ tags:
 ## 降低顶点数和面熟
 
 - [教程](https://www.youtube.com/watch?v=Erstqc5uSxU)
+
+## Vox的游戏
+
+* [Blocky Farm](https://play.google.com/store/apps/details?id=com.JetToast.BlockyFarm&hl=en_US)
+* [Twisty Board 2](https://apps.apple.com/us/app/twisty-board-2/id1245082161)
+* [Kingdoms of HF - Dragon War](https://play.google.com/store/apps/details?id=ata.kraken.heckfire&gl=US)
+* [Countless Zombies](https://play.google.com/store/apps/details?id=jp.co.studio08.zmb&gl=JP)
+* [Westy West Cowboys](https://play.google.com/store/apps/details?id=com.CountrysideGames.WestyWest&gl=AE)
+* [Donut Factory Tycoon](https://play.google.com/store/apps/details?id=com.mindstormstudios.tinydonuts.google&gl=US)
+* [Pizza Factory Tycoon](https://apps.apple.com/us/app/pizza-factory-tycoon/id1425902375)
+* [Formula Clicker Idle Tycoon](https://play.google.com/store/apps/details?id=com.ggds.FormulaClicker&gl=US)
+* [Dinos Royale](https://apps.apple.com/us/app/dinos-royale/id1403969940)
