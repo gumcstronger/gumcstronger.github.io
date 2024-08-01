@@ -59,8 +59,9 @@ tags:
 * [gltf-exporter](https://github.com/Plattar/gltf-exporter) 导出/导入gltf
 * [Scene OBJ Exporter ](https://assetstore.unity.com/packages/tools/utilities/scene-obj-exporter-22250#content) 导出obj
 * [Lightweight Mesh Info](https://assetstore.unity.com/packages/tools/utilities/lightweight-mesh-info-277515) 显示Mesh的基础信息
-* [MAST - Modular Asset Staging Tool](https://assetstore.unity.com/packages/tools/level-design/mast-modular-asset-staging-tool-154939) 3d关卡编辑器(比TileMap好用)
-* [Level Editor](https://github.com/taesiri/Tokyo?tab=readme-ov-file) 游戏内2D关卡编辑器
+* [Park Inc | Template + Editor](https://assetstore.unity.com/packages/templates/packs/park-inc-template-editor-179668)  Level Editor
+* ~~[MAST - Modular Asset Staging Tool](https://assetstore.unity.com/packages/tools/level-design/mast-modular-asset-staging-tool-154939) 3d关卡编辑器(比TileMap好用)~~
+* ~~[Level Editor](https://github.com/taesiri/Tokyo?tab=readme-ov-file) 游戏内2D关卡编辑器~~
 * [LazyFetcher ](https://github.com/wafflesgama/LazyFetcher) 3D网格通用库和工具（想将其修改为资源通用库)
 
 ##### Security
@@ -99,7 +100,8 @@ tags:
 
 ##### Fx
 
-* [付费] [Confetti Fx 2](https://assetstore.unity.com/packages/vfx/particles/confetti-fx-2-170027#content)
+* [ParticleEffectForUGUI](https://github.com/mob-sakai/ParticleEffectForUGUI)  UIParticle
+* [付费] [Confetti Fx 2](https://assetstore.unity.com/packages/vfx/particles/confetti-fx-2-170027#content) / [[Github](https://github.com/nsanfo/Capybara-Springs)]
 
 ##### GI / Shadow
 
@@ -113,7 +115,7 @@ tags:
 ##### URP
 
 * [付费] [Lux URP Essentials](https://assetstore.unity.com/packages/vfx/shaders/lux-urp-essentials-150355)
-* [付费] [Toony Colors Pro 2](https://assetstore.unity.com/packages/vfx/shaders/toony-colors-pro-2-8105)  风格化的着色器和工具
+* [付费] [Toony Colors Pro 2](https://assetstore.unity.com/packages/vfx/shaders/toony-colors-pro-2-8105) / [[Github](https://github.com/nsanfo/Capybara-Springs)] 风格化的着色器和工具
 * [付费] [COLR – Coloring Redefined](https://assetstore.unity.com/packages/vfx/shaders/colr-coloring-redefined-57591#description) 颜色着色器（无灯光所以高效，休闲游戏推荐使用）
 * [planar-reflections-unity](https://github.com/eldskald/planar-reflections-unity) 平面反射组件
 * [URP (LWRP)-Shaders](https://github.com/marcozakaria/URP-LWRP-Shaders/tree/master) URP shader
