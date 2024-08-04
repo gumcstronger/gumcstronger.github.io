@@ -8,6 +8,7 @@ header-img: "img/post-bg-2015.jpg"
 catalog: true
 tags:
     - 游戏开发
+    - 持续更新
 ---
 ## 插件
 
