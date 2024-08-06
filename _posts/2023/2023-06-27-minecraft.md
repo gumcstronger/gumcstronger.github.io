@@ -94,8 +94,10 @@ tags:
 ## Minecraft Object/Schematic 外部工具
 
 * [mineways](https://www.realtimerendering.com/erich/minecraft/public/mineways/) minecraft导出obj
+* [j-mc-2-obj](https://github.com/jmc2obj/j-mc-2-obj) minecraft地图转obj
 * [Amulet-Map-Editor](https://github.com/Amulet-Team/Amulet-Map-Editor) minecraft地图编辑器，只能打开世界存档，无法打开litmatics和schematic
-* [voxedit](https://github.com/vengi-voxel/vengi) 导入很多格式文件转化为vox  [voxconvert](https://github.com/vengi-voxel/vengi) 将obj转化为vox
+* [voxedit](https://github.com/vengi-voxel/vengi) 导入很多格式文件转化为vox
+* ~~[voxconvert](https://github.com/vengi-voxel/vengi) 将obj转化为vox~~
 
 ---
 
