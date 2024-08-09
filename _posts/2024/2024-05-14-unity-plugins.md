@@ -48,6 +48,12 @@ tags:
 
 #### Plugin
 
+##### Framework
+
+* ET
+* GameFramework
+* [Instant Games Bridge](https://github.com/instant-games-bridge/instant-games-bridge-unity) 发布playgama HTML5 游戏的 SDK
+
 ##### Unity Extension
 
 * [Serialized Dictionary Lite](https://assetstore.unity.com/packages/tools/utilities/serialized-dictionary-lite-110992) Unity序列化Dictionary
