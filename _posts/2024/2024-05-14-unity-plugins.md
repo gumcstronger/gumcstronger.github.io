@@ -35,6 +35,7 @@ tags:
 
 * [付费] [GUI Pro - Simple Casual](https://assetstore.unity.com/packages/2d/gui/icons/gui-pro-simple-casual-203399) 简单休闲游戏UI
 * [付费] [GUI Pro - Casual Game](https://assetstore.unity.com/packages/2d/gui/gui-pro-casual-game-176695) 休闲游戏UI(类似皇室冲突)
+* [2D Flat Avatars - 30 Game Character Sprites ](https://assetstore.unity.com/packages/2d/characters/2d-flat-avatars-30-game-character-sprites-240974) UI头像
 
 ##### Music/Sound
 
