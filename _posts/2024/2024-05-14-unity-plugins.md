@@ -62,6 +62,10 @@ tags:
 * [EasyEntitas](https://github.com/sonilyan/EasyEntitas) Entitas的无代码生成版本([Entitas-Lite](https://github.com/rocwood/Entitas-Lite)优化版本)
 * [构建公司内部的PackageManager](https://cloud.tencent.com/developer/article/2086298)
 
+##### UI
+
+* [FancyScrollView](https://github.com/setchi/FancyScrollView) 滑动列表
+
 ##### Editor Tool
 
 * [gltf-exporter](https://github.com/Plattar/gltf-exporter) 导出/导入gltf
