@@ -24,12 +24,13 @@ tags:
 
 适配Pad
 
-
 ## Appstore
+
+[注册海外账户](注册非中国大陆区)
 
 ## GooglePlay
 
-### 获取免费用户
+### Get Free User
 
 两个获取用户的方式：[GooglePlay上架及推荐流程](https://www.youtube.com/watch?v=uJCXs4Hvdrc&list=PL4ykYQuQMeWXwmaNkKebDbw6mlSD9ohS5&index=5)
 
@@ -41,3 +42,8 @@ googleplay featuring nomination: 搜索
 ASO/谷歌趋势：[获取海外流量技巧](https://www.youtube.com/watch?v=PlWRCwI_QF8&list=PL4ykYQuQMeWXwmaNkKebDbw6mlSD9ohS5&index=7)
 
 [[开源]App Store Optimization (aso)](https://github.com/facundoolano/aso) / [App Store Optimization tool for iOS Developers](https://github.com/matteospada/astro)
+
+### 其他
+
+* [GooglePlay Sdk Index](https://play.google.com/sdks/?hl=zh-cn) 用于GooglePlay后台数据安全表单配置
+* [GooglePlay社区](https://support.google.com/googleplay/android-developer/threads?hl=zh-Hans&max_results=20) 查看社区帖子

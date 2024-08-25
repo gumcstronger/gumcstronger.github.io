@@ -75,10 +75,11 @@ tags:
 * ~~[MAST - Modular Asset Staging Tool](https://assetstore.unity.com/packages/tools/level-design/mast-modular-asset-staging-tool-154939) 3d关卡编辑器(比TileMap好用)~~
 * ~~[Level Editor](https://github.com/taesiri/Tokyo?tab=readme-ov-file) 游戏内2D关卡编辑器~~
 * [LazyFetcher ](https://github.com/wafflesgama/LazyFetcher) 3D网格通用库和工具（想将其修改为资源通用库)
+* [付费] [Maintainer ](https://assetstore.unity.com/packages/tools/utilities/maintainer-32199#content) 查找项目中丢失的资源或脚本 / [[Github](https://github.com/DavidCampbellIII/DiabetesSimulator/tree/main)]
 
 ##### Security
 
-* [付费] [Anti-Cheat Toolkit](https://assetstore.unity.com/packages/tools/utilities/anti-cheat-toolkit-2023-202695#releases) 反作弊
+* [付费] [Anti-Cheat Toolkit](https://assetstore.unity.com/packages/tools/utilities/anti-cheat-toolkit-2023-202695#releases) 反作弊 / [[Github](https://github.com/kangdusick/HardTask/tree/dc5049f5aff95afc32f83f3832db64d7b8b90955/PlayHardTaskClient/Assets/Plugins/CodeStage/AntiCheatToolkit)]
 
 ##### Camera && Input
 
