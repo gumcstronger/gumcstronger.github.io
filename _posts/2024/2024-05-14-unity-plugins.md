@@ -65,6 +65,7 @@ tags:
 ##### UI
 
 * [FancyScrollView](https://github.com/setchi/FancyScrollView) 滑动列表
+* [com.unity.uiextensions](https://github.com/Unity-UI-Extensions/com.unity.uiextensions) [UI扩展](https://unity-ui-extensions.github.io/Controls.html#effect-components)如列表、文字、UI效果
 
 ##### Editor Tool
 
