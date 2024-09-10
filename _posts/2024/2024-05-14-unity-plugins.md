@@ -77,6 +77,7 @@ tags:
 * ~~[Level Editor](https://github.com/taesiri/Tokyo?tab=readme-ov-file) 游戏内2D关卡编辑器~~
 * [LazyFetcher ](https://github.com/wafflesgama/LazyFetcher) 3D网格通用库和工具（想将其修改为资源通用库)
 * [付费] [Maintainer ](https://assetstore.unity.com/packages/tools/utilities/maintainer-32199#content) 查找项目中丢失的资源或脚本 / [[Github](https://github.com/DavidCampbellIII/DiabetesSimulator/tree/main)]
+* [PBR 纹理打包成一个纹理贴图](https://github.com/PreyK/Unigine-Shading-Map-Generator)
 
 ##### Security
 
@@ -145,6 +146,8 @@ tags:
 * [UnityHexGrid](https://github.com/inca/UnityHexGrid/tree/master) 六边形
 * [隐私协议生成工具](https://app-privacy-policy-generator.firebaseapp.com/#)
 * [UnityAppIcon](https://github.com/shellyHBG/UnityAppIcon) Unity设置AppIcon
+* ?[ 角色创建器](https://github.com/cmaher/Shelley)
+* ？[实用Unity插件](https://github.com/dkbozkurt/My_Useful_Unity_Codes/tree/main/Assets%20to%20Must%20Have)
 
 ## 教程
 
