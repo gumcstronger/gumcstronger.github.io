@@ -66,6 +66,7 @@ tags:
 
 * [FancyScrollView](https://github.com/setchi/FancyScrollView) 滑动列表
 * [com.unity.uiextensions](https://github.com/Unity-UI-Extensions/com.unity.uiextensions) [UI扩展](https://unity-ui-extensions.github.io/Controls.html#effect-components)如列表、文字、UI效果
+* [付费] [SuperScrollView](https://assetstore.unity.com/packages/tools/gui/ugui-super-scrollview-86572?srsltid=AfmBOoodciq35G5bSf8SPLn_Iy_Ur0qrU515UeWIJC4gCwYjs2JCKoZi#content) / [[Github](https://github.com/JasurGameMaker/Cherry/tree/main)]
 
 ##### Editor Tool
 
