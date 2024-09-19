@@ -33,8 +33,10 @@ tags:
 
 ##### UI
 
+* ~~[付费] [PSD Logo Templates](https://assetstore.unity.com/packages/2d/gui/icons/psd-logo-templates-103928#content) Logo PSD 模板~~
+* [20 Logo Templates with customizable PSD vector sources](https://assetstore.unity.com/packages/2d/gui/icons/20-logo-templates-with-customizable-psd-vector-sources-174999) Logo PSD 模板
 * [付费] [GUI Pro - Simple Casual](https://assetstore.unity.com/packages/2d/gui/icons/gui-pro-simple-casual-203399) 简单休闲游戏UI
-* [付费] [GUI Pro - Casual Game](https://assetstore.unity.com/packages/2d/gui/gui-pro-casual-game-176695) 休闲游戏UI(类似皇室冲突)
+* [付费] [GUI Pro - Super Casual](https://assetstore.unity.com/packages/2d/gui/gui-pro-super-casual-278534#content) 休闲游戏UI(类似皇室冲突竖版) / [[Github](https://github.com/workavast/SuikaGame/tree/main)] / [横板 GUI Pro - Casual Game](https://assetstore.unity.com/packages/2d/gui/gui-pro-casual-game-176695)
 * [2D Flat Avatars - 30 Game Character Sprites ](https://assetstore.unity.com/packages/2d/characters/2d-flat-avatars-30-game-character-sprites-240974) UI头像
 
 ##### Music/Sound
@@ -67,6 +69,9 @@ tags:
 * [FancyScrollView](https://github.com/setchi/FancyScrollView) 滑动列表
 * [com.unity.uiextensions](https://github.com/Unity-UI-Extensions/com.unity.uiextensions) [UI扩展](https://unity-ui-extensions.github.io/Controls.html#effect-components)如列表、文字、UI效果
 * [付费] [SuperScrollView](https://assetstore.unity.com/packages/tools/gui/ugui-super-scrollview-86572?srsltid=AfmBOoodciq35G5bSf8SPLn_Iy_Ur0qrU515UeWIJC4gCwYjs2JCKoZi#content) / [[Github](https://github.com/JasurGameMaker/Cherry/tree/main)]
+* ~~[付费] [UI Theme](https://assetstore.unity.com/packages/tools/gui/ui-themes-163888#releases) / [[Github](https://github.com/sgho0915/SYSnetA_GSEng/tree/master)]~~
+* [UI Themes](https://arturnista.itch.io/ui-themes)
+* [thematic-ui](https://github.com/bedulatto/thematic-ui/tree/master)
 
 ##### Editor Tool
 
