@@ -13,7 +13,17 @@ layout: default
 <article>
     <div class="container">
         <div class="row">
-
+            {% if page.multilingual %}
+            {% else %}
+            <div id="google_translate_element" style="min-height: 28px;font-size: 54px;"></div>
+            <script type="text/javascript">
+                function googleTranslateElementInit () {
+                    new google.translate.TranslateElement({ pageLanguage: {% if page.language %} "{{ page.language }}" {% else %} 'zh-CN' {% endif %}, layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_translate_element');
+                }
+            </script>
+            <script type="text/javascript"
+                src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+            {% endif %}
             <!-- Post Container -->
             <div class="
                 col-lg-8 col-lg-offset-2
