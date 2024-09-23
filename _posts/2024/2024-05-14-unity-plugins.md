@@ -1,7 +1,7 @@
 ---
 layout:     post
-title:      "Unity常用插件和教程"
-subtitle:   " \"Unity常用插件和教程\""
+title:      "Unity common plugins and tutorials"
+subtitle:   " \"Unity common plugins and tutorials\""
 date:       2024-05-14 12:15:00
 author:     "Gumc"
 header-img: "assets/img/2015/post-bg-2015.jpg"
