@@ -4,10 +4,10 @@ title:      "Entitas-Lite常见问题"
 subtitle:   " \"Entitas-Lite是没有代码生成器的Entitas\""
 date:       2022-10-11 09:03:00
 author:     "Gumc"
-header-img: "img/post-bg-2015.jpg"
+header-img: "assets/img/2015/post-bg-2015.jpg"
 catalog: true
 tags:
-    - 游戏开发
+    - Game Development
 ---
 ## DebugSystem在Editor查看时崩溃
 

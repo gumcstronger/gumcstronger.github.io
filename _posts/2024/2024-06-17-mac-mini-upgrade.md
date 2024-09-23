@@ -4,10 +4,10 @@ title:      "Mac Mini Late 2014加装SSD和使用OpenCore Legacy Patcher安装ma
 subtitle:   " \"Unity常用插件和教程\""
 date:       2024-06-17 11:15:00
 author:     "Gumc"
-header-img: "img/post-bg-2015.jpg"
+header-img: "assets/img/2015/post-bg-2015.jpg"
 catalog: true
 tags:
-    - 开源
+    - Open Source
 ---
 Mac Mini Late 2014是很早一个版本的Mac，性能较低，并且很多人都是只购买纯HDD。并且无法使用macOS Ventura和macOS Sonoma，因为苹果除了M1、M2版本后已经不再支持Intel的设备升级到新系统，而打包iOS需要升级到Sonoma，只能使用OpenCore Legacy Ptcher。
 

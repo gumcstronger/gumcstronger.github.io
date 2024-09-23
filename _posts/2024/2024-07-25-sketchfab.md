@@ -4,10 +4,10 @@ title:      "Sketchfab漂亮的卡通风格"
 subtitle:   " \"Wireshark\""
 date:       2024-07-25 09:15:00
 author:     "Gumc"
-header-img: "img/post-bg-2015.jpg"
+header-img: "assets/img/2015/post-bg-2015.jpg"
 catalog: true
 tags:
-    - 游戏开发
+    - Game Development
 ---
 注：如何搜索美术，在Sketchfab搜索大类例如：cartoon或toon,看到好看的则点进去看该作者，一般风格比较一致。
 

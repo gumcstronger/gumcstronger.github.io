@@ -4,11 +4,11 @@ title:      "Unity常用插件和教程"
 subtitle:   " \"Unity常用插件和教程\""
 date:       2024-05-14 12:15:00
 author:     "Gumc"
-header-img: "img/post-bg-2015.jpg"
+header-img: "assets/img/2015/post-bg-2015.jpg"
 catalog: true
 tags:
-    - 游戏开发
-    - 持续更新
+    - Game Development
+    - Continuous Updates
 ---
 ## 插件
 

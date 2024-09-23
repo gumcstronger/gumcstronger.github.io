@@ -4,11 +4,11 @@ title:      "2024年梦境"
 subtitle:   " \"最近都很累\""
 date:       2024-03-20 14:30:00
 author:     "Gumc"
-header-img: "img/post-bg-2015.jpg"
+header-img: "assets/img/2015/post-bg-2015.jpg"
 catalog: true
 tags:
-    - 做梦
-    - 持续更新
+    - Dreams
+    - Continuous Updates
 ---
 ## 3月20号
 

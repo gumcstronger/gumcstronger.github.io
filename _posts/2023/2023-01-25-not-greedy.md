@@ -4,10 +4,10 @@ title:      "我不贪心"
 subtitle:   " \"慢慢接受大概率孤独终老的现实\""
 date:       2023-01-25 04:00:00
 author:     "Gumc"
-header-img: "img/post-bg-2015.jpg"
+header-img: "assets/img/2015/post-bg-2015.jpg"
 catalog: true
 tags:
-    - 诗与歌
+    - Poetry
 ---
 <center>
 我不贪心­<br/>

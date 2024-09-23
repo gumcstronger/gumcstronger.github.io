@@ -4,10 +4,10 @@ title:      "新项目Voxel处理教程"
 subtitle:   " \"Wireshark\""
 date:       2024-06-25 16:15:00
 author:     "Gumc"
-header-img: "img/post-bg-2015.jpg"
+header-img: "assets/img/2015/post-bg-2015.jpg"
 catalog: true
 tags:
-    - 游戏开发
+    - Game Development
 ---
 1. 将obj转化为Voxel
 

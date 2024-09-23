@@ -1,7 +1,9 @@
 ---
 layout: page
-description: "「人生 不过是一种经历」"
+description: page-description-index
 ---
+
+{% assign config = site.data.config | where: "language",site.active_lang | first %}
 
 {% for post in paginator.posts %}
 <div class="post-preview">
@@ -23,7 +25,8 @@ description: "「人生 不过是一种经历」"
         </div>
     </a>
     <p class="post-meta">
-        Posted by {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %} on {{ post.date | date: "%B
+        Posted by {% if post.author %}{{ post.author }}{% else %}{{ config[site.title] }}{% endif %} on {{ post.date |
+        date: "%B
         %-d, %Y" }}
     </p>
 </div>

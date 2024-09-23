@@ -4,10 +4,10 @@ title:      "电影《生活多美好》"
 subtitle:   " \"《生活多美好》\""
 date:       2023-02-20 01:30:00
 author:     "Gumc"
-header-img: "img/post-bg-2015.jpg"
+header-img: "assets/img/2015/post-bg-2015.jpg"
 catalog: true
 tags:
-    - 电影
+    - Movie
 ---
 今晚看了两部电影《生活多美好》和《莫娣》。
 

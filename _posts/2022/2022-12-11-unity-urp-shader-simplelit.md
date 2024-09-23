@@ -4,10 +4,10 @@ title:      "Unity URP SimpleLit.shader 学习"
 subtitle:   " \"Unity Shader\""
 date:       2022-12-11 12:37:00
 author:     "Gumc"
-header-img: "img/post-bg-2015.jpg"
+header-img: "assets/img/2015/post-bg-2015.jpg"
 catalog: true
 tags:
-    - 游戏开发
+    - Game Development
 ---
 ## SimpleLit.shader
 

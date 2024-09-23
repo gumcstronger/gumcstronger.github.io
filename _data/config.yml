@@ -1,0 +1,58 @@
+-
+  language: en
+  # title
+  title: Gumc
+  SEOTitle: Gumc's Blog
+  email: gumcstronger@gmail.com
+  description: "Here is Gu Mincong's Personal Blog, Life is nothing but an experience, To leave something behind."
+  keyword: "mc, mincong, Gumc, Gumc's Blog, Blog, Personal Web, Web, C#, Unity"
+  # SNS
+  discord_username: v35wzc5gNa
+  # weibo_u÷sername: gumincong
+  # zhihu_username: gumincong
+  github_username: gumcstronger
+  twitter_username: gumcstronger
+  facebook_username:  gumcstronger
+  # Sidebar
+  sidebar: true # whether or not using Sidebar.
+  sidebar-about-description: "Keep Conscience Clear, Then Never Fear. Gumc@CooHex"
+  sidebar-avatar: https://github.com/gumcstronger.png # use absolute URL, seeing it's used in both `/` and `/about/`
+  friends:
+  - 
+    title: lizhug
+    href: https://www.zhihu.com/people/lizhug
+  # page description
+  page-description-index: 「Life Is Just An Experience」
+  page-description-about: 「The Dream I'm Chasing」
+  page-description-archive: 「Something I Exchange My Time For」
+  page-description-404: You came to a wasteland without knowledge :(
+  page-description-offline: The pages you have read can be accessed even when you are offline ;)
+- 
+  language: zh
+  # title
+  title: 敏聪
+  SEOTitle: 敏聪的博客
+  email: gumcstronger@gmail.com
+  description: "这里是敏聪的个人博客，人生不过是一份经历，总要留下点什么"
+  keyword: "mc, mincong, Gumc, 敏聪的博客, 博客, 个人网站, Web, C#, Unity"
+  # SNS
+  discord_username: v35wzc5gNa
+  # weibo_username: gumincong
+  # zhihu_username: gumincong
+  github_username: gumcstronger
+  twitter_username: gumcstronger
+  facebook_username:  gumcstronger
+  # Sidebar
+  sidebar: true # whether or not using Sidebar.
+  sidebar-about-description: "问心无愧,永不畏惧. 敏聪@酷骇游戏"
+  sidebar-avatar: https://github.com/gumcstronger.png # use absolute URL, seeing it's used in both `/` and `/about/`
+  friends:
+  - 
+    title: 小李子
+    href: https://www.zhihu.com/people/lizhug
+  # page description
+  page-description-index: 「人生 不过是一种经历」
+  page-description-about: 「我正在追逐的梦想」
+  page-description-archive: 「我拿了时间换了什么」
+  page-description-404: 你来到了没有知识的荒原 :(
+  page-description-offline: 阅读过的页面可以在离线时访问哦 ;)

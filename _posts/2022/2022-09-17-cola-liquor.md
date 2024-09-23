@@ -4,10 +4,10 @@ title:      "可乐兑酒"
 subtitle:   " \"可乐兑酒\""
 date:       2022-09-17 01:00:00
 author:     "Gumc"
-header-img: "img/post-bg-2015.jpg"
+header-img: "assets/img/2015/post-bg-2015.jpg"
 catalog: true
 tags:
-    - 诗与歌
+    - Poetry
 ---
 > 这两天<寂静之声>不断循环，孤独感不断袭来
 

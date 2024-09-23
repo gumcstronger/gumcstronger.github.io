@@ -4,10 +4,10 @@ title:      "幸福的感觉"
 subtitle:   "\"抓住这一丝幸福\""
 date:       2023-06-13 14:57:00
 author:     "Gumc"
-header-img: "img/post-bg-2015.jpg"
+header-img: "assets/img/2015/post-bg-2015.jpg"
 catalog: true
 tags:
-    - 生活
+    - Life
 ---
 此时此刻，突然有一丝幸福快乐的感觉。
 

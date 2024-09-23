@@ -4,10 +4,10 @@ title:      "读路遥的《人生》"
 subtitle:   " \"路遥 《人生》\""
 date:       2014-01-13 13:55:00
 author:     "Gumc"
-header-img: "img/post-bg-2015.jpg"
+header-img: "assets/img/2015/post-bg-2015.jpg"
 catalog: true
 tags:
-    - 读书
+    - Read
 ---
 特别喜欢其中一句：人生的道路虽然漫长，但紧要处常常只有几步，特别是当人年轻的时候。
 

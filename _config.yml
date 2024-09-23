@@ -1,46 +1,46 @@
 # Site settings
-title: Gumc Blog
-SEOTitle: 敏聪的博客 | Gumc Blog
-header-img: img/home-bg.jpg
-email: gumcstronger@gmail.com
-description: "关于人生 | 敏聪, gumcstronger, Game Developer，Software Engineer | 这里是 @Gumc敏聪 的个人博客，与你一起发现更大的世界。"
-keyword: "敏聪, gumc敏聪, gumc, @gumcstronger, 敏聪的博客, Gumc Blog, 博客, 个人网站, 游戏开发, 互联网"
-url: "https://gumcstronger.github.io"                  # your host, for absolute URL
-baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog'
+title: title
+SEOTitle: SEOTitle
+header-img: assets/site-img/home/home-bg.jpg
+email: email
+description: description
+keyword: keyword
+url: "http://gumcstronger.github.io" # your host, for absolute URL
+baseurl: "" # for example, '/blog' if your blog hosted on 'host/blog'
 
 # Publish posts or collection documents with a future date.
 future: true
 
 # SNS settings
 RSS: false
-weibo_username: gumincong
-zhihu_username: gumincong
-github_username: gumcstronger
-twitter_username: gumcstronger
-# facebook_username:  gumcstronger
-#linkedin_username:  firstname-lastname-idxxxx
-
-
 
 # Build settings
 # from 2016, 'pygments' is unsupported on GitHub Pages. Use 'rouge' for highlighting instead.
 highlighter: rouge
 permalink: pretty
 paginate: 10
-exclude: ["less","node_modules","Gruntfile.js","package.json","README.md","README.zh.md"]
-anchorjs: true                          # if you want to customize anchor. check out line:181 of `post.html`
+exclude:
+  [
+    "less",
+    "node_modules",
+    "Gruntfile.js",
+    "package.json",
+    "README.md",
+    "README.zh.md",
+    "assets/less"
+  ]
+anchorjs: true # if you want to customize anchor. check out line:181 of `post.html`
 # If you have timezone issue (e.g. #68) in China, uncomment to use this:
-#timezone: CN  
-
-
+#timezone: CN
 
 # Gems
 # from PR#40, to support local preview for Jekyll 3.0
 # make sure you have this gem installed
 # `$ gem install jekyll-paginate`
-plugins: [jekyll-paginate]
-
-
+plugins: 
+  - jekyll-paginate
+  # - jekyll-polyglot
+  # - jekyll-redirect-from
 
 # Markdown settings
 # replace redcarpet to kramdown,
@@ -48,14 +48,13 @@ plugins: [jekyll-paginate]
 # document: http://jekyllrb.com/docs/configuration/#kramdown
 markdown: kramdown
 kramdown:
-  input: GFM                            # use Github Flavored Markdown !important
+  input: GFM # use Github Flavored Markdown !important
   syntax_highlighter_opts:
     span:
       line_numbers: false
     block:
       line_numbers: true
       start_line: 1
-
 
 # gitalk 
 gitalk_comment: {
@@ -76,45 +75,43 @@ disqus_username: gumcstronger
 # Netease settings
 netease_comment: false
 
-
 # Analytics settings
-# Baidu Analytics 
+# Baidu Analytics
 # ba_track_id: [your track id]
 ba_track_id: 857a799c7d828e8797d499d32c7db0b8
 
 # Google Analytics
-# ga_track_id: 'UA-49627206-1'            # Format: UA-xxxxxx-xx
+# ga_track_id: "UA-49627206-1" # Format: UA-xxxxxx-xx
 # ga_domain: gumcstronger.github.io
 
-
 # Sidebar settings
-sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "mc，创业者，游戏开发者<br>"
-sidebar-avatar: https://github.com/gumcstronger.png # use absolute URL, seeing it's used in both `/` and `/about/`
-
-
+sidebar: true # whether or not using Sidebar.
 
 # Featured Tags
-featured-tags: true                     # whether or not using Feature-Tags
-featured-condition-size: 1              # A tag will be featured if the size of it is more than this condition value
-
-
+featured-tags: true # whether or not using Feature-Tags
+featured-condition-size: 1 # A tag will be featured if the size of it is more than this condition value
 
 # Progressive Web Apps
 chrome-tab-theme-color: "#000000"
 service-worker: true
 
-
-
 # MathJax rendering for layout:page (e.g. post preview)
 page-mathjax: false
 
-
-
-# Friends
-friends: [
-    {
-        title: "小李子",
-        href: "https://www.zhihu.com/people/lizhug"
-    }
-]
+# Language / Polyglot settings
+languages: ["en","zh"]
+default_lang: "en"
+active_lang: "en"
+# languages-captions: 
+#   - 
+#     caption: English
+#     language: en
+#     icon: fa-globe-americas
+#   - 
+#     caption: 简体中文
+#     language: zh
+#     icon: fa-globe-asia
+# exclude_from_localization: ["_config.yml", "assets", "_layouts", "_includes", "_data", "_plugin"]
+# parallel_localization: false
+# whitelist:
+#   - jekyll-redirect-from

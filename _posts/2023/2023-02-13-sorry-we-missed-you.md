@@ -4,10 +4,10 @@ title:      "电影《对不起，我们错过了你》"
 subtitle:   " \"里面的母亲爆粗时都好温柔\""
 date:       2023-02-13 00:30:00
 author:     "Gumc"
-header-img: "img/post-bg-2015.jpg"
+header-img: "assets/img/2015/post-bg-2015.jpg"
 catalog: true
 tags:
-    - 电影
+    - Movie
 ---
 晚上看了《对不起，我们错过了你》，说这是一个悲惨世界也不为过，但这也是万千的现实。
 

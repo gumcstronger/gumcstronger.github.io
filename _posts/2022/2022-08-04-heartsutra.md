@@ -4,10 +4,10 @@ title:      "心经"
 subtitle:   " \"心经全文­\""
 date:       2022-08-04 09:18:00
 author:     "Gumc"
-header-img: "img/post-bg-2015.jpg"
+header-img: "assets/img/2015/post-bg-2015.jpg"
 catalog: true
 tags:
-    - 读书
+    - Read
 ---
 
 观自在菩萨，行深般若波罗蜜多时，照见五蕴皆空，度一切苦厄。

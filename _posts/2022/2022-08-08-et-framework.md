@@ -4,7 +4,7 @@ title:      "C#游戏双端框架(未完待续)"
 subtitle:   " \"客户端使用Unity、服务端C#­\""
 date:       2022-08-08 18:15:00
 author:     "Gumc"
-header-img: "img/post-bg-2015.jpg"
+header-img: "assets/img/2015/post-bg-2015.jpg"
 catalog: true
 tags:
     - Server

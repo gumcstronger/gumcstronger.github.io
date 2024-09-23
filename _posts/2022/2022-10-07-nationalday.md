@@ -4,10 +4,10 @@ title:      "国庆流水日记"
 subtitle:   " \"又一夜无眠\""
 date:       2022-10-07 04:03:00
 author:     "Gumc"
-header-img: "img/post-bg-2015.jpg"
+header-img: "assets/img/2015/post-bg-2015.jpg"
 catalog: true
 tags:
-    - 生活
+    - Life
 ---
 &emsp;&emsp;又一夜无眠，写点日记记录下点流水帐。
 

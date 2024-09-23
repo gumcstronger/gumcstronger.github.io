@@ -4,10 +4,10 @@ title:      "2023年梦境"
 subtitle:   " \"梦见自己很颓废\""
 date:       2023-02-05 16:30:00
 author:     "Gumc"
-header-img: "img/post-bg-2015.jpg"
+header-img: "assets/img/2015/post-bg-2015.jpg"
 catalog: true
 tags:
-    - 做梦
+    - Dreams
 ---
 ## 2月4号
 

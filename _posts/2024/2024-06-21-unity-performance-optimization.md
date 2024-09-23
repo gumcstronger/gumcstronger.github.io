@@ -4,10 +4,10 @@ title:      "Unity性能优化"
 subtitle:   " \"Unity性能优化\""
 date:       2024-06-21 11:15:00
 author:     "Gumc"
-header-img: "img/post-bg-2015.jpg"
+header-img: "assets/img/2015/post-bg-2015.jpg"
 catalog: true
 tags:
-    - 游戏开发
+    - Game Development
 ---
 ### 所有测试在OnePlus 6T手机上进行。
 

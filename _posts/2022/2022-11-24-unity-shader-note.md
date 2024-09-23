@@ -4,10 +4,10 @@ title:      "Unity Shader 笔记"
 subtitle:   " \"Unity Shader\""
 date:       2022-11-24 02:37:00
 author:     "Gumc"
-header-img: "img/post-bg-2015.jpg"
+header-img: "assets/img/2015/post-bg-2015.jpg"
 catalog: true
 tags:
-    - 游戏开发
+    - Game Development
 ---
 ## shader学习入门链接
 

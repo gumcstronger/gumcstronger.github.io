@@ -4,7 +4,7 @@ title:      "C#服务器编程(未完待续)"
 subtitle:   " \"C#服务器编程：异步编程、Acotr模型、Context­\""
 date:       2022-08-09 10:15:00
 author:     "Gumc"
-header-img: "img/post-bg-2015.jpg"
+header-img: "assets/img/2015/post-bg-2015.jpg"
 catalog: true
 tags:
     - Server

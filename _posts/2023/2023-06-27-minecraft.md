@@ -4,10 +4,10 @@ title:      "Minecraft笔记"
 subtitle:   "\"Minecraft\""
 date:       2023-06-27 12:08:00
 author:     "Gumc"
-header-img: "img/post-bg-2015.jpg"
+header-img: "assets/img/2015/post-bg-2015.jpg"
 catalog: true
 tags:
-    - 游戏开发
+    - Game Development
 ---
 ## 启动器
 

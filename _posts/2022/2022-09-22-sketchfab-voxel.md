@@ -4,10 +4,10 @@ title:      "sketchfab下载的模型如何处理成体素"
 subtitle:   " \"sketchfab、Blender、Qubicle\""
 date:       2022-09-22 01:00:00
 author:     "Gumc"
-header-img: "img/post-bg-2015.jpg"
+header-img: "assets/img/2015/post-bg-2015.jpg"
 catalog: true
 tags:
-    - 游戏开发
+    - Game Development
 ---
 ## Obj2Vox
 

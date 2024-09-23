@@ -4,10 +4,10 @@ title:      "和什么样的人在一起"
 subtitle:   " \"和什么样的人在一起­\""
 date:       2014-04-01 13:38:00
 author:     "Gumc"
-header-img: "img/post-bg-2015.jpg"
+header-img: "assets/img/2015/post-bg-2015.jpg"
 catalog: true
 tags:
-    - 人生
+    - Life
 ---
 
 早上发现小伙伴们都没起床，去不了办公室。中午吃完饭又暴雨侵袭，于是只能宅宿舍。突然想记录一下，以后招人，找伙伴，找伴侣，应该找怎样的人，并且自己也应该努力成为这样的人。

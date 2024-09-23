@@ -4,10 +4,10 @@ title:      "回到孩童时代"
 subtitle:   " \"做个小孩\""
 date:       2022-08-28 01:15:00
 author:     "Gumc"
-header-img: "img/post-bg-2015.jpg"
+header-img: "assets/img/2015/post-bg-2015.jpg"
 catalog: true
 tags:
-    - 诗与歌
+    - Poetry
 ---
 > 周六晚上，又找木瓜过来吃饭喝了点小酒看了个恐怖片，酒后一个人又尽情的宣泄着孤独的情绪。
 > 偶然刷视频看到潮州古筝和锣鼓，想起以前初三时，白天上课，晚上练鼓，练到很晚回来做作业。

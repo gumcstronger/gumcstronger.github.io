@@ -4,10 +4,10 @@ title:      "移动端广告"
 subtitle:   " \"移动端广告\""
 date:       2024-06-24 11:15:00
 author:     "Gumc"
-header-img: "img/post-bg-2015.jpg"
+header-img: "assets/img/2015/post-bg-2015.jpg"
 catalog: true
 tags:
-    - 游戏开发
+    - Game Development
 ---
 ## 前言
 

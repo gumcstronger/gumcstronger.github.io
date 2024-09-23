@@ -4,10 +4,10 @@ title:      "早睡早起"
 subtitle:   " \"早睡早起\""
 date:       2022-12-16 8:48:00
 author:     "Gumc"
-header-img: "img/post-bg-2015.jpg"
+header-img: "assets/img/2015/post-bg-2015.jpg"
 catalog: true
 tags:
-    - 生活
+    - Life
 ---
 
 

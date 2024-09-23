@@ -1,8 +1,10 @@
-{% if site.friends %}
+{% assign config = site.data.config | where: "language",site.active_lang | first %}
+
+{% if config.friends %}
 <hr>
 <h5>FRIENDS</h5>
 <ul class="list-inline">
-  {% for friend in site.friends %}
+  {% for friend in config.friends %}
   <li><a href="{{friend.href}}">{{friend.title}}</a></li>
   {% endfor %}
 </ul>

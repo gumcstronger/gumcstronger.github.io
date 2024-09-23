@@ -15,23 +15,24 @@ const CACHE = CACHE_NAMESPACE + 'precache-then-runtime';
 const PRECACHE_LIST = [
   "./",
   "./offline.html",
-  "./js/jquery.min.js",
-  "./js/bootstrap.min.js",
-  "./js/hux-blog.min.js",
-  "./js/snackbar.js",
-  // "./img/avatar-gumc.jpg",
-  "./img/home-bg.jpg",
-  "./img/404-bg.jpg",
-  "./css/hux-blog.min.css",
-  "./css/bootstrap.min.css"
+  "./assets/js/jquery.min.js",
+  "./assets/js/bootstrap.min.js",
+  "./assets/js/hux-blog.min.js",
+  "./assets/js/snackbar.js",
+  "./assets/site-img/home/avatar-gumc.jpg",
+  "./assets/site-img/home/avatar-gumc.jpg",
+  "./assets/site-img/home/home-bg.jpg",
+  "./assets/site-img/offline/404-bg.jpg",
+  "./assets/css/hux-blog.min.css",
+  "./assets/css/bootstrap.min.css"
   // "//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css",
   // "//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/fonts/fontawesome-webfont.woff2?v=4.6.3",
   // "//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"
 ]
 const HOSTNAME_WHITELIST = [
   self.location.hostname,
-  "gumcstronger.guithub.io",
-  // "cdnjs.cloudflare.com"
+  "gumcstronger.github.io",
+  "cdnjs.cloudflare.com"
 ]
 const DEPRECATED_CACHES = ['precache-v1', 'runtime', 'main-precache-v1', 'main-runtime']
 
@@ -252,9 +253,9 @@ function revalidateContent (cachedResp, fetchedResp) {
   // revalidate when both promise resolved
   return Promise.all([cachedResp, fetchedResp])
     .then(([cached, fetched]) => {
-      const cachedVer = !cached ? "" : cached.headers.get('last-modified')
-      const fetchedVer = !fetched ? "" : fetched.headers.get('last-modified')
-      console.log(`cachedVer:"${cachedVer}" vs. fetchedVer:"${fetchedVer}"`);
+      const cachedVer = cached.headers.get('last-modified')
+      const fetchedVer = fetched.headers.get('last-modified')
+      console.log(`"${cachedVer}" vs. "${fetchedVer}"`);
       if (cachedVer !== fetchedVer) {
         sendMessageToClientsAsync({
           'command': 'UPDATE_FOUND',

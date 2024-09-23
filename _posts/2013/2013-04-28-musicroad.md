@@ -4,10 +4,10 @@ title:      "我的音乐之旅"
 subtitle:   " \"我的音乐之旅\""
 date:       2013-04-28 01:49:00
 author:     "Gumc"
-header-img: "img/post-bg-2015.jpg"
+header-img: "assets/img/2015/post-bg-2015.jpg"
 catalog: true
 tags:
-    - 生活
+    - Life
 ---
 &emsp;&emsp;睡不着，起来无所事事，代码也写不进去，便来写一点回忆。
 

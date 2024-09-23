@@ -4,10 +4,10 @@ title:      "天涯神贴「如何改变命运和运气」"
 subtitle:   "\"狂乱的眼\""
 date:       2023-07-19 15:44:00
 author:     "Gumc"
-header-img: "img/post-bg-2015.jpg"
+header-img: "assets/img/2015/post-bg-2015.jpg"
 catalog: true
 tags:
-    - 天涯
+    - Society and Science
 ---
 如何改变命运和运气【已出版】_狂乱的眼_(脱水读 https://tuoshuidu.com/)
 

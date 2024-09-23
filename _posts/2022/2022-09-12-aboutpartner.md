@@ -4,10 +4,10 @@ title:      "半夜思语"
 subtitle:   " \"胡思乱想\""
 date:       2022-09-12 01:40:00
 author:     "Gumc"
-header-img: "img/post-bg-2015.jpg"
+header-img: "assets/img/2015/post-bg-2015.jpg"
 catalog: true
 tags:
-    - 人生
+    - Life
 ---
 &emsp;&emsp;本想睡觉，无奈12点看了下朋友圈，点了下赞，又开始了精神内耗。
 

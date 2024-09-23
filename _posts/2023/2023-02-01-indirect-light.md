@@ -4,10 +4,10 @@ title:      "Unity光照笔记"
 subtitle:   " \"Global Illumination\""
 date:       2023-02-01 20:00:00
 author:     "Gumc"
-header-img: "img/post-bg-2015.jpg"
+header-img: "assets/img/2015/post-bg-2015.jpg"
 catalog: true
 tags:
-    - 游戏开发
+    - Game Development
 ---
 GI = 直接光照 （主要方向光，主要灯光）+ 间接光照（弹射光照，非重要灯光）+ 环境光照 + 反射光（区域反射，环境反射）。
 

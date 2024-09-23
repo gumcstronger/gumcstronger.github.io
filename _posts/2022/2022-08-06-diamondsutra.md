@@ -4,10 +4,10 @@ title:      "金刚经"
 subtitle:   " \"金刚经全文，摘录于南怀瑾先生的《金刚经说什么》­\""
 date:       2022-08-06 20:15:00
 author:     "Gumc"
-header-img: "img/post-bg-2015.jpg"
+header-img: "assets/img/2015/post-bg-2015.jpg"
 catalog: true
 tags:
-    - 读书
+    - Read
 ---
 
 第一品 法会因由分

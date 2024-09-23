@@ -4,10 +4,10 @@ title:      "梦见老鼠"
 subtitle:   " \"梦见老鼠\""
 date:       2022-09-23 08:27:00
 author:     "Gumc"
-header-img: "img/post-bg-2015.jpg"
+header-img: "assets/img/2015/post-bg-2015.jpg"
 catalog: true
 tags:
-    - 做梦
+    - Dreams
 ---
 &emsp;&emsp;刚刚做了个梦，梦见自己去了个类似餐馆的地方，里面有个门，门里有个想像在祭拜某个人or神。
 

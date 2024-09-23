@@ -4,10 +4,10 @@ title:      "Privacy Policy"
 subtitle:   " \"Privacy Policy\""
 date:       2024-01-01 01:30:00
 author:     "Gumc"
-header-img: "img/post-bg-2015.jpg"
+header-img: "assets/img/2015/post-bg-2015.jpg"
 catalog: true
 tags:
-    - 开源
+    - Open Source
 ---
 # Privacy Policy Template
 

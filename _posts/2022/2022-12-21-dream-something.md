@@ -4,10 +4,10 @@ title:      "奇怪的梦"
 subtitle:   " \"梦见\""
 date:       2022-12-21 08:27:00
 author:     "Gumc"
-header-img: "img/post-bg-2015.jpg"
+header-img: "assets/img/2015/post-bg-2015.jpg"
 catalog: true
 tags:
-    - 做梦
+    - Dreams
 ---
 早上做了个梦，梦得很奇怪。
 

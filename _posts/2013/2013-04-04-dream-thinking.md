@@ -4,10 +4,10 @@ title:      "做梦引发的思考"
 subtitle:   " \"做梦引发的思考\""
 date:       2013-04-04 07:23:00
 author:     "Gumc"
-header-img: "img/post-bg-2015.jpg"
+header-img: "assets/img/2015/post-bg-2015.jpg"
 catalog: true
 tags:
-    - 人生
+    - Life
 ---
 　　下午小睡一小时，貌似做了两个梦，醒来瞬间想，这两个梦是同步的还是异步的呢？大脑是多线程呢还是单线程呢？于是我下床思考了很久并开始查阅资料。发现几乎没有任何资料，于是我又开始思考。
 

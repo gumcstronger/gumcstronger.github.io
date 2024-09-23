@@ -1,4 +1,5 @@
 <!-- Navigation -->
+{% assign config = site.data.config | where: "language",site.active_lang | first %}
 {% if page.nav-style == "invert" or page.header-style == "text" %}
 <nav class="navbar navbar-default navbar-custom navbar-fixed-top invert">
     {% else %}
@@ -13,7 +14,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="{{ site.baseurl }}/">{{ site.title }}</a>
+                <a class="navbar-brand" href="{{ site.baseurl }}/">{{ config[site.title] }}</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->

@@ -4,10 +4,10 @@ title:      "电影《国王查理德》"
 subtitle:   "\"千万不要放弃幻想\""
 date:       2023-06-04 22:22:00
 author:     "Gumc"
-header-img: "img/post-bg-2015.jpg"
+header-img: "assets/img/2015/post-bg-2015.jpg"
 catalog: true
 tags:
-    - 电影
+    - Movie
 ---
 今天很开心的一件事情，就是看了一部电影《国王查理德》。
 

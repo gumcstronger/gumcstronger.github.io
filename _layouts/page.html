@@ -8,7 +8,7 @@ layout: default
 <!-- Main Content -->
 <div class="container">
   <div class="row">
-    {% if site.sidebar == false %}
+    {% if config.sidebar == false %}
     <!-- NO SIDEBAR -->
     <!-- PostList Container -->
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1
@@ -69,8 +69,6 @@ layout: default
     }
   });
 </script>
-<!-- <script type="text/javascript"
-  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
-<script type="text/javascript" src='{{ " /js/MathJax.js " | prepend: site.baseurl }}' + "?config=TeX-AMS-MML_HTMLorMML">
-</script>
+<script type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 {% endif %}

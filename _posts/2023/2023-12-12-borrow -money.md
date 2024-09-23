@@ -4,10 +4,10 @@ title:      "被借钱"
 subtitle:   "\"关于借钱\""
 date:       2023-12-12 14:44:00
 author:     "Gumc"
-header-img: "img/post-bg-2015.jpg"
+header-img: "assets/img/2015/post-bg-2015.jpg"
 catalog: true
 tags:
-    - 生活
+    - Life
 ---
 事情的起源，表姐即将动手术，说不敢现在申请贷款，想先跟我借钱，回头再把贷款拿出来还给我。
 

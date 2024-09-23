@@ -4,10 +4,10 @@ title:      "[转]Unity Shader Bible翻译学习"
 subtitle:   " \"Unity Shader Bible翻译学习\""
 date:       2024-01-25 01:30:00
 author:     "Gumc"
-header-img: "img/post-bg-2015.jpg"
+header-img: "assets/img/2015/post-bg-2015.jpg"
 catalog: true
 tags:
-    - 游戏开发
+    - Game Development
 ---
 ## 第一章 | 着色器编程语言介绍
 

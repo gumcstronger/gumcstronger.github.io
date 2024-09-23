@@ -4,10 +4,10 @@ title:      "广州游玩地点"
 subtitle:   "\"游玩地点\""
 date:       2023-07-14 15:44:00
 author:     "Gumc"
-header-img: "img/post-bg-2015.jpg"
+header-img: "assets/img/2015/post-bg-2015.jpg"
 catalog: true
 tags:
-    - 持续更新
+    - Continuous Updates
 ---
 * 生态
   * 京溪生态公园

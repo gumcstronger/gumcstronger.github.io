@@ -4,10 +4,10 @@ title:      "中国是资本主义么"
 subtitle:   " \"社会主义？\""
 date:       2022-10-16 19:03:00
 author:     "Gumc"
-header-img: "img/post-bg-2015.jpg"
+header-img: "assets/img/2015/post-bg-2015.jpg"
 catalog: true
 tags:
-    - 社会与科学
+    - Society and Science
 ---
 从小读书都知道，中国是走社会主义，社会主义的目标是共产主义，即使没办法实现共产主义，我们的目标也是实现初步的社会主义。
 
