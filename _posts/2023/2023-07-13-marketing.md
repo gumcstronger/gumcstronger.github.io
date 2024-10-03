@@ -7,9 +7,8 @@ author:     "Gumc"
 header-img: "assets/img/2015/post-bg-2015.jpg"
 catalog: true
 tags:
-    - 市场
+    - Market
 ---
-
 转载自《**[CONTENT MARKETING IN 2023](https://backlinko.com/content-marketing-this-year)》**
 
 这是我的 2023 年内容营销完整指南。
