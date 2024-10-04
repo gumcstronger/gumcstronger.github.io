@@ -241,6 +241,8 @@ ruby -v
 
 它应该与您在步骤2中安装的版本相匹配。
 
+(译者注：这里需要运行 `source ～/.zshrc` 更新配置文件)
+
 ### 步骤 3：安装 gem
 
 恭喜！您现在有一个可以运行的 Ruby 开发环境。您现在应该能够安装 Rails、Jekyll、cocoapods、fastlane、bundler、compass 或过去几天或几个月一直尝试安装的任何 gem！

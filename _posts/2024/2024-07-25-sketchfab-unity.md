@@ -1,7 +1,7 @@
 ---
 layout:     post
-title:      "Sketchfab漂亮的卡通风格"
-subtitle:   " \"sketchfab\""
+title:      "Sketchfab & Unity Asset Store Fancy Stylized Model"
+subtitle:   " \"sketchfab && Unity Asset Store\""
 date:       2024-07-25 09:15:00
 author:     "Gumc"
 header-img: "assets/img/2015/post-bg-2015.jpg"
@@ -11,7 +11,9 @@ tags:
 ---
 注：如何搜索美术，在Sketchfab搜索大类例如：cartoon或toon,看到好看的则点进去看该作者，一般风格比较一致。
 
-## 环境
+## Sketchfab
+
+### 环境
 
 <div class="sketchfab-embed-wrapper"> <iframe title="Koi Cat" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/216615de5f91404a90ba0a721e13dd36/embed"> </iframe> <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;"> <a href="https://sketchfab.com/3d-models/koi-cat-216615de5f91404a90ba0a721e13dd36?utm_medium=embed&utm_campaign=share-popup&utm_content=216615de5f91404a90ba0a721e13dd36" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;"> Koi Cat </a> by <a href="https://sketchfab.com/radiergummi?utm_medium=embed&utm_campaign=share-popup&utm_content=216615de5f91404a90ba0a721e13dd36" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;"> radiergummi </a> on <a href="https://sketchfab.com?utm_medium=embed&utm_campaign=share-popup&utm_content=216615de5f91404a90ba0a721e13dd36" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a></p></div>
 
@@ -55,7 +57,7 @@ tags:
 
 <div class="sketchfab-embed-wrapper"> <iframe title="⚽Soccer football stadium game asset lowpoly city" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/73de63c7cf3f4a238bb334976d4b58d2/embed"> </iframe> <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;"> <a href="https://sketchfab.com/3d-models/soccer-football-stadium-game-asset-lowpoly-city-73de63c7cf3f4a238bb334976d4b58d2?utm_medium=embed&utm_campaign=share-popup&utm_content=73de63c7cf3f4a238bb334976d4b58d2" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;"> ⚽Soccer football stadium game asset lowpoly city </a> by <a href="https://sketchfab.com/haykel1993?utm_medium=embed&utm_campaign=share-popup&utm_content=73de63c7cf3f4a238bb334976d4b58d2" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;"> haykel-shaba </a> on <a href="https://sketchfab.com?utm_medium=embed&utm_campaign=share-popup&utm_content=73de63c7cf3f4a238bb334976d4b58d2" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a></p></div>
 
-## 角色
+### 角色
 
 <div class="sketchfab-embed-wrapper"> <iframe title="Cartoon Guitarboy" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/106138afe837446fa8176739919bab14/embed"> </iframe> <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;"> <a href="https://sketchfab.com/3d-models/cartoon-guitarboy-106138afe837446fa8176739919bab14?utm_medium=embed&utm_campaign=share-popup&utm_content=106138afe837446fa8176739919bab14" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;"> Cartoon Guitarboy </a> by <a href="https://sketchfab.com/shakiller?utm_medium=embed&utm_campaign=share-popup&utm_content=106138afe837446fa8176739919bab14" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;"> shakiller </a> on <a href="https://sketchfab.com?utm_medium=embed&utm_campaign=share-popup&utm_content=106138afe837446fa8176739919bab14" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a></p></div>
 
@@ -66,3 +68,11 @@ tags:
 <div class="sketchfab-embed-wrapper"> <iframe title="Lotlcorn" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/e2a747fe3415495f8a97eda4da1187df/embed"> </iframe> <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;"> <a href="https://sketchfab.com/3d-models/lotlcorn-e2a747fe3415495f8a97eda4da1187df?utm_medium=embed&utm_campaign=share-popup&utm_content=e2a747fe3415495f8a97eda4da1187df" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;"> Lotlcorn </a> by <a href="https://sketchfab.com/fensartden?utm_medium=embed&utm_campaign=share-popup&utm_content=e2a747fe3415495f8a97eda4da1187df" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;"> Fen Beatty </a> (该用户其他好看的) on <a href="https://sketchfab.com?utm_medium=embed&utm_campaign=share-popup&utm_content=e2a747fe3415495f8a97eda4da1187df" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a></p></div>
 
 <div class="sketchfab-embed-wrapper"> <iframe title="千と千尋の神隠し ハク ジブリ Spirited Away Haku Ghibli" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/9d3b4fb097214ca797c960d9fda87d10/embed"> </iframe> <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;"> <a href="https://sketchfab.com/3d-models/spirited-away-haku-ghibli-9d3b4fb097214ca797c960d9fda87d10?utm_medium=embed&utm_campaign=share-popup&utm_content=9d3b4fb097214ca797c960d9fda87d10" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;"> 千と千尋の神隠し ハク ジブリ Spirited Away Haku Ghibli </a> by <a href="https://sketchfab.com/mariokobayashi?utm_medium=embed&utm_campaign=share-popup&utm_content=9d3b4fb097214ca797c960d9fda87d10" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;"> mariokobayashi </a> on <a href="https://sketchfab.com?utm_medium=embed&utm_campaign=share-popup&utm_content=9d3b4fb097214ca797c960d9fda87d10" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a></p></div>
+
+## Unity Asset Store
+
+### Environment
+
+### Role
+
+![Quirky Series - River Animals Vol.2](https://assetstorev1-prd-cdn.unity3d.com/key-image/3b9d21f5-7f5c-468e-85d2-e99dd5f4761f.webp)
