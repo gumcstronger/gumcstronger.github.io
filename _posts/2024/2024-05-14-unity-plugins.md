@@ -36,7 +36,9 @@ tags:
 * ~~[付费] [PSD Logo Templates](https://assetstore.unity.com/packages/2d/gui/icons/psd-logo-templates-103928#content) Logo PSD 模板~~
 * [20 Logo Templates with customizable PSD vector sources](https://assetstore.unity.com/packages/2d/gui/icons/20-logo-templates-with-customizable-psd-vector-sources-174999) Logo PSD 模板
 * [付费] [GUI Pro - Simple Casual](https://assetstore.unity.com/packages/2d/gui/icons/gui-pro-simple-casual-203399) 简单休闲游戏UI
-* [付费] [GUI Pro - Super Casual](https://assetstore.unity.com/packages/2d/gui/gui-pro-super-casual-278534#content) 休闲游戏UI(类似皇室冲突竖版) / [[Github](https://github.com/workavast/SuikaGame/tree/main)] / [横板 GUI Pro - Casual Game](https://assetstore.unity.com/packages/2d/gui/gui-pro-casual-game-176695)
+* [付费] [GUI Pro - Super Casual](https://assetstore.unity.com/packages/2d/gui/gui-pro-super-casual-278534#content) 休闲游戏UI(类似皇室冲突竖版) / [[Github](https://github.com/workavast/SuikaGame/tree/main)]
+* [付费] [GUI Pro - Casual Game](https://assetstore.unity.com/packages/2d/gui/gui-pro-casual-game-176695) Super Casual的横板 / [[Github](https://github.com/ttvpro007/UnityPhysicsSimulator)]
+* [付费] [GUI Pro - Fantasy RPG](https://assetstore.unity.com/packages/2d/gui/gui-pro-fantasy-rpg-170168) / [[Github](https://github.com/ThinhTranQ/Project-ThirdPerson/tree/e3ffab2e3ef42417ecb8794dbaa78e40110994d7)]
 * [2D Flat Avatars - 30 Game Character Sprites ](https://assetstore.unity.com/packages/2d/characters/2d-flat-avatars-30-game-character-sprites-240974) UI头像
 
 ##### Music/Sound
