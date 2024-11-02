@@ -9,6 +9,8 @@ catalog: true
 tags:
     - Game Development
 ---
+
+## 处理Voxel
 1. 将obj转化为Voxel
 
    - 需要将obj进行面数、顶点数简化：[教程](https://www.youtube.com/watch?v=Erstqc5uSxU)
@@ -17,3 +19,7 @@ tags:
 
    - 使用voxTool - Optimization将voxel自动拆分。
    - 复制拆分后的vox文件，保留需要的某个模块，删除不需要的，然后使用voxTool - Connectivity连接在一起
+## 处理obj
+1. 删除obj顶点
+   - 参考obj转化为voxel的教程中，blender的tab+a则然后可以删除顶点
+   - 设置顶点origin, 不使用tab+a的情况下，点击Object-Set Origin
