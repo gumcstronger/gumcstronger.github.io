@@ -63,7 +63,7 @@ tags:
 
 * [Serialized Dictionary Lite](https://assetstore.unity.com/packages/tools/utilities/serialized-dictionary-lite-110992) Unity序列化Dictionary
 * [Unity.mathx](https://github.com/ltmx/Unity.mathx) Unity.Mathematics 扩展
-* [EasyEntitas](https://github.com/sonilyan/EasyEntitas) Entitas的无代码生成版本([Entitas-Lite](https://github.com/rocwood/Entitas-Lite)优化版本)
+* [EasyEntitas](https://github.com/sonilyan/EasyEntitas) Entitas的无代码生成版本(基于[Entitas-Lite](https://github.com/rocwood/Entitas-Lite)的优化版本)
 * [构建公司内部的PackageManager](https://cloud.tencent.com/developer/article/2086298)
 
 ##### UI
