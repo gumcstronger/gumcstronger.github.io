@@ -81,10 +81,11 @@ tags:
 * [Scene OBJ Exporter ](https://assetstore.unity.com/packages/tools/utilities/scene-obj-exporter-22250#content) 导出obj
 * [Lightweight Mesh Info](https://assetstore.unity.com/packages/tools/utilities/lightweight-mesh-info-277515) 显示Mesh的基础信息
 * [Watermelon Games](https://assetstore.unity.com/publishers/41882) Level Editor
-  * [Park Inc Template + Editor](https://assetstore.unity.com/packages/templates/packs/park-inc-template-editor-179668) 
+  * [Park Inc Template + Editor](https://assetstore.unity.com/packages/templates/packs/park-inc-template-editor-179668)
   * [Tile Match | Template + Editor](https://assetstore.unity.com/packages/templates/packs/tile-match-template-editor-282748#releases)
   * [Squad Shooter | Template + Editor](https://github.com/rhea-tyrads/badguyshooter/tree/main)
   * [Survival Island | Template + Editor](https://github.com/acidklon/First-Day-on-Earth-Survival)
+  * [Pet Doctor | Template + Editor](https://github.com/W4nderC/Rescue_the_Cats)
 * ~~[MAST - Modular Asset Staging Tool](https://assetstore.unity.com/packages/tools/level-design/mast-modular-asset-staging-tool-154939) 3d关卡编辑器(比TileMap好用)~~
 * ~~[Level Editor](https://github.com/taesiri/Tokyo?tab=readme-ov-file) 游戏内2D关卡编辑器~~
 * [LazyFetcher ](https://github.com/wafflesgama/LazyFetcher) 3D网格通用库和工具（想将其修改为资源通用库)
@@ -102,6 +103,7 @@ tags:
 * [Mighty DevOps](https://assetstore.unity.com/packages/tools/utilities/mighty-devops-minimap-bookmarks-screenshots-and-more-267512)  场景导航和项目完成提供免费的迷你地图
 * [Multi Screenshot](https://assetstore.unity.com/packages/tools/utilities/multi-screenshot-249566) Editor截图
 * [Fingers-Lite](https://assetstore.unity.com/packages/tools/input-management/fingers-lite-free-finger-touch-gestures-for-unity-64276) 输入插件([开源](https://github.com/DigitalRuby/FingersGestures)) / [付费版] [Fingers](https://assetstore.unity.com/packages/tools/input-management/fingers-touch-gestures-for-unity-41076) / [[Github](https://github.com/MrBaoquan/UNIHper)]
+* [Maze Cleaner - Hyper Casual Template](https://assetstore.unity.com/packages/templates/packs/maze-cleaner-hyper-casual-template-182608) 生成gif分享
 
 ##### Tween
 
