@@ -77,7 +77,7 @@ tags:
 
 ##### Editor Tool
 
-* [gltf-exporter](https://github.com/Plattar/gltf-exporter) 导出/导入gltf
+* ~~[gltf-exporter](https://github.com/Plattar/gltf-exporter) 导出/导入gltf  很久没维护更新~~
 * [Scene OBJ Exporter ](https://assetstore.unity.com/packages/tools/utilities/scene-obj-exporter-22250#content) 导出obj
 * [Lightweight Mesh Info](https://assetstore.unity.com/packages/tools/utilities/lightweight-mesh-info-277515) 显示Mesh的基础信息
 * [Watermelon Games](https://assetstore.unity.com/publishers/41882) Level Editor
@@ -100,6 +100,7 @@ tags:
 ##### Camera && Input
 
 * [UnityRuntimePreviewGenerator](https://github.com/yasirkula/UnityRuntimePreviewGenerator) 动态渲染图片
+* [付费] [3D 模型转 2D 精灵](https://assetstore.unity.com/packages/2d/characters/3d-model-to-2d-sprite-transparent-background-212839) 类似UnityRuntimePreviewGenerator,可处理3d模型动画
 * [付费] [Touch Camera Pro](https://assetstore.unity.com/packages/tools/camera/touch-camera-pro-2024-easy-mobile-desktop-camera-controller-194808#content) 摄像机工具
 * [Mighty DevOps](https://assetstore.unity.com/packages/tools/utilities/mighty-devops-minimap-bookmarks-screenshots-and-more-267512)  场景导航和项目完成提供免费的迷你地图
 * [Multi Screenshot](https://assetstore.unity.com/packages/tools/utilities/multi-screenshot-249566) Editor截图
@@ -111,9 +112,18 @@ tags:
 * [UniTween](https://github.com/gmhevinci/UniFramework/blob/main/UniFramework/UniTween) UniFramework.Tween
 * [Mini Tween Free](https://assetstore.unity.com/packages/tools/animation/mini-tween-free-281591) Mini Tween 方便Editor调试看效果
 
+##### Animation
+
+* [付费] [Amplify Animation Pack](https://assetstore.unity.com/packages/3d/animations/amplify-animation-pack-207911)  600 多个动画
+
 ##### Voxel
 
 * [付费] [Voxel toolkit](https://assetstore.unity.com/packages/tools/modeling/voxel-toolkit-magicavoxel-importer-247538) Vox导入插件
+
+##### Mesh
+
+* [Mesh Tools Bundle - Extract, Double-Sided, Material Painter](https://assetstore.unity.com/packages/tools/modeling/mesh-tools-bundle-extract-double-sided-material-painter-246929) / [[Github](https://github.com/ShinSeongChang/MetaLoadRefactor/tree/main/MetaLordRefactor_SSC/Assets/ImportAsset/Kamgam)]网格分离上色等
+* [Colorinchis - Recolor at Runtime and Bake Textures Tool](https://assetstore.unity.com/packages/vfx/shaders/colorinchis-recolor-at-runtime-and-bake-textures-tool-240878) 运行时重新着色
 
 ##### Debug
 
@@ -132,6 +142,10 @@ tags:
 
 * [ParticleEffectForUGUI](https://github.com/mob-sakai/ParticleEffectForUGUI)  UIParticle
 * [付费] [Confetti Fx 2](https://assetstore.unity.com/packages/vfx/particles/confetti-fx-2-170027#content) / [[Github](https://github.com/nsanfo/Capybara-Springs)]
+* [付费] [Unique Visual Effects](https://assetstore.unity.com/packages/vfx/shaders/unique-visual-effects-vfx-collection-193359) 独特视觉效果
+* [付费] [Poly Characters Effects Pack 2.0](https://assetstore.unity.com/packages/vfx/shaders/poly-characters-effects-pack-2-0-254711) 角色视觉效果
+* [付费] [Linework: Easy Outlines, Edges and Fills](https://assetstore.unity.com/packages/vfx/shaders/linework-easy-outlines-edges-and-fills-294140) 轻松勾勒轮廓
+* [URP Dissolve 2020](https://assetstore.unity.com/packages/vfx/shaders/urp-dissolve-2020-191256) URP溶解
 
 ##### GI / Shadow
 
@@ -144,13 +158,21 @@ tags:
 
 ##### URP
 
-* [付费] [Lux URP Essentials](https://assetstore.unity.com/packages/vfx/shaders/lux-urp-essentials-150355)
+* [付费] [Lux URP Essentials](https://assetstore.unity.com/packages/vfx/shaders/lux-urp-essentials-150355) / [[Github 1.98.1](https://github.com/masterrey/LookAway/blob/master/Assets/Store/Lux%20URP%20Essentials/ChangeLog.txt)] Lux URP着色器
+* [付费] [Amplify Shader Pack](https://assetstore.unity.com/packages/vfx/shaders/amplify-shader-pack-202484#description) / [[Github](https://github.com/CorneliusTheLion/ShaderLab/blob/main/Assets/Samples/AmplifyShaderPack/ChangeLog.txt)] 对URP提供支持,180个精选着色器 [[效果图](https://wiki.amplify.pt/index.php?title=Unity_Products:Amplify_Shader_Pack/URP)]
 * [付费] [Toony Colors Pro 2](https://assetstore.unity.com/packages/vfx/shaders/toony-colors-pro-2-8105) / [[Github](https://github.com/nsanfo/Capybara-Springs)] 风格化的着色器和工具
 * [付费] [COLR – Coloring Redefined](https://assetstore.unity.com/packages/vfx/shaders/colr-coloring-redefined-57591#description) 颜色着色器（无灯光所以高效，休闲游戏推荐使用）
-* [planar-reflections-unity](https://github.com/eldskald/planar-reflections-unity) 平面反射组件
 * [URP (LWRP)-Shaders](https://github.com/marcozakaria/URP-LWRP-Shaders/tree/master) URP shader
+* [付费] [Lens Flares URP](https://assetstore.unity.com/packages/vfx/lens-flares-urp-hdrp-198361) 光晕效果
+* [planar-reflections-unity](https://github.com/eldskald/planar-reflections-unity) 平面反射组件
 * [动画进度条着色器图](https://github.com/MirzaBeig/Animated-Progress-Bar-Shader-Graph) 动画进度条,只使用shader
 * [动态UV（坐标和颜色）](https://assetstore.unity.com/packages/tools/utilities/dynamic-uv-coordinates-colors-212742)
+* [将相机视图投影到角色 UV](https://assetstore.unity.com/packages/tools/utilities/project-camera-view-to-character-uv-301344#reviews)
+* [UV 独立渐变](https://assetstore.unity.com/packages/vfx/shaders/uv-independent-gradient-249703)
+
+#### Water
+
+* [付费] [Low Poly Water ](https://assetstore.unity.com/packages/vfx/shaders/low-poly-water-100-gpu-180176#description) / [Github] 低多边形水
 
 #### Native
 
