@@ -61,9 +61,11 @@ tags:
 
 ##### Unity Extension
 
-* [Serialized Dictionary Lite](https://assetstore.unity.com/packages/tools/utilities/serialized-dictionary-lite-110992) Unity序列化Dictionary
+* ~~[Serialized Dictionary Lite](https://assetstore.unity.com/packages/tools/utilities/serialized-dictionary-lite-110992) Unity序列化Dictionary （key -> 单个value还会折叠,比较麻烦）~~
+* [Serializable-Dictionary-Unity ](https://github.com/EduardMalkhasyan/Serializable-Dictionary-Unity) 较好的Unity序列化Dictionary
 * [Unity.mathx](https://github.com/ltmx/Unity.mathx) Unity.Mathematics 扩展
 * [EasyEntitas](https://github.com/sonilyan/EasyEntitas) Entitas的无代码生成版本(基于[Entitas-Lite](https://github.com/rocwood/Entitas-Lite)的优化版本)
+* [BaseTool](https://github.com/DarkRewar/BaseTool?tab=readme-ov-file#class-extensions) Unity工具库大型工具库
 * [构建公司内部的PackageManager](https://cloud.tencent.com/developer/article/2086298)
 
 ##### UI
