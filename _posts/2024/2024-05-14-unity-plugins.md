@@ -152,6 +152,7 @@ tags:
 ##### GI / Shadow
 
 * [PlanarShadow-URP](https://github.com/czy-moyu/PlanarShadow-URP/tree/main) / [PlannarShadowForUnity](https://github.com/ozlael/PlannarShadowForUnity) 平面阴影
+* [Fast Volumetric Blob Shadows](https://assetstore.unity.com/packages/vfx/shaders/fast-volumetric-blob-shadows-29928#content) / [[Github](https://github.com/inzenfenix/BCatJam/blob/3dcc8f43485f65f3dced83dcf2c0075174fc9b6d/Assets/FastVolumetricBlobShadows/Changelog.txt#L29)]
 * [付费] [Corgi Cached Shadows (for URP)](https://assetstore.unity.com/packages/tools/particles-effects/corgi-cached-shadows-for-urp-246936) 实时缓存阴影
 
 ##### Standard

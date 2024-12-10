@@ -38,7 +38,7 @@ OpenCore Legacy Patcher安装Sonoma流程：[OpenCore Legacy Patcher](https://do
   sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.ReportCrash.Root.plist
   ```
 
-# Mac Mini Late 2014抹除硬盘
+## Mac Mini Late 2014抹除硬盘
 
 - 重置硬盘
   - 如需要重置，需要先卸载OpenCore Legacy Patcher，重置NVRAM，删除EFI分区，不然无法重新安装原先的系统。
@@ -51,10 +51,14 @@ OpenCore Legacy Patcher安装Sonoma流程：[OpenCore Legacy Patcher](https://do
   - Apple分区图：用于启动Windows的分区。
   - GUID分区图：启动 Mac OS 的，区别在于 GUID分区图 是启动Intel芯片的
 
-# Mac Mini Late 2014 安装常规系统
+## Mac Mini Late 2014 安装常规系统
 
 - 安装出厂MacOS版本（Monterey）
   - 长按 windows + Alt + R (即[Option(⌥) + Command (⌘) + R](https://support.apple.com/en-us/102603))然后长按开机键从互联网安装
   - 如果失败，则是因为网络原因，不要用WIFI，而是直接用网线连接
   - 不要使用 Shift + windows + Alt + R，因为会安装出厂自带的Yosemite
   - 安装完跳过登录Apple Account，才能设置开机密码和账户密码相同
+
+## 固态选择
+
+- 据闲鱼的网友uhone说，建兴的固态在Mac Mini 2014 Late的机子兼容上最好，读写都和原装评估硬盘一样速度达到800多。
