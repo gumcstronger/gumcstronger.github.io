@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "Unity common plugins and tutorials"
+title:      "Unity 常用插件和教程"
 subtitle:   " \"Unity common plugins and tutorials\""
 date:       2024-05-14 12:15:00
 author:     "Gumc"
@@ -55,14 +55,20 @@ tags:
 
 ##### Framework
 
-* ET
-* GameFramework
-* [Instant Games Bridge](https://github.com/instant-games-bridge/instant-games-bridge-unity) 发布playgama HTML5 游戏的 SDK
+* Client
+  * [ET](https://github.com/egametang/ET)
+  * GameFramework
+  * [Instant Games Bridge](https://github.com/instant-games-bridge/instant-games-bridge-unity) 发布playgama HTML5 游戏的 SDK
+* Server
+  * [ET](https://github.com/egametang/ET)
+  * GeekServer
 
 ##### Unity Extension
 
 * ~~[Serialized Dictionary Lite](https://assetstore.unity.com/packages/tools/utilities/serialized-dictionary-lite-110992) Unity序列化Dictionary （key -> 单个value还会折叠,比较麻烦）~~
 * [Serializable-Dictionary-Unity ](https://github.com/EduardMalkhasyan/Serializable-Dictionary-Unity) 较好的Unity序列化Dictionary
+* [unity-utilities](https://github.com/minerva-studio/unity-utilities) Unity有用的工具
+* [TArray](https://github.com/ovsky/TArray) 序列化二维数组
 * [Unity.mathx](https://github.com/ltmx/Unity.mathx) Unity.Mathematics 扩展
 * [EasyEntitas](https://github.com/sonilyan/EasyEntitas) Entitas的无代码生成版本(基于[Entitas-Lite](https://github.com/rocwood/Entitas-Lite)的优化版本)
 * [BaseTool](https://github.com/DarkRewar/BaseTool?tab=readme-ov-file#class-extensions) Unity工具库大型工具库
@@ -79,20 +85,33 @@ tags:
 
 ##### Editor Tool
 
+###### Mesh / Object
+
 * ~~[gltf-exporter](https://github.com/Plattar/gltf-exporter) 导出/导入gltf  很久没维护更新~~
 * [Scene OBJ Exporter ](https://assetstore.unity.com/packages/tools/utilities/scene-obj-exporter-22250#content) 导出obj
+* [LazyFetcher ](https://github.com/wafflesgama/LazyFetcher) 3D网格通用库和工具（想将其修改为资源通用库)
 * [Lightweight Mesh Info](https://assetstore.unity.com/packages/tools/utilities/lightweight-mesh-info-277515) 显示Mesh的基础信息
+* [付费] [Mesh Simplify](https://assetstore.unity.com/packages/tools/modeling/mesh-simplify-43658#content) / [Github]()
+* [付费] [UModeler](https://assetstore.unity.com/packages/tools/modeling/umodeler-80868#description) / [Github](https://github.com/bkostrowiecki/tk-jam-2023/tree/5f475070861b3e9ddbb210055495aaafca2f5555)
+* [Mesh Tools Bundle - Extract, Double-Sided, Material Painter](https://assetstore.unity.com/packages/tools/modeling/mesh-tools-bundle-extract-double-sided-material-painter-246929) / [[Github](https://github.com/ShinSeongChang/MetaLoadRefactor/tree/main/MetaLordRefactor_SSC/Assets/ImportAsset/Kamgam)]网格分离上色等
+* ~~[Mesh Optimizer](https://assetstore.unity.com/packages/tools/modeling/mesh-optimizer-154517) 优化后会有问题，棉会变为平面~~
+* [付费][ Mesh Simplify](https://assetstore.unity.com/packages/tools/modeling/mesh-simplify-43658#content) / [[Github](https://github.com/Bhawesh02/Car-Physics/blob/8c4f5ea7f7f6bfb4cf28aa3d6bbf71bbf3d4b810/Car_Physics/Assets/Ultimate%20Game%20Tools/MeshSimplify/!Readme.txt)] Mesh简化
+
+###### Level Editor
+
 * [Watermelon Games](https://assetstore.unity.com/publishers/41882) Level Editor
-  * [Park Inc Template + Editor](https://assetstore.unity.com/packages/templates/packs/park-inc-template-editor-179668) | 百度云
-  * [Tile Match | Template + Editor](https://assetstore.unity.com/packages/templates/packs/tile-match-template-editor-282748#releases)
-  * [Squad Shooter | Template + Editor](https://github.com/rhea-tyrads/badguyshooter/tree/main)
-  * [Survival Island | Template + Editor](https://github.com/acidklon/First-Day-on-Earth-Survival)
-  * [Pet Doctor | Template + Editor](https://github.com/W4nderC/Rescue_the_Cats)
-  * [Match Joy | Template + Editor](https://assetstore.unity.com/packages/templates/packs/match-joy-template-editor-185204#content) | 百度云
+  * [付费] [Park Inc Template + Editor](https://assetstore.unity.com/packages/templates/packs/park-inc-template-editor-179668) | 百度云
+  * [付费] [Tile Match | Template + Editor](https://assetstore.unity.com/packages/templates/packs/tile-match-template-editor-282748#releases)
+  * [付费] [Squad Shooter | Template + Editor](https://github.com/rhea-tyrads/badguyshooter/tree/main)
+  * [付费] [Survival Island | Template + Editor](https://github.com/acidklon/First-Day-on-Earth-Survival)
+  * [付费] [Pet Doctor | Template + Editor](https://github.com/W4nderC/Rescue_the_Cats)
+  * [付费] [Match Joy | Template + Editor](https://assetstore.unity.com/packages/templates/packs/match-joy-template-editor-185204#content) | 百度云
 * ~~[MAST - Modular Asset Staging Tool](https://assetstore.unity.com/packages/tools/level-design/mast-modular-asset-staging-tool-154939) 3d关卡编辑器(比TileMap好用)~~
 * ~~[Level Editor](https://github.com/taesiri/Tokyo?tab=readme-ov-file) 游戏内2D关卡编辑器~~
-* [LazyFetcher ](https://github.com/wafflesgama/LazyFetcher) 3D网格通用库和工具（想将其修改为资源通用库)
 * [付费] [Maintainer ](https://assetstore.unity.com/packages/tools/utilities/maintainer-32199#content) 查找项目中丢失的资源或脚本 / [[Github](https://github.com/DavidCampbellIII/DiabetesSimulator/tree/main)]
+
+###### Other
+
 * [PBR 纹理打包成一个纹理贴图](https://github.com/PreyK/Unigine-Shading-Map-Generator)
 
 ##### Security
@@ -106,7 +125,7 @@ tags:
 * [付费] [Touch Camera Pro](https://assetstore.unity.com/packages/tools/camera/touch-camera-pro-2024-easy-mobile-desktop-camera-controller-194808#content) 摄像机工具
 * [Mighty DevOps](https://assetstore.unity.com/packages/tools/utilities/mighty-devops-minimap-bookmarks-screenshots-and-more-267512)  场景导航和项目完成提供免费的迷你地图
 * [Multi Screenshot](https://assetstore.unity.com/packages/tools/utilities/multi-screenshot-249566) Editor截图
-* [Fingers-Lite](https://assetstore.unity.com/packages/tools/input-management/fingers-lite-free-finger-touch-gestures-for-unity-64276) 输入插件([开源](https://github.com/DigitalRuby/FingersGestures)) / [付费版] [Fingers](https://assetstore.unity.com/packages/tools/input-management/fingers-touch-gestures-for-unity-41076) / [[Github](https://github.com/MrBaoquan/UNIHper)]
+* [[开源Lite版](https://github.com/DigitalRuby/FingersGestures)] [Fingers-Lite](https://assetstore.unity.com/packages/tools/input-management/fingers-lite-free-finger-touch-gestures-for-unity-64276) 输入插件 / [付费] [Fingers](https://assetstore.unity.com/packages/tools/input-management/fingers-touch-gestures-for-unity-41076) / [[Github](https://github.com/MrBaoquan/UNIHper)]
 * [Maze Cleaner - Hyper Casual Template](https://assetstore.unity.com/packages/templates/packs/maze-cleaner-hyper-casual-template-182608) 生成gif分享
 
 ##### Tween
@@ -124,8 +143,8 @@ tags:
 
 ##### Mesh
 
-* [Mesh Tools Bundle - Extract, Double-Sided, Material Painter](https://assetstore.unity.com/packages/tools/modeling/mesh-tools-bundle-extract-double-sided-material-painter-246929) / [[Github](https://github.com/ShinSeongChang/MetaLoadRefactor/tree/main/MetaLordRefactor_SSC/Assets/ImportAsset/Kamgam)]网格分离上色等
 * [Colorinchis - Recolor at Runtime and Bake Textures Tool](https://assetstore.unity.com/packages/vfx/shaders/colorinchis-recolor-at-runtime-and-bake-textures-tool-240878) 运行时重新着色
+* [付费] [Automatic LOD](https://assetstore.unity.com/packages/tools/modeling/automatic-lod-43652)  远处自动减少网格 / [Github]
 
 ##### Debug
 
@@ -165,6 +184,9 @@ tags:
 * [付费] [Amplify Shader Pack](https://assetstore.unity.com/packages/vfx/shaders/amplify-shader-pack-202484#description) / [[Github](https://github.com/CorneliusTheLion/ShaderLab/blob/main/Assets/Samples/AmplifyShaderPack/ChangeLog.txt)] 对URP提供支持,180个精选着色器 [[效果图](https://wiki.amplify.pt/index.php?title=Unity_Products:Amplify_Shader_Pack/URP)]
 * [付费] [Toony Colors Pro 2](https://assetstore.unity.com/packages/vfx/shaders/toony-colors-pro-2-8105) / [[Github](https://github.com/nsanfo/Capybara-Springs)] 风格化的着色器和工具
 * [付费] [COLR – Coloring Redefined](https://assetstore.unity.com/packages/vfx/shaders/colr-coloring-redefined-57591#description) 颜色着色器（无灯光所以高效，休闲游戏推荐使用）
+* [付费][ Toon Detailer: Cavity Contours](https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/toon-detailer-cavity-contours-262457) 类似SSAO的效果？
+* [MK ChromaFlow - Gradient Shaders](https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/mk-chromaflow-gradient-shaders-296243) 场景气氛？
+* [Polyverse Skies | Low Poly Skybox Shaders](https://assetstore.unity.com/packages/vfx/shaders/polyverse-skies-low-poly-skybox-shaders-104017) 天空盒
 * [URP (LWRP)-Shaders](https://github.com/marcozakaria/URP-LWRP-Shaders/tree/master) URP shader
 * [付费] [Lens Flares URP](https://assetstore.unity.com/packages/vfx/lens-flares-urp-hdrp-198361) 光晕效果
 * [planar-reflections-unity](https://github.com/eldskald/planar-reflections-unity) 平面反射组件
