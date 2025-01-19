@@ -2,7 +2,7 @@
 layout:     post
 title:      "如何看生辰八字"
 subtitle:   "中国命理学"
-date:       2025-01-011 14:15:00
+date:       2025-01-11 14:15:00
 language:   zh-CN
 author:     "Gumc"
 header-img: "assets/img/2015/post-bg-2015.jpg"
