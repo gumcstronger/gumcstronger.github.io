@@ -145,6 +145,8 @@ tags:
 
 * [Colorinchis - Recolor at Runtime and Bake Textures Tool](https://assetstore.unity.com/packages/vfx/shaders/colorinchis-recolor-at-runtime-and-bake-textures-tool-240878) 运行时重新着色
 * [付费] [Automatic LOD](https://assetstore.unity.com/packages/tools/modeling/automatic-lod-43652)  远处自动减少网格 / [Github]
+* [27 Slicer](https://assetstore.unity.com/packages/tools/utilities/27-slicer-204453?aid=1101ljXAW) 3D Mesh拉伸缩放(类似UI的九宫格)
+* [付费] [Mesh Slicer](https://assetstore.unity.com/packages/tools/modeling/mesh-slicer-59618#content) 模型切割 / [[Github](https://github.com/JWdori/Haply_WoodCarving/blob/cebe728ac75894a452b1b8abccb88546db015285/Assets/BzKovSoft/CharacterSlicer/BzSliceableCharacter.cs#L9)]
 
 ##### Debug
 
