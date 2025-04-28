@@ -204,6 +204,7 @@ tags:
 #### Native
 
 * [付费] [Cross Platform Native Plugins](https://assetstore.unity.com/packages/tools/integration/*cross-platform-native-plugins-essential-kit-mobile-ios-android-140111) Android/iOS原生平台功能
+* [Ads-Kit](https://github.com/voxelbusters/ads-kit) Android/iOS平台的广告插件(Admob、AppLovin、Unity Level Play\)
 
 #### Other
 
