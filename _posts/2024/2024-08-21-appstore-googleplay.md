@@ -29,7 +29,11 @@ tags:
 
 ## Appstore
 
-[注册海外账户](注册非中国大陆区)
+### [注册海外账户](https://github.com/Alvin9999/new-pac/wiki/iOS%E6%B3%A8%E5%86%8C%E7%BE%8E%E5%8C%BAApple-ID%E6%95%99%E7%A8%8B)
+
+### Get User
+
+* [promote](https://developer.apple.com/cn/app-store/promote/)
 
 ## GooglePlay
 
