@@ -103,11 +103,10 @@ tags:
 
   * [付费] [Park Inc Template + Editor](https://assetstore.unity.com/packages/templates/packs/park-inc-template-editor-179668) / 百度云
   * [付费] [Tile Match Template + Editor](https://assetstore.unity.com/packages/templates/packs/tile-match-template-editor-282748#releases)
-  * [付费] [Squad Shooter Template + Editor](https://github.com/rhea-tyrads/badguyshooter/tree/main)
-  * [付费] [Survival Island Template + Editor](https://github.com/acidklon/First-Day-on-Earth-Survival)
-  * [付费] [Pet Doctor Template + Editor](https://github.com/W4nderC/Rescue_the_Cats)
+  * [付费] [Squad Shooter Template + Editor](https://github.com/rhea-tyrads/badguyshooter/tree/main) / ([Github](https://github.com/rhea-tyrads/badguyshooter/tree/main))
+  * [付费] [Survival Island Template + Editor](https://github.com/acidklon/First-Day-on-Earth-Survival) / ([Github](https://github.com/acidklon/First-Day-on-Earth-Survival))
+  * [付费] [Pet Doctor Template + Editor](https://github.com/W4nderC/Rescue_the_Cats) / ([Github](https://github.com/W4nderC/Rescue_the_Cats))
   * [付费] [Match Joy Template + Editor](https://assetstore.unity.com/packages/templates/packs/match-joy-template-editor-185204#content) / 百度云
-
 * ~~[MAST - Modular Asset Staging Tool](https://assetstore.unity.com/packages/tools/level-design/mast-modular-asset-staging-tool-154939) 3d关卡编辑器(比TileMap好用)~~
 * ~~[Level Editor](https://github.com/taesiri/Tokyo?tab=readme-ov-file) 游戏内2D关卡编辑器~~
 * [付费] [Maintainer ](https://assetstore.unity.com/packages/tools/utilities/maintainer-32199#content) 查找项目中丢失的资源或脚本 / [[Github](https://github.com/DavidCampbellIII/DiabetesSimulator/tree/main)]
@@ -191,7 +190,6 @@ tags:
 * [付费][ Toon Detailer: Cavity Contours](https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/toon-detailer-cavity-contours-262457) 类似SSAO的效果？
 * [MK ChromaFlow - Gradient Shaders](https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/mk-chromaflow-gradient-shaders-296243) 场景气氛？
 * [Polyverse Skies Low Poly Skybox Shaders](https://assetstore.unity.com/packages/vfx/shaders/polyverse-skies-low-poly-skybox-shaders-104017) 天空盒
-
 * [URP (LWRP)-Shaders](https://github.com/marcozakaria/URP-LWRP-Shaders/tree/master) URP shader
 * [付费] [Lens Flares URP](https://assetstore.unity.com/packages/vfx/lens-flares-urp-hdrp-198361) 光晕效果
 * [planar-reflections-unity](https://github.com/eldskald/planar-reflections-unity) 平面反射组件
