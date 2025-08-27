@@ -8,7 +8,7 @@ author:     "Gumc"
 header-img: "assets/img/2015/post-bg-2015.jpg"
 catalog: true
 tags:
-    - AI
+    - Game Development
 ---
 [官方参考](https://docs.unity3d.com/6000.2/Documentation/Manual/ent-proxy-cmd-file.html)
 [论坛参考](https://discussions.unity.com/t/trouble-signing-in-i-am-redirected-to-id-unity-cn/875158/12)
@@ -112,5 +112,4 @@ nohup "/Applications/Unity Hub.app/Contents/MacOS/Unity Hub" &>/dev/null &' > la
 
 * 授权
   `chmod +x launchUnityHub.command`
-
 * 同样双击运行
