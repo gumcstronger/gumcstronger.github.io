@@ -89,7 +89,7 @@ pause
   将D:\ProgramFiles\Unity Hub\Unity Hub.exe替换为你的Unity Hub路径
 * 保存脚本
   打开Windows的记事本，复制以上代码，修改后点击**文件**-**另存为**-**在"保存类型"下拉菜单中，选择 “所有文件 (.)”**-命名你的文件launch_unity_hub.cmd-保存到桌面（方便访问）
-* 双击双击launch_unity_hub.bat
+* 双击运行launch_unity_hub.bat，就会自动打开Unity Hub
 
 ## Mac用户
 
