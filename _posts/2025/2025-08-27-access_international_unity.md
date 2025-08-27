@@ -10,7 +10,8 @@ catalog: true
 tags:
     - AI
 ---
-[参考](https://docs.unity3d.com/6000.2/Documentation/Manual/ent-proxy-cmd-file.html)
+[官方参考](https://docs.unity3d.com/6000.2/Documentation/Manual/ent-proxy-cmd-file.html)
+[论坛参考](https://discussions.unity.com/t/trouble-signing-in-i-am-redirected-to-id-unity-cn/875158/12)
 
 ## 查看代理端口
 
