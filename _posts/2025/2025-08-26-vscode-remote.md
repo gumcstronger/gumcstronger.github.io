@@ -1,7 +1,7 @@
 ---
 layout:     post
-title:      "Vscode实现远程工作"
-subtitle:   "Vscode Remote tunnel"
+title:      "远程工作：UU一键远程，iPad第二屏幕,vscode远程代码"
+subtitle:   "UU Remote & Ipad Second Screen & Vscode Remote tunnel"
 date:       2025-08-26 12:15:00
 language:   zh-CN
 author:     "Gumc"
@@ -12,7 +12,19 @@ tags:
 ---
 近期因为工作需要，大部分情况下需要使用笔记本工作，奈何笔记本性能不行，只能通过远程来凑。
 
-而直接使用UU远程让笔记本控制台式电脑，键盘和鼠标的输入太慢，打字写代码延迟很久很影响效率。所以改为UU远程控制电脑方便用于Unity调试，而vscode远程代码可以直接在笔记本上写代码。
+## UU远程
+
+远程视频选用UU远程登录账号后，可直接从Mac air笔记本远程Windows。甚至可以实现手机开机（暂未测试）。
+
+## iPad作为第二屏幕
+
+市面上的软件包括~~Duet Display(付费)，Yam Display(付费)~~等软件都需要付费且有可能比较坑。还有想~~SpaceDesk~~只支持WIndows。所以最终选用[Deskpad ](https://github.com/Stengo/DeskPad)+ [Deskreen](https://github.com/pavlobu/deskreen)方案，因为两者都是开源的。先使用Deskpad开启虚拟第二屏幕，假装有两个屏幕。再使用Deskreen将第二屏幕通过Wifi投射到Ipad上(只要有浏览器就都可以实现)。
+
+Deskreen似乎这几年没有维护了，目前再Mac OS最新系统上，需要关闭防火墙后才有效。为了安全每次关闭防火墙，连接Deskreen后再重新打开防火墙。
+
+## Vscode Remote Tunnel远程代码
+
+直接使用UU远程让笔记本控制台式电脑，键盘和鼠标的输入太慢，打字写代码延迟很久很影响效率。所以改为UU远程控制电脑方便用于Unity调试，而vscode远程代码可以直接在笔记本上写代码，并实时同步到台式机上运行。
 
 * 在台式主机上的vscode开启Remote Tunnel
   点击右下角Account头像 - Turn On Remote Tunnel Access，使用Github或Microsoft登录。
