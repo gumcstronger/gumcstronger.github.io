@@ -18,9 +18,11 @@ tags:
 
 ## iPad作为第二屏幕
 
-市面上的软件包括~~Duet Display(付费)，Yam Display(付费)~~等软件都需要付费且有可能比较坑。还有想~~SpaceDesk~~只支持WIndows。所以最终选用[Deskpad ](https://github.com/Stengo/DeskPad)+ [Deskreen](https://github.com/pavlobu/deskreen)方案，因为两者都是开源的。先使用Deskpad开启虚拟第二屏幕，假装有两个屏幕。再使用Deskreen将第二屏幕通过Wifi投射到Ipad上(只要有浏览器就都可以实现)。
+~~市面上的软件包括Duet Display(付费)，Yam Display(付费)等软件都需要付费且有可能比较坑。还有想SpaceDesk只支持WIndows。所以最终选用[Deskpad ](https://github.com/Stengo/DeskPad)+ [Deskreen](https://github.com/pavlobu/deskreen)方案，因为两者都是开源的。先使用Deskpad开启虚拟第二屏幕，假装有两个屏幕。再使用Deskreen将第二屏幕通过Wifi投射到Ipad上(只要有浏览器就都可以实现)。~~
 
-Deskreen似乎这几年没有维护了，目前再Mac OS最新系统上，需要关闭防火墙后才有效。为了安全每次关闭防火墙，连接Deskreen后再重新打开防火墙。
+~~Deskreen似乎这几年没有维护了，目前再Mac OS最新系统上，需要关闭防火墙后才有效。为了安全每次关闭防火墙，连接Deskreen后再重新打开防火墙。~~
+
+Deskreen的延迟太严重，使用Duet Display通过usb连接，记得取消其本地网络设备连接的权限。免费版30分钟重连一次。
 
 ## Vscode Remote Tunnel远程代码
 
