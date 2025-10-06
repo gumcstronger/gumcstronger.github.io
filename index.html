@@ -6,6 +6,7 @@ description: page-description-index
 {% assign config = site.data.config | where: "language",site.active_lang | first %}
 
 {% for post in paginator.posts %}
+{% if post.visible != false %}
 <div class="post-preview">
     <a href="{{ post.url | prepend: site.baseurl }}">
         <h2 class="post-title">
@@ -31,6 +32,7 @@ description: page-description-index
     </p>
 </div>
 <hr>
+{% endif %}
 {% endfor %}
 
 <!-- Pager -->
