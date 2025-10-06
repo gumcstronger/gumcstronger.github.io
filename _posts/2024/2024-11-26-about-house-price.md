@@ -6,7 +6,8 @@ date:       2024-11-26 14:15:00
 language:   zh-CN
 author:     "Gumc"
 header-img: "assets/img/2015/post-bg-2015.jpg"
-catalog: true
+catalog:    true
+visible:    false
 tags:
     - Society and Science
 ---

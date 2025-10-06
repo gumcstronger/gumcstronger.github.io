@@ -6,6 +6,7 @@ date:       2022-09-12 01:40:00
 author:     "Gumc"
 header-img: "assets/img/2015/post-bg-2015.jpg"
 catalog: true
+visible:   false
 tags:
     - Life
 ---
