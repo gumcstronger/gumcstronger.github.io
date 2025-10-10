@@ -31,6 +31,10 @@ tags:
 
 ### [注册海外账户](https://github.com/Alvin9999/new-pac/wiki/iOS%E6%B3%A8%E5%86%8C%E7%BE%8E%E5%8C%BAApple-ID%E6%95%99%E7%A8%8B)
 
+### Public
+
+* [Ruby和Cocoapods的安装](2024年在Mac上安装Ruby的最快、最简单的方法)
+
 ### Get User
 
 * [promote](https://developer.apple.com/cn/app-store/promote/)
