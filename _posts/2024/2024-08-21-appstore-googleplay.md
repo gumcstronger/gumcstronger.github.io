@@ -33,7 +33,7 @@ tags:
 
 ### Public
 
-* [Ruby和Cocoapods的安装](2024年在Mac上安装Ruby的最快、最简单的方法)
+* [Ruby和Cocoapods的安装](https://gumcstronger.github.io/2024/10/01/mac-ruby-install/)
 
 ### Get User
 
