@@ -33,13 +33,20 @@ tags:
 
 ### Public
 
-* [Ruby和Cocoapods的安装](https://gumcstronger.github.io/2024/10/01/mac-ruby-install/)
+* [Ruby和Cocoapods](https://gumcstronger.github.io/2024/10/01/mac-ruby-install/) 安装教程
+* [MagicScript: App Store Connect Automation](https://chromewebstore.google.com/detail/magicscript-app-store-con/dibilpekhfnlccjpcgkkancjamoeljcp) AppStore Connect版本更新多语言自动化工具
+
+### ASO
 
 ### Get User
 
 * [promote](https://developer.apple.com/cn/app-store/promote/)
 
 ## GooglePlay
+
+### ASO
+
+* [Play Store ASO Tweak by TaoufikGFX](https://chromewebstore.google.com/detail/play-store-aso-tweak-by-t/kbicddhhnpiaphanlgkiaokbebecdcnd)
 
 ### Get Free User
 
