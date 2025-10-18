@@ -41,6 +41,8 @@ tags:
 ### Get User
 
 * [promote](https://developer.apple.com/cn/app-store/promote/)
+* [申请推荐] 见AppStore开发者后台
+* [Review问题](https://developer.apple.com/cn/distribute/app-review/)
 
 ## GooglePlay
 
@@ -69,3 +71,24 @@ ASO/谷歌趋势：[获取海外流量技巧](https://www.youtube.com/watch?v=Pl
 
 * [GooglePlay Sdk Index](https://play.google.com/sdks/?hl=zh-cn) 用于GooglePlay后台数据安全表单配置
 * [GooglePlay社区](https://support.google.com/googleplay/android-developer/threads?hl=zh-Hans&max_results=20) 查看社区帖子
+
+## 其他平台
+
+* 360
+* 阿里巴巴
+* AltStore
+* Amazon Appstore
+* Aptoide
+* Epic Game Store
+* GOG
+* 华为应用上帝那
+* Humble Store
+* MacPaw/SetApp
+* Microsoft Store
+* One Store
+* Oppo软件商店
+* Steam
+* Taptap
+* 腾讯应用宝
+* vivo应用商店
+* 小米应用商店
