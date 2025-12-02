@@ -6,6 +6,7 @@ date:       2023-03-06 23:30:00
 author:     "Gumc"
 header-img: "assets/img/2015/post-bg-2015.jpg"
 catalog: true
+visible:   false
 tags:
     - Life
 ---

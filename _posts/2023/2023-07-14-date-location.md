@@ -6,6 +6,7 @@ date:       2023-07-14 15:44:00
 author:     "Gumc"
 header-img: "assets/img/2015/post-bg-2015.jpg"
 catalog: true
+visible:   false
 tags:
     - Continuous Updates
 ---

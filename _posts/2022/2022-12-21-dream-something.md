@@ -6,6 +6,7 @@ date:       2022-12-21 08:27:00
 author:     "Gumc"
 header-img: "assets/img/2015/post-bg-2015.jpg"
 catalog: true
+visible:   false
 tags:
     - Dreams
 ---
