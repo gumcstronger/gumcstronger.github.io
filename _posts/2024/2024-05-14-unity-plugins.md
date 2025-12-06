@@ -108,7 +108,7 @@ tags:
 * [Watermelon Games](https://assetstore.unity.com/publishers/41882) Level Editor
 
   * [付费] [Park Inc Template + Editor](https://assetstore.unity.com/packages/templates/packs/park-inc-template-editor-179668) / 百度云
-  * [付费] [Tile Match Template + Editor](https://assetstore.unity.com/packages/templates/packs/tile-match-template-editor-282748#releases)
+  * [付费] [Tile Match Template + Editor](https://assetstore.unity.com/packages/templates/packs/tile-match-template-editor-282748#releases) / ([Github](https://github.com/DevSaltocorp/Tile-Match))
   * [付费] [Squad Shooter Template + Editor](https://github.com/rhea-tyrads/badguyshooter/tree/main) / ([Github](https://github.com/rhea-tyrads/badguyshooter/tree/main))
   * [付费] [Survival Island Template + Editor](https://github.com/acidklon/First-Day-on-Earth-Survival) / ([Github](https://github.com/acidklon/First-Day-on-Earth-Survival))
   * [付费] [Pet Doctor Template + Editor](https://github.com/W4nderC/Rescue_the_Cats) / ([Github](https://github.com/W4nderC/Rescue_the_Cats))
@@ -128,7 +128,7 @@ tags:
 
 ##### Security
 
-* [付费] [Anti-Cheat Toolkit](https://assetstore.unity.com/packages/tools/utilities/anti-cheat-toolkit-2023-202695#releases) 反作弊 / [[Github](https://github.com/IRONFACTORY/MinionsDefence/blob/main/Assets/Plugins/CodeStage/AntiCheatToolkit/CHANGELOG.md)]
+* [付费] [Anti-Cheat Toolkit](https://assetstore.unity.com/packages/tools/utilities/anti-cheat-toolkit-2023-202695#releases) 反作弊 / [[Github](https://github.com/deathcrykr/TapStar/tree/main/Assets/Plugins/CodeStage/AntiCheatToolkit)]
 
 ##### Camera && Input
 
@@ -201,7 +201,7 @@ tags:
 * [付费] [Lux URP Essentials](https://assetstore.unity.com/packages/vfx/shaders/lux-urp-essentials-150355) / [[Github 1.98.1](https://github.com/masterrey/LookAway/blob/master/Assets/Store/Lux%20URP%20Essentials/ChangeLog.txt)] Lux URP着色器
 * [付费] [Amplify Shader Pack](https://assetstore.unity.com/packages/vfx/shaders/amplify-shader-pack-202484#description) / [[Github](https://github.com/CorneliusTheLion/ShaderLab/blob/main/Assets/Samples/AmplifyShaderPack/ChangeLog.txt)] 对URP提供支持,180个精选着色器 [[效果图](https://wiki.amplify.pt/index.php?title=Unity_Products:Amplify_Shader_Pack/URP)]
 * [付费] [Toony Colors Pro 2](https://assetstore.unity.com/packages/vfx/shaders/toony-colors-pro-2-8105) / [[Github](https://github.com/nsanfo/Capybara-Springs)] 风格化的着色器和工具
-* [付费] [COLR – Coloring Redefined](https://assetstore.unity.com/packages/vfx/shaders/colr-coloring-redefined-57591#description) 颜色着色器（无灯光所以高效，休闲游戏推荐使用）
+* [付费] [COLR – Coloring Redefined](https://assetstore.unity.com/packages/vfx/shaders/colr-coloring-redefined-57591#description) 颜色着色器（无灯光所以高效，休闲游戏推荐使用）/ [Github]
 * [付费][ Toon Detailer: Cavity Contours](https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/toon-detailer-cavity-contours-262457) 类似SSAO的效果？
 * [MK ChromaFlow - Gradient Shaders](https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/mk-chromaflow-gradient-shaders-296243) 场景气氛？
 * [Polyverse Skies Low Poly Skybox Shaders](https://assetstore.unity.com/packages/vfx/shaders/polyverse-skies-low-poly-skybox-shaders-104017) 天空盒
