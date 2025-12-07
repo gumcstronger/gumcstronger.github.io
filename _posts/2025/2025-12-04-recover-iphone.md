@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "才能在没有 Face ID 的情况下关闭防盗保护"
+title:      "在没有 Face ID 的情况下关闭防盗保护"
 subtitle:   "Recover Iphone without Face ID"
 date:       2025-12-04 12:15:00
 language:   zh-CN
@@ -10,7 +10,6 @@ catalog:    true
 tags:
     - Mobile
 ---
-
 你需要这些：
 
 * 手机关联Apple ID。
