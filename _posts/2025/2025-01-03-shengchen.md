@@ -8,7 +8,7 @@ author:     "Gumc"
 header-img: "assets/img/2015/post-bg-2015.jpg"
 catalog: true
 tags:
-    - Market
+    - Life
 ---
 [中国古代命理学要义讲稿-王德峰.pdf](https://data.guoxueruanjian.com/books/%E4%B8%AD%E5%9B%BD%E5%8F%A4%E4%BB%A3%E5%91%BD%E7%90%86%E5%AD%A6%E8%A6%81%E4%B9%89%E8%AE%B2%E7%A8%BF-%E7%8E%8B%E5%BE%B7%E5%B3%B0.pdf)
 

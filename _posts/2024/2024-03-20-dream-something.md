@@ -8,7 +8,6 @@ header-img: "assets/img/2015/post-bg-2015.jpg"
 catalog: true
 tags:
     - Dreams
-    - Continuous Updates
 ---
 ## 3月20号
 
