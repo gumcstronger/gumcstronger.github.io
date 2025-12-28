@@ -2,7 +2,7 @@
 layout    : post
 title     : "Jekyll环境部署"
 subtitle  : "Jekyll Environment"
-date      : 2025-12-06 12: 15: 00
+date      : 2025-12-06 12:15:00
 language  : zh-CN
 author    : "Gumc"
 header-img: "assets/img/2015/post-bg-2015.jpg"
