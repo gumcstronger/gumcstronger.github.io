@@ -15,7 +15,7 @@ layout: default
         <div class="row">
             {% if page.multilingual %}
             {% else %}
-            <div id="google_translate_element" style="min-height: 28px;font-size: 54px;"></div>
+            <div id="google_translate_element" style="min-height: 28px"></div>
             <script type="text/javascript">
                 function googleTranslateElementInit () {
                     new google.translate.TranslateElement({ pageLanguage: {% if page.language %} "{{ page.language }}" {% else %} 'zh-CN' {% endif %}, layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_translate_element');
@@ -136,7 +136,7 @@ layout: default
     /* * * CONFIGURATION VARIABLES * * */
     var disqus_shortname = "{{site.disqus_username}}";
     var disqus_identifier = "{{page.id}}";
-    var disqus_url = "{{site.url}}{{page.url}}";
+    var disqus_url = "{{ page.url | prepend: site.baseurl | prepend: site.url }}";
 
     (function () {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
@@ -183,3 +183,7 @@ layout: default
     }
 </style>
 {% endif %}
+
+<!-- Google AdSense -->
+<script data-ad-client="ca-pub-5146553678282787" async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>

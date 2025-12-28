@@ -30,8 +30,8 @@
     <meta property="og:description"
         content="{% if page.description %}{{ page.description }}{% else %}{{ config[site.description] }}{% endif %}">
     {% endcase %}
-    <meta property="og:image" content="{{ site.url }}{{ config.sidebar-avatar }}">
-    <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+    <meta property="og:image" content="{{ config.sidebar-avatar | prepend: site.baseurl | prepend: site.url }}">
+    <meta property="og:url" content="{{ page.url | prepend: site.baseurl | prepend: site.url }}">
     <meta property="og:site_name" content="{{ config[site.SEOTitle] }}">
 
     <title>{% if page.title %}{{ page.title }} - {{ config[site.SEOTitle] }}{% else %}{{ config[site.SEOTitle] }}{%
@@ -69,6 +69,6 @@
     <script></script>
 
     <!-- Google AdSense -->
-    <script data-ad-client="ca-pub-5146553678282787" async
-        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- <script data-ad-client="ca-pub-5146553678282787" async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> -->
 </head>
