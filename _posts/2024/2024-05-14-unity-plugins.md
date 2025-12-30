@@ -82,8 +82,8 @@ tags:
 * ScrollView
   * ~~[FancyScrollView](https://github.com/setchi/FancyScrollView) 滑动列表~~ 弃用，Cell大小必须一致
   * [com.unity.uiextensions](https://github.com/Unity-UI-Extensions/com.unity.uiextensions) [UI扩展](https://unity-ui-extensions.github.io/Controls.html#effect-components)如列表、文字、UI效果
-  * ~~[付费] [SuperScrollView](https://assetstore.unity.com/packages/tools/gui/ugui-super-scrollview-86572?srsltid=AfmBOoodciq35G5bSf8SPLn_Iy_Ur0qrU515UeWIJC4gCwYjs2JCKoZi#content) / [[Github](https://github.com/ZMteacher/ZMFrameWork/tree/main/ZMFrameWork/Assets/ZMPackages/ZMUI/ThirdLibrary/SuperScrollView)] 弃用~~
-  * [[付费] EnhancedScroller](https://assetstore.unity.com/packages/tools/gui/enhancedscroller-36378?srsltid=AfmBOoqoM7NkuMp_c7J0xOFSxoSHWKsqmH0QI2ObGWdN3W2-RoqW9XyL#releases) / [[GIthub](https://github.com/HungNT-Packages/HungNT-EnhancedScroller)]
+  * ~~[付费] [SuperScrollView](https://assetstore.unity.com/packages/tools/gui/ugui-super-scrollview-86572?srsltid=AfmBOoodciq35G5bSf8SPLn_Iy_Ur0qrU515UeWIJC4gCwYjs2JCKoZi#content) / [[Github](https://github.com/Lusbi/WalkBrave/tree/master/SuperScrollView)] 弃用~~
+  * [[付费] EnhancedScroller](https://assetstore.unity.com/packages/tools/gui/enhancedscroller-36378?srsltid=AfmBOoqoM7NkuMp_c7J0xOFSxoSHWKsqmH0QI2ObGWdN3W2-RoqW9XyL#releases) / [[Github without Demo](https://github.com/SeonghunChoi/Playing_Card/blob/main/Assets/EnhancedScroller%20v2/ChangeLog.txt)]/[[demo](https://github.com/HungNT-Packages/HungNT-EnhancedScroller)]
 * UI Theme
   * ~~[付费] [UI Theme](https://assetstore.unity.com/packages/tools/gui/ui-themes-163888#releases) / [[Github](https://github.com/sgho0915/SYSnetA_GSEng/tree/master)]~~
   * [UI Themes](https://arturnista.itch.io/ui-themes)
