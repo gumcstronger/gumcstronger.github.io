@@ -503,128 +503,152 @@ dotnet_diagnostic.IDE1006.severity = none
     // ==============================================================================
     // 1. 界面与显示 (Workbench & Appearance)
     // ==============================================================================
-    "workbench.editor.wrapTabs": true,                                          // 标签页过多时自动换行显示
-    "workbench.startupEditor": "none",                                          // 启动时不打开欢迎页
-    "workbench.secondarySideBar.defaultVisibility": "hidden",                   // 默认隐藏辅助侧边栏
-    "workbench.editor.enablePreview": false,                                    // 禁用预览模式，单击即持久打开
-    "editor.minimap.enabled": false,                                            // 禁用代码小地图
-    "terminal.integrated.gpuAcceleration": "off",                               // 禁用终端 GPU 加速
-    "telemetry.telemetryLevel": "off",                                          // 禁用遥测数据采集
-
+    "workbench.editor.wrapTabs": true,                        // 标签页过多时自动换行显示
+    "workbench.startupEditor": "none",                        // 启动时不打开欢迎页
+    "workbench.secondarySideBar.defaultVisibility": "hidden", // 默认隐藏辅助侧边栏
+    "workbench.editor.enablePreview": false,                  // 禁用预览模式，单击即持久打开
+    "editor.minimap.enabled": false,                          // 禁用代码小地图
+    "terminal.integrated.gpuAcceleration": "off",             // 禁用终端 GPU 加速
+    "telemetry.telemetryLevel": "off",                        // 禁用遥测数据采集
     // ==============================================================================
     // 2. 文件与性能 (Files & Performance)
     // ==============================================================================
-    "explorer.excludeGitIgnore": true,                                          // 资源管理器隐藏 .gitignore 排除项
-    "files.trimTrailingWhitespace": true,                                       // 保存时自动清理行尾空格
-    "files.insertFinalNewline": true,                                           // 保存时在文件末尾强制插入空行
-    "git.enabled": false,                                                       // 禁用编辑器内置 Git 插件
-    "files.watcherExclude": {                                                   // 排除高频变动目录的文件监视
+    "explorer.excludeGitIgnore": true,                        // 资源管理器隐藏 .gitignore 排除项
+    "files.trimTrailingWhitespace": true,                     // 保存时自动清理行尾空格
+    "files.insertFinalNewline": true,                         // 保存时在文件末尾强制插入空行
+    "git.enabled": false,                                     // 禁用编辑器内置 Git 插件
+    "files.watcherExclude": {                                 // 排除高频变动目录的文件监视
         "**/bin/**": true,
         "**/obj/**": true,
         "**/Library/**": true,
         "**/Temp/**": true
     },
-
     // ==============================================================================
     // 3. 编辑器核心行为 (Editor Core)
     // ==============================================================================
-    "editor.formatOnSave": true,                                                // 保存文件时自动格式化
-    "editor.defaultFormatter": "nromanov.dotrush",                              // 全局默认格式化器：DotRush
-    // "editor.defaultFormatter": "ms-dotnettools.csdevkit",                    // 全局默认格式化器：C# DevKit
-    "editor.tabSize": 4,                                                        // 设置缩进为 4 格
-    "editor.codeActionsOnSave": {                                               // 定义保存时执行的动作
-        "source.fixAll.dotnet": "explicit",                                     // 显式执行所有 .NET 自动修复
-        "source.fixAll": "explicit",                                            // 显式执行所有快速修复
-        "source.organizeImports": "explicit",                                   // 自动整理并移除未使用的 Using
+    "editor.formatOnSave": true,                              // 保存文件时自动格式化
+    // "editor.defaultFormatter": "nromanov.dotrush",            // 全局默认格式化器：DotRush
+    "editor.defaultFormatter": "ms-dotnettools.csdevkit",     // 全局默认格式化器：C# DevKit
+    "editor.tabSize": 4,                                      // 设置缩进为 4 格
+    "editor.codeActionsOnSave": {                             // 定义保存时执行的动作
+        // 显式禁止通用的 fixAll，防止 Gemini 偷跑
+        "source.fixAll": "never",                             // 显式执行所有快速修复
+        "source.fixAll.dotnet": "explicit",                   // 显式执行所有 .NET 自动修复
+        "source.organizeImports": "explicit",                 // 自动整理并移除未使用的 Using
+        "source.fixAll.csharpier": "explicit",                // CSharpier
     },
-
     // ==============================================================================
     // 4. 扩展插件配置 (Extensions / Plugins)
     // ==============================================================================
-
     // --- 4.1 DotRush (C# 语言服务) ---
-    // "dotrush.enable": true,                                                  // 启用 DotRush 语言服务
-    "dotrush.roslyn.diagnosticsFormat":"InfosAsHints",                          // 让信息类建议也以提示形式显示，便于通过灯泡图标快速修复
-    "dotrush.roslyn.showItemsFromUnimportedNamespaces":true,                    // 补全能提示并自动添加using
-    "dotrush.roslynAnalyzers": true,                                            // 开启 Roslyn 分析器支持
-    // "dotrush.backgroundAnalysis": false,                                     // 禁用后台持续分析
-    "dotrush.roslyn.loadMetadataForReferencedProjects": false,                  // 禁用引用项目元数据预加载提升速度
-    "dotrush.roslyn.analyzerDiagnosticsScope": "Project",                       // 对当前解决方案进行分析
-
+    // "dotrush.enable": true,                                 // 启用 DotRush 语言服务
+    "dotrush.roslyn.diagnosticsFormat": "InfosAsHints",        // 让信息类建议也以提示形式显示，便于通过灯泡图标快速修复
+    "dotrush.roslyn.showItemsFromUnimportedNamespaces": true,  // 补全能提示并自动添加using
+    "dotrush.roslynAnalyzers": true,                           // 开启 Roslyn 分析器支持
+    // "dotrush.backgroundAnalysis": false,                    // 禁用后台持续分析
+    "dotrush.roslyn.loadMetadataForReferencedProjects": false, // 禁用引用项目元数据预加载提升速度
+    "dotrush.roslyn.analyzerDiagnosticsScope": "Project",      // 对当前解决方案进行分析
     // --- 4.2 CSharpier (代码强制格式化) ---
-    "csharpier.enableDiagnostics": true,                                        // 启用 CSharpier 诊断输出
-
+    "csharpier.enableDiagnostics": true,                       // 启用 CSharpier 诊断输出
     // --- 4.3 Error Lens (行内错误诊断) ---
-    "errorLens.enabledDiagnosticLevels": ["error", "warning"],                  // Error Lens 仅显示错误和警告
-
+    "errorLens.enabledDiagnosticLevels": [
+        "error",
+        "warning"
+    ], // Error Lens 仅显示错误和警告
     // --- 4.4 Office Viewer (文档查看) ---
-    "vscode-office.editorTheme": "Auto",                                        // Office 查看器主题随系统切换
-    "vscode-office.viewAbsoluteLocal": true,                                    // 允许通过绝对路径查看本地文件
-    "vscode-office.openOutline": true,                                          // 打开文档时默认显示大纲
-
+    "vscode-office.editorTheme": "Auto",                      // Office 查看器主题随系统切换
+    "vscode-office.viewAbsoluteLocal": true,                  // 允许通过绝对路径查看本地文件
+    "vscode-office.openOutline": true,                        // 打开文档时默认显示大纲
     // --- 4.5 英语辞典 (Dictionary & Translation) ---
-    "EnglishChineseDictionary.enableHover": true,                               // 启用英汉翻译悬停提示
-
+    "EnglishChineseDictionary.enableHover": true,             // 启用英汉翻译悬停提示
     // --- 4.6 Antigravity (核心助手设置) ---
     "antigravity.marketplaceGalleryItemURL": "https://marketplace.visualstudio.com/items",
     "antigravity.marketplaceExtensionGalleryServiceURL": "https://marketplace.visualstudio.com/_apis/public/gallery",
-
     // --- 4.7 C# DevKit (C# 开发工具) ---
-    "dotnet.solution.autoOpen": "framework.sln",                                // 自动打开指定的解决方案
-    "dotnet.automaticallySyncWithActiveItem": true,                             // 自动同步当前活动项
-
+    "dotnet.solution.autoOpen": "framework.sln",              // 自动打开指定的解决方案
+    "dotnet.automaticallySyncWithActiveItem": true,           // 自动同步当前活动项
+    // --- Gemini Code Attribute (Gemini 代码属性) ---
+    "geminicodeassist.rules": "从源码角度分析,要求使用实际类名、方法名和代码片段说明,不要只做文字性总结。请始终使用中文回复",
+    "geminicodeassist.enableTelemetry": false,
+    "geminicodeassist.inlineSuggestions.enableAuto": false,
+    "geminicodeassist.languages": [
+        // 注意：列表中故意没有包含 "csharp"
+    ],
     // --- 4.8 Trae (AI辅助工具) ---
+    // "trae.advanced":{
+    //     "logLevel": "info",
+    //     "logFileV2": true,
+    //     "outOfScopeProcess": false,
+    //     "debounceInterval": 125,
+    //     "proxyMode": "manual",
+    //     "proxyUrl": "http://127.0.0.1:10808",
+    //     "addToChatHint": true
+    // },
     "trae.enableCodelens": {
-        "enableInlineDocumentation": false,                                     // 禁用内联文档
-        "enableInlineExplain": true                                             // 启用内联解释
+        "enableInlineDocumentation": false,                   // 禁用内联文档
+        "enableInlineExplain": true                           // 启用内联解释
     },
-    "trae.chatLanguage": "cn",                                                  // AI 聊天语言设为中文
-    "trae.privacy.mode": true,                                                  // 开启隐私模式
-    "trae.tab.enableAutoImport": true,                                          // Tab 补全时自动导入
-    "trae.tab.cue": true,                                                       // 开启 Tab 提示
-
+    "trae.chatLanguage": "cn",                                // AI 聊天语言设为中文
+    "trae.privacy.mode": true,                                // 开启隐私模式
+    "trae.tab.enableAutoImport": true,                        // Tab 补全时自动导入
+    "trae.tab.cue": true,
+    "trae.tab.enableRename": false,
+    // --- 4.9 Markdown 格式化 ---
+    "markdownlint.config": {
+        // MD031: 禁用“代码块周围必须有空行”的检查
+        "MD031": {
+            "list_items": false
+        },
+        // MD007: 修改无序列表缩进,缩进为2,首行缩进
+        "MD007": {
+            "indent": 2,
+            "start_indented": true
+        }
+    },
+    // --- Gemini COde Assist ---
+    "http.systemCertificatesNode": true,
     // ==============================================================================
     // 5. 语言特定细化配置 (Language Specific)
     // ==============================================================================
     "[csharp]": {
-        "editor.defaultFormatter": "nromanov.dotrush",                        // C# 首选 DotRush
-        // "editor.defaultFormatter": "ms-dotnettools.csdevkit",                   // C# 脚本首选 C# DevKit
+        "geminicodeassist.enable": false,  // 尝试仅在 C# 文件中禁用插件
+        // "editor.defaultFormatter": "nromanov.dotrush",        // C# 首选 DotRush
+        "editor.defaultFormatter": "csharpier.csharpier-vscode", // C# 脚本首选 C# DevKit
         "editor.codeActionsOnSave": {
-            "source.fixAll.dotnet": "explicit",                                 // 自动修复诊断规则
-            "source.fixAll": "explicit",                                        // 核心：自动应用 QuickFix
-            "source.organizeImports": "explicit",                               // 排序 Using 指令
+            // // 显式禁止通用的 fixAll，防止 Gemini 偷跑
+            "source.fixAll": "never",                            // 核心：自动应用 QuickFix
+            "source.fixAll.dotnet": "explicit",                  // 自动修复诊断规则
+            "source.organizeImports": "explicit",                // 排序 Using 指令
+            "source.fixAll.csharpier": "explicit"                // CSharpier
         }
     },
+    "json.schemaDownload.enable": true,                       // 开启 JSON 架构自动下载
+    "[markdown]": {
+        "editor.formatOnSave": true,
+        "editor.formatOnPaste": true,
+        "editor.codeActionsOnSave": {
+            "source.fixAll.markdownlint": "explicit"
+        }
+    },
+    "[xml]": {
+        "editor.defaultFormatter": "csharpier.csharpier-vscode"
+    },
 
-    "json.schemaDownload.enable": true,                                         // 开启 JSON 架构自动下载
-
-    // "markdownFormatter.codeAreaToBlock": "",
-    // "markdownFormatter.formatCodes": true,
-    // "[markdown]": {
-    //     "editor.defaultFormatter": "mervin.markdown-formatter",                 // Markdown 格式化器
-    //     "editor.quickSuggestions": {                                            // 开启 Markdown 快速提示
-    //         "other": true,
-    //         "comments": true,
-    //         "strings": true
-    //     },
+    // "[jsonc]": {
+    //     "editor.defaultFormatter": "vscode.json-language-features"
     // },
-
-    // // 设置 JSON 使用 Prettier
     // "[json]": {
-    //     "editor.defaultFormatter": "esbenp.prettier-vscode"                  // JSON 使用 Prettier
+    //     "editor.defaultFormatter": "vscode.json-language-features"
     // },
-
-
     // ==============================================================================
     // 6. 已停用或备份的扩展配置 (Legacy / Backups)
     // ==============================================================================
     // --- OmniSharp (Legacy C# Support) ---
-    // "omnisharp.useModernNet": false,                                         // (禁用) 强制旧版 .NET 运行时
-    // "dotnetAcquisitionExtension.enableTelemetry": false,                     // (禁用) 禁止遥测数据采集
-    // "dotnet.server.useOmnisharp": false,                                     // (禁用) 明确停用 OmniSharp
-    // "omnisharp.enableRoslynAnalyzers": true,                                 // 启用分析器
-    // "omnisharp.enableEditorConfigSupport": true,                             // 启用 EditorConfig
-
+    // "omnisharp.useModernNet": false,                        // (禁用) 强制旧版 .NET 运行时
+    // "dotnetAcquisitionExtension.enableTelemetry": false,    // (禁用) 禁止遥测数据采集
+    // "dotnet.server.useOmnisharp": false,                    // (禁用) 明确停用 OmniSharp
+    // "omnisharp.enableRoslynAnalyzers": true,                // 启用分析器
+    // "omnisharp.enableEditorConfigSupport": true,            // 启用 EditorConfig
     // --- Run On Save (备份命令) ---
     // "emeraldwalk.runonsave": { "commands": [ { "match": "\\.cs$", "cmd": "dotnet format..." } ] }
 }
