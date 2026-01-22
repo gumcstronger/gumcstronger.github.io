@@ -1,16 +1,15 @@
 ---
-layout    : post
-title     : "禁用微信WeChatAppEx进程"
-subtitle  : "禁用微信WeChatAppEx进程"
-date      : 2026-01-22 09:15:00
-language  : zh-CN
-author    : "Gumc"
+layout:   post
+title:    "禁用微信WeChatAppEx进程"
+subtitle: "禁用微信WeChatAppEx进程"
+date:     2026-01-22 09:15:00
+language: zh-CN
+author: "Gumc"
 header-img: "assets/img/2015/post-bg-2015.jpg"
-catalog   : true
-tags      :
+catalog: true
+tags:
     - System
 ---
-
 ## 问题描述
 
 打开Windows微信电脑端，WeChatAppEx进程好多个，每个占用部分CPU和内存。而且关闭WeChatAppEx进程后还会自动打开。
