@@ -21,3 +21,9 @@ tags:
 之后再重新打开微信，就不再有WeChatAppEx进程。
 
 禁用之后不能再使用小程序的功能
+
+20260301
+
+发现微信非常鸡贼地改到了C:\Users\XXX\AppData\Roaming\Tencent\\xwechatXPlugin\Plugins\RadiumWMPF
+
+通用禁用写入权限
