@@ -507,7 +507,7 @@ dotnet_diagnostic.IDE1006.severity = none
     "workbench.startupEditor": "none",                        // 启动时不打开欢迎页
     "workbench.secondarySideBar.defaultVisibility": "hidden", // 默认隐藏辅助侧边栏
     "workbench.editor.enablePreview": false,                  // 禁用预览模式，单击即持久打开
-    "editor.minimap.enabled": false,                          // 禁用代码小地图
+    "editor.minimap.enabled": true,                           // 禁用代码小地图
     "terminal.integrated.gpuAcceleration": "off",             // 禁用终端 GPU 加速
     "telemetry.telemetryLevel": "off",                        // 禁用遥测数据采集
     // ==============================================================================
@@ -517,11 +517,46 @@ dotnet_diagnostic.IDE1006.severity = none
     "files.trimTrailingWhitespace": true,                     // 保存时自动清理行尾空格
     "files.insertFinalNewline": true,                         // 保存时在文件末尾强制插入空行
     "git.enabled": false,                                     // 禁用编辑器内置 Git 插件
+    "files.eol": "\n",                                        // 创建新文件时默认使用 LF
+    "files.encoding":"utf8",
     "files.watcherExclude": {                                 // 排除高频变动目录的文件监视
         "**/bin/**": true,
         "**/obj/**": true,
         "**/Library/**": true,
         "**/Temp/**": true
+    },
+     "files.exclude": {
+      "**/.git": true,
+      "**/.DS_Store": true,
+      "**/Library": true,
+      "**/Temp": true,
+      "**/Obj": true,
+      "**/Build": true,
+      "**/Builds": true,
+      "**/Logs": true,
+      "**/*.pidb": true,
+      "**/*.booproj": true,
+      "**/*.svd": true,
+      "**/*.pdb": true,
+      "**/*.mdb": true,
+      "**/*.opendb": true,
+      "**/*.VC.db": true,
+      "**/*.meta": false
+    },
+    "search.exclude": {
+      "**/Library": true,
+      "**/Temp": true,
+      "**/Obj": true,
+      "**/Build": true,
+      "**/Builds": true,
+      "**/Logs": true,
+      "**/*.meta": true
+    },
+    "files.associations": {                                 // 强制将 .targets, .props 等 MSBuild 文件关联到 xml 语言模式
+        "*.targets": "xml",
+        "*.props": "xml",
+        "Directory.Build.props": "xml",
+        "Directory.Build.targets": "xml"
     },
     // ==============================================================================
     // 3. 编辑器核心行为 (Editor Core)
@@ -530,13 +565,15 @@ dotnet_diagnostic.IDE1006.severity = none
     // "editor.defaultFormatter": "nromanov.dotrush",            // 全局默认格式化器：DotRush
     "editor.defaultFormatter": "ms-dotnettools.csdevkit",     // 全局默认格式化器：C# DevKit
     "editor.tabSize": 4,                                      // 设置缩进为 4 格
-    "editor.codeActionsOnSave": {                             // 定义保存时执行的动作
+    "editor.codeActionsOnSave": {
         // 显式禁止通用的 fixAll，防止 Gemini 偷跑
-        "source.fixAll": "never",                             // 显式执行所有快速修复
+        // "source.fixAll": "never",                             // 显式执行所有快速修复
         "source.fixAll.dotnet": "explicit",                   // 显式执行所有 .NET 自动修复
         "source.organizeImports": "explicit",                 // 自动整理并移除未使用的 Using
         "source.fixAll.csharpier": "explicit",                // CSharpier
     },
+    "editor.codeActionsOnSaveTimeout": 800,                   // 设置保存操作的超时时间为 500~1000 毫秒
+    "http.proxy": "http://127.0.0.1:10808",
     // ==============================================================================
     // 4. 扩展插件配置 (Extensions / Plugins)
     // ==============================================================================
@@ -561,20 +598,34 @@ dotnet_diagnostic.IDE1006.severity = none
     "vscode-office.openOutline": true,                        // 打开文档时默认显示大纲
     // --- 4.5 英语辞典 (Dictionary & Translation) ---
     "EnglishChineseDictionary.enableHover": true,             // 启用英汉翻译悬停提示
-    // --- 4.6 Antigravity (核心助手设置) ---
-    "antigravity.marketplaceGalleryItemURL": "https://marketplace.visualstudio.com/items",
-    "antigravity.marketplaceExtensionGalleryServiceURL": "https://marketplace.visualstudio.com/_apis/public/gallery",
     // --- 4.7 C# DevKit (C# 开发工具) ---
     "dotnet.solution.autoOpen": "framework.sln",              // 自动打开指定的解决方案
     "dotnet.automaticallySyncWithActiveItem": true,           // 自动同步当前活动项
+    // --- 4.8 AI 助手系列 ---
+    // --- copilot ---
+    "github.copilot.chat.agent.temperature": 0,               // 禁止 Copilot 聊天代理使用随机温度，保持回复一致性
+    "github.copilot.chat.agentDebugLog.enabled":false,        // 禁止收集代理请求信息（包括工具调用、LLM 请求、Token 用量及错误信息），以便在 VS Code 中进行查看和故障排除
+    "github.copilot.chat.agentDebugLog.fileLogging.flushIntervalMs":40000, // 将日志文件刷新间隔设置为 4000 毫秒，确保调试信息及时写入磁盘
+    "github.copilot.nextEditSuggestions.enabled": true,     // 启用 Copilot 下一次编辑建议功能，提供基于上下文的智能编辑建议
+    // --- Codex ---
+    "chatgpt.commentCodeLensEnabled":false,             // 禁止在代码中显示 ChatGPT 相关的 CodeLens 提示，保持界面简洁
+    "chatgpt.localeOverride": "zh-CN",                  // 强制 Codex 使用中文界面
+    // "chat.agent.maxRequests": 100,                      // 将聊天代理的最大请求数增加到 100，适应更长的对话历史
+    // "chat.viewSessions.orientation": "stacked",         // 将聊天会话视图改为并排显示，便于同时查看多个会话
+    // --- Gemini Code Assist ---
+    "http.systemCertificatesNode": true,                 // 让 Gemini 使用系统证书，解决部分环境下的 TLS 连接问题
+    // --- Antigravity ---
+    "antigravity.marketplaceGalleryItemURL": "https://marketplace.visualstudio.com/items",
+    "antigravity.marketplaceExtensionGalleryServiceURL": "https://marketplace.visualstudio.com/_apis/public/gallery",
     // --- Gemini Code Attribute (Gemini 代码属性) ---
     "geminicodeassist.rules": "从源码角度分析,要求使用实际类名、方法名和代码片段说明,不要只做文字性总结。请始终使用中文回复",
     "geminicodeassist.enableTelemetry": false,
-    "geminicodeassist.inlineSuggestions.enableAuto": false,
-    "geminicodeassist.languages": [
-        // 注意：列表中故意没有包含 "csharp"
-    ],
-    // --- 4.8 Trae (AI辅助工具) ---
+    "geminicodeassist.chat.changeView":"Default diff view",
+    // "geminicodeassist.inlineSuggestions.enableAuto": false,
+    // "geminicodeassist.languages": [
+    //     // 注意：列表中故意没有包含 "csharp"
+    // ],
+    // --- Trae ---
     // "trae.advanced":{
     //     "logLevel": "info",
     //     "logFileV2": true,
@@ -584,15 +635,78 @@ dotnet_diagnostic.IDE1006.severity = none
     //     "proxyUrl": "http://127.0.0.1:10808",
     //     "addToChatHint": true
     // },
-    "trae.enableCodelens": {
-        "enableInlineDocumentation": false,                   // 禁用内联文档
-        "enableInlineExplain": true                           // 启用内联解释
-    },
+    // "trae.enableCodelens": {
+    //     "enableInlineDocumentation": false,
+    //     "enableInlineExplain": false,
+    // },
     "trae.chatLanguage": "cn",                                // AI 聊天语言设为中文
     "trae.privacy.mode": true,                                // 开启隐私模式
-    "trae.tab.enableAutoImport": true,                        // Tab 补全时自动导入
-    "trae.tab.cue": true,
-    "trae.tab.enableRename": false,
+    "trae.tab.enableAutoImport": true,                       // 禁止自动添加 using 导入
+    "trae.tab.enableRename": true,                           // 禁止自动重命名
+    // "trae.enableInlineCommand": false,                        // 禁止启用行内命令
+    // "trae.tab.enableTabKeyboardShortcuts": false,             // 禁止在标签页启用代码操作
+    "trae.tab.cue": true,                                    // 禁止在标签页启用提示
+    // "trae.enableAddToChatTips": false,                        // 禁止启用“添加到聊天”提示
+    // --- Claude Code ---
+    "claudeCode.preferredLocation": "sidebar",                // 将 Claude Code 的主要界面放在侧边栏，保持编辑区清爽
+    "claudeCode.disableLoginPrompt": true,                    // 禁止 Claude Code 在未登录时弹出登录提示，避免干扰工作流
+    // --- Code Web Chat ---
+    "codeWebChat.aiStudioUserId":null,                      // 清空 AI Studio 用户 ID，避免与个人账户绑定
+    "codeWebChat.editContextSystemInstructions": "",
+    "codeWebChat.areAutomaticCheckpointsDisabled": true,
+    "codeWebChat.reuseLastTab": true,
+    "codeWebChat.chatPresetsForAskAboutContext": [
+        {
+            "name": "(0)",
+            "chatbot": "DeepSeek",
+            "options": [
+                "deep-think",
+                "search"
+            ]
+        }
+    ],
+    "codeWebChat.chatPresetsForEditContext": [
+        {
+            "name": "(0)",
+            "chatbot": "DeepSeek",
+            "options": [
+                "deep-think",
+                "search"
+            ]
+        },
+        {
+            "name": "(1)",
+            "chatbot": "AI Studio",
+            "model": "gemini-3-flash-preview",
+            "reasoningEffort": "Minimal"
+        }
+    ],
+    // // --- Roo Code ---
+    // "roo-cline.debug": false,
+    // "roo-cline.allowedCommands": [
+    //     "git log",
+    //     "git diff",
+    //     "git show"
+    // ],
+    // "roo-cline.deniedCommands": [],
+    // // --- Continue ---
+    // "continue.disableQuickFix" : true,                      // 禁止 Continue 在编辑器中提供 QuickFix 建议，避免与 DotRush 冲突
+    // "continue.enableNextEdit": false,                       // 禁止启用 Continue 的下一次编辑建议功能，保持编辑流程专注
+    // "continue.enableTabAutocomplete":false,                 // 禁止在标签页启用 Continue 的自动补全建议，避免干扰代码编辑
+    // "continue.showInlineTip":false,                         // 禁止显示 Continue 的行内提示，保持界面简洁
+    // "continue.telemetryEnabled":false,                      // 禁止 Continue 收集遥测数据，保护隐私
+    // // --- tencent code ---
+    // "codingcopilot.enableAutoCompletions": false,             // 禁止自动补全建议
+    // "codingcopilot.enableCodelens": false,                    // 禁止在代码中显示 CodeLens 提示
+    // "codingcopilot.enableInlineChat": false,                  // 禁止启用行内聊天
+    // "codingcopilot.enableInlineChatAutoFormatCode": false,    // 禁止行内聊天自动格式化代码
+    // "codingcopilot.enableInlineChatShortcutsTip": false,      // 禁止行内聊天快捷方式提示
+    // "codingcopilot.enableFloatShortcut": false,               // 禁止启用浮动快捷方式
+    // "codingcopilot.enableNextEditSuggestions": false,         // 禁止启用下一次编辑建议
+    // // --- amazonQ ---
+    // "amazonQ.importRecommendationForInlineCodeSuggestions": false,  // 禁止在行内代码建议中启用导入推荐
+    // "amazonQ.shareContentWithAWS": false,                           // 禁止与 AWS 共享内容
+    // "amazonQ.telemetry": false,                                     // 禁止遥测数据采集
     // --- 4.9 Markdown 格式化 ---
     "markdownlint.config": {
         // MD031: 禁用“代码块周围必须有空行”的检查
@@ -605,18 +719,16 @@ dotnet_diagnostic.IDE1006.severity = none
             "start_indented": true
         }
     },
-    // --- Gemini COde Assist ---
-    "http.systemCertificatesNode": true,
     // ==============================================================================
     // 5. 语言特定细化配置 (Language Specific)
     // ==============================================================================
     "[csharp]": {
-        "geminicodeassist.enable": false,  // 尝试仅在 C# 文件中禁用插件
+        // "geminicodeassist.enable": false,  // 尝试仅在 C# 文件中禁用插件
         // "editor.defaultFormatter": "nromanov.dotrush",        // C# 首选 DotRush
         "editor.defaultFormatter": "csharpier.csharpier-vscode", // C# 脚本首选 C# DevKit
         "editor.codeActionsOnSave": {
             // // 显式禁止通用的 fixAll，防止 Gemini 偷跑
-            "source.fixAll": "never",                            // 核心：自动应用 QuickFix
+            // "source.fixAll": "never",                            // 核心：自动应用 QuickFix
             "source.fixAll.dotnet": "explicit",                  // 自动修复诊断规则
             "source.organizeImports": "explicit",                // 排序 Using 指令
             "source.fixAll.csharpier": "explicit"                // CSharpier
@@ -633,7 +745,12 @@ dotnet_diagnostic.IDE1006.severity = none
     "[xml]": {
         "editor.defaultFormatter": "csharpier.csharpier-vscode"
     },
-
+    // "[targets]": {
+    //     "editor.defaultFormatter": "DotJoshJohnson.xml"
+    // },
+    "diffEditor.codeLens": true,
+    "remote.tunnels.tunnelCredentialCommand": null,
+    "chat.viewSessions.orientation": "stacked",
     // "[jsonc]": {
     //     "editor.defaultFormatter": "vscode.json-language-features"
     // },
