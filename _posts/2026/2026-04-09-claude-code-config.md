@@ -17,10 +17,14 @@ tags:
 
   备注：npm安装方式已弃用
 
-  ```bash
+```bash
   # 管理员权限运行powershell
   irm https://claude.ai/install.ps1 | iex
-  ```
+
+  # 配置关闭claude code遥感
+  # 永久生效：
+  [Environment]::SetEnvironmentVariable("CLAUDE_TELEMETRY", "off", "User")
+```
 
 ### 安装[Claude Code for VS Code](vscode:extension/anthropic.claude-code)
 
@@ -42,7 +46,7 @@ tags:
 
 ### claude-md-management
 
-### planning-with-files
+### ~~planning-with-files~~
 
 ### Remember
 
