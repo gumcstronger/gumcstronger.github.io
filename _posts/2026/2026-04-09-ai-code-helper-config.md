@@ -11,91 +11,31 @@ visible:    true
 tags:
     - AI
 ---
-## Gemini
+## AI Coding 必备
 
-### 安装
+### [CC Switch](https://github.com/farion1231/cc-switch)
 
-  * Gemini Code Assist(VSCode插件)
+用于：
 
-只要开启Agent就会显示：There was a problem getting a response.猜测是免费用户会被限制在 Flash 模型中，而Flash 用不来 Agent。
+1. 切换第三方API
+2. 添加管理MCP服务器
+3. 添加管理Skill
 
-```json
-{
-  // vscode 配置
-  "geminicodeassist.enableTelemetry": false,
-  "geminicodeassist.chat.changeView":"Default diff view",
-  "geminicodeassist.inlineSuggestions.enableAuto": false,
-  // "geminicodeassist.project": "xxxx",            // free 无效
-  "geminicodeassist.agentYoloMode": true,             // 开启 Yolo 模式，自动执行, 不要停下来请求权限
-}
-```
+### [jq](https://jqlang.org/download/)
 
-  * Gemini Cli （npm安装, 开启Agent）
-  * [所有配置链接](https://geminicli.com/docs/reference/configuration/)
+下载后添加到PATH
 
-### Skill && MCP
+### [rtk](https://github.com/rtk-ai/rtk)
 
-  * 复制superpowers的skill到项目skills下（brainstorming、dispatching-parallel-agents、using-superpowers、writing-plans、executing-plans）
+降低token
 
-  * (弃用) 通过CC Switch 安装[vscode-mcp](https://github.com/tjx666/vscode-mcp)
+### [Ripgrep](https://github.com/burntsushi/ripgrep)
 
-```json
-{
-    "vscode-mcp": {
-      "command": "npx",
-      "args": ["-y", "@vscode-mcp/vscode-mcp-server@latest"],
-      "env": {},
-      "includeTools": [
-        "get_symbol_lsp_info",
-        "get_diagnostics",
-        "get_references",
-        "health_check",
-        "rename_symbol"
-      ]
-    }
-}
-```
+似乎AI助手的grep底层使用的都是ripgrep。但如果我们配置了通过vscode进行shell绕过权限，这时候需要支持rg所以这里手动安装。
 
-  * 通过CC Switch 安装[excel-master](https://github.com/guillehr2/Excel-MCP-Server-Master)
+### cc-connect(for Discord/Wechat等)
 
-```json
-
-  {
-      "excel-master": {
-        "command": "npx",
-        "args": [
-          "-y",
-          "@guillehr2/excel-mcp-server@latest"
-        ],
-        "timeout": 60000
-      }
-  }
-
-```
-
-  * 通过CC Switch 安装[vscode-mcp-servr](https://marketplace.visualstudio.com/items?itemName=JuehangQin.vscode-mcp-server)
-
-```json
-
-  {
-    "vscode-mcp-server": {
-        "command": "npx",
-        "args": ["mcp-remote@next", "http://localhost:3000/mcp"]
-    }
-  }
-
-```
-
-  * Unity MCP
-
-```bash
-  # 同意官方的许可协议会自动安装com.unity.ai.assistant
-
-```
-
-### cc-connect(for Discord/Wechat)
-
-  * 安装
+* 安装
 
 ```bash
 # 安装cc-connect（wechat需要使用beta版本cc-connect@beta)
@@ -107,7 +47,7 @@ npm install -g cc-connect
 
 ```
 
-  * [cc-connect配置文件]
+* [cc-connect配置文件]
 
 ```conf
   # 配置config.toml，以下是我的配置(从discord获取token)
@@ -168,9 +108,109 @@ npm install -g cc-connect
   [cron]
 ```
 
-  * [cc-connect使用指南](https://github.com/chenhg5/cc-connect/blob/main/docs/usage.zh-CN.md)
+* [cc-connect使用指南](https://github.com/chenhg5/cc-connect/blob/main/docs/usage.zh-CN.md)
+* 配置开机启动
 
-  * 配置开机启动
+---
+
+## Gemini
+
+### 安装
+
+* Gemini Code Assist(VSCode插件) 用处不大，仅在头脑风暴时进行。
+
+只要开启Agent就会显示：There was a problem getting a response.猜测是免费用户会被限制在 Flash 模型中，而Flash 用不来 Agent。
+
+```json
+{
+  // vscode 配置
+  "geminicodeassist.enableTelemetry": false,
+  "geminicodeassist.chat.changeView":"Default diff view",
+  "geminicodeassist.inlineSuggestions.enableAuto": false,
+  // "geminicodeassist.project": "xxxx",            // free 无效
+  "geminicodeassist.agentYoloMode": true,             // 开启 Yolo 模式，自动执行, 不要停下来请求权限
+}
+```
+
+* Gemini Cli （npm安装）
+* [所有配置链接](https://geminicli.com/docs/reference/configuration/)
+
+### Skill && MCP
+
+* 复制superpowers的skill到项目skills下（brainstorming、dispatching-parallel-agents、using-superpowers、writing-plans、executing-plans）
+* (弃用) 通过CC Switch 安装[vscode-mcp](https://github.com/tjx666/vscode-mcp)
+
+```json
+{
+    "vscode-mcp": {
+      "command": "npx",
+      "args": ["-y", "@vscode-mcp/vscode-mcp-server@latest"],
+      "env": {},
+      "includeTools": [
+        "get_symbol_lsp_info",
+        "get_diagnostics",
+        "get_references",
+        "health_check",
+        "rename_symbol"
+      ]
+    }
+}
+```
+
+* 通过CC Switch 安装[excel-master](https://github.com/guillehr2/Excel-MCP-Server-Master)
+
+```json
+
+  {
+      "excel-master": {
+        "command": "npx",
+        "args": [
+          "-y",
+          "@guillehr2/excel-mcp-server@latest"
+        ],
+        "timeout": 60000
+      }
+  }
+
+```
+
+* 通过CC Switch 安装[vscode-mcp-servr](https://marketplace.visualstudio.com/items?itemName=JuehangQin.vscode-mcp-server)
+
+```json
+
+  {
+    "vscode-mcp-server": {
+        "command": "npx",
+        "args": ["mcp-remote@next", "http://localhost:3000/mcp"]
+    }
+  }
+
+```
+
+* [Unity MCP](https://github.com/CoplayDev/unity-mcp)
+
+```bash
+# unity通过github安装：https://github.com/CoplayDev/unity-mcp.git?path=/MCPForUnity#main
+# 进入unity - window - mcp for unity - toggle mcp window
+# 进入connect，选择传递方式为stdio, 复制configuratioon到项目目录配置文件，工具只开启execute_menu_item和read_console和manage_prefabs
+# 可以禁用手机数据
+"unityMCP": {
+      "command": "uvx",
+      "args": [
+        "--from",
+        "mcpforunityserver==9.6.6",
+        "mcp-for-unity",
+        "--transport",
+        "stdio"
+      ],
+      "type": "stdio",
+      "env": {
+        "DISABLE_TELEMETRY": "true"
+      }
+    }
+# 让AI自己写markdown,工具的参数见源码：https://github.com/CoplayDev/unity-mcp/tree/beta/Server/src/services/tools
+
+```
 
 <!-- ### (已弃用)clibot(for Discord/Wechat)
 
@@ -209,8 +249,8 @@ help                               # 显示帮助
 
 ### 安装
 
-  * Codex桌面版
-  * VSCode Codex插件
+* Codex桌面版
+* VSCode Codex插件
 
 vscode codex插件如果开启WSL就会使用WSL的配置，需要进入/home/xx/.condex中修改配置，所以不开启WSL
 
@@ -218,7 +258,7 @@ vscode codex插件如果开启WSL就会使用WSL的配置，需要进入/home/xx
 
 ### MCP
 
-  * [VSCode MCP](https://github.com/tjx666/vscode-mcp)
+* [VSCode MCP](https://github.com/tjx666/vscode-mcp)
 
 不支持partial class，但能获取诊断信息，用于获取诊断信息并修复。
 
@@ -236,37 +276,13 @@ startup_timeout_ms = 16_000
 
 ---
 
-## AI助手通用必备
-
-### [CC Switch](https://github.com/farion1231/cc-switch)
-
-用于：
-
-1. 切换第三方API
-2. 添加管理MCP服务器
-3. 添加管理Skill
-
-### [jq](https://jqlang.org/download/)
-
-下载后添加到PATH
-
-### [rtk](https://github.com/rtk-ai/rtk)
-
-降低token
-
-### [Ripgrep](https://github.com/burntsushi/ripgrep)
-
-似乎AI助手的grep底层使用的都是ripgrep。不确定是否真实，所以也安装ripgrep方便使用
-
----
-
 ## Claude Code
 
 备注：为什么弃用，因为对其他AI的支持很弱，anthropic的AI像Claude Sonne才能用起来顺畅。
 
 ### 安装
 
-  * 安装[Claude Code](https://github.com/anthropics/claude-code)
+* 安装[Claude Code](https://github.com/anthropics/claude-code)
 
   备注：npm安装方式已弃用
 
@@ -282,7 +298,7 @@ startup_timeout_ms = 16_000
   # [System.Environment]::SetEnvironmentVariable('DISABLE_TELEMETRY', '1', 'User')
 ```
 
-  * 安装[Claude Code for VS Code](vscode:extension/anthropic.claude-code)
+* 安装[Claude Code for VS Code](vscode:extension/anthropic.claude-code)
 
   VS Code插件
 
@@ -304,7 +320,7 @@ startup_timeout_ms = 16_000
 
 ### MCP
 
-  * [ripgrep](https://github.com/burntsushi/ripgrep)
+* [ripgrep](https://github.com/burntsushi/ripgrep)
 
 据说claude code底层使用的是ripgrep。不确定claude code内部是否包含了ripgrep，直接安装ripgrep方便使用
 
@@ -313,7 +329,7 @@ startup_timeout_ms = 16_000
 winget install BurntSushi.ripgrep.MSVC
 ```
 
-  * [codebase-memory-mcp](https://github.com/DeusData/codebase-memory-mcp)
+* [codebase-memory-mcp](https://github.com/DeusData/codebase-memory-mcp)
 
 ```bash
 # 安装
@@ -325,15 +341,14 @@ codebase-memory-mcp update
 # 告诉claude测试codebase-memory-mcp的使用会进行项目索引
 ```
 
-  * (弃用)[~~Superpowers~~](https://github.com/obra/superpowers)
-  * (弃用)~~claude-md-management~~
-  * (弃用)~~planning-with-files~~
-  * (弃用)~~Remember~~
-  * (弃用)LSP
+* (弃用)[~~Superpowers~~](https://github.com/obra/superpowers)
+* (弃用)~~claude-md-management~~
+* (弃用)~~planning-with-files~~
+* (弃用)~~Remember~~
+* (弃用)LSP
 
   放弃LSP方案，因为C# LSP无法正确处理partial。
-
-  * (弃用) LSP- [VSC-LSP-MCP](https://github.com/beixiyo/vsc-lsp-mcp)
+* (弃用) LSP- [VSC-LSP-MCP](https://github.com/beixiyo/vsc-lsp-mcp)
 
 使用VSCode LSP的MCP，MCP（模型上下文协议）客户端能够实时访问丰富的 VSCode 上下文信息
 
@@ -347,7 +362,7 @@ codebase-memory-mcp update
   3. .claude/rules/TOOLS.LSP.md要求Claude Code生成对VSCode-MCP的使用。
 ```
 
-  * [LSP-VSCode MCP](https://github.com/tjx666/vscode-mcp)
+* [LSP-VSCode MCP](https://github.com/tjx666/vscode-mcp)
 
 不支持partial class，但能获取诊断信息，用于获取诊断信息并修复。
 
@@ -369,12 +384,12 @@ MCP（模型上下文协议）客户端能够实时访问丰富的 VSCode 上下
   3. .claude/rules/TOOLS.md要求Claude Code生成对VSCode-MCP的使用。
 ```
 
-  * [弃用]LSP-Claude Code官方CSharp-lsp
+* [弃用]LSP-Claude Code官方CSharp-lsp
 
 dotnet安装[csharp-ls](https://github.com/razzmatazz/csharp-language-server)
 Claude Code VS Code插件市场安装csharp-ls Plugin
 
-  * (弃用)LSP-[VSCode LSP MCP Server](https://marketplace.visualstudio.com/items?itemName=trademe.vscode-lsp-mcp)(作者：Trad Me)
+* (弃用)LSP-[VSCode LSP MCP Server](https://marketplace.visualstudio.com/items?itemName=trademe.vscode-lsp-mcp)(作者：Trad Me)
 
 这个最简单，安装vscode插件。
 运行VSCode命令: "LSP MCP: Install for Claude Code"
@@ -398,7 +413,7 @@ uv tool update-shell
 }
 ```
 
-  * (弃用)LSP-roslyn-refactor
+* (弃用)LSP-roslyn-refactor
 
 感觉很慢
 
@@ -410,27 +425,27 @@ uv tool update-shell
 
 ## VSCode插件
 
-  * Copilot
+* Copilot
 
 Copilot Pro无限使用GPT-5 Mini是不错的，可惜只有首月免费。
 
-  * Codex插件
+* Codex插件
 
 某鱼某淘可购买business或Plus也有25元，可能有风险。
 免费额度也很慷慨。
 
-  * Gemini Code Assist
+* Gemini Code Assist
 
 复杂问题使用，Gemini 3的思考和代码能力最强。当然Geimin Code Assist经常会自动切换到Gemini Pro 2.5会降智的。
 一般遇到复杂功能、不确定如何实现的需求或找Bug，则在aistudio使用Gemini 3讨论。如需要与代码交互(如找Bug)则使用Gemini Code Assist或Antigravity。
 
-  * Trae
+* Trae
 
 基本废了，基本作为补全使用，不会用来写代码。
 trae使用梯子通过trae.ai登录海外账号，似乎可以无限使用Gemini 2.5,不过现在经常出错，似乎海外账号不支持vscode插件了。
 目前使用起来很慢，估计很快就可以弃用了。
 
-  * Code Web Chat
+* Code Web Chat
 
 相当于合法通过vscode将上下文发送到web页面，然后获取web页面结果返回到vscode，自动进行editor等操作。
 相比于很多逆向API(违规），这个合规的，自动帮忙提交上下文到网页版后并自动获取结果来对比。
@@ -438,6 +453,6 @@ trae使用梯子通过trae.ai登录海外账号，似乎可以无限使用Gemini
 
 备注：与Code Web Chat类似的有个：[openlink](https://github.com/afumu/openlink)([视频](https://www.bilibili.com/video/BV17Yw3z7EJd/?spm_id_from=333.1391.0.0&vd_source=f355063fe070b37905b1cec42ccf5c6c))，但还需要自己解决gemini外的前端适配和skill。
 
-  * Claude Code
+* Claude Code
 
 除非用Claude官方模型，不然第三方其他AI支持很差。
