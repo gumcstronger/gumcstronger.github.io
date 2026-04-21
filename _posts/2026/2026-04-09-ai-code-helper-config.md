@@ -15,7 +15,7 @@ tags:
 
 ### 安装
 
-* Gemini Code Assist(VSCode插件)
+  * Gemini Code Assist(VSCode插件)
 
 只要开启Agent就会显示：There was a problem getting a response.猜测是免费用户会被限制在 Flash 模型中，而Flash 用不来 Agent。
 
@@ -30,12 +30,14 @@ tags:
 }
 ```
 
-* Gemini Cli （npm安装, 开启Agent）
+  * Gemini Cli （npm安装, 开启Agent）
+  * [所有配置链接](https://geminicli.com/docs/reference/configuration/)
 
 ### Skill && MCP
 
-* 通过CC Switch 安装 superpowers（brainstorming、dispatching-parallel-agents、using-superpowers、writing-plans、executing-plans）
-* 通过CC Switch 安装[vscode-mcp](https://github.com/tjx666/vscode-mcp)
+  * 复制superpowers的skill到项目skills下（brainstorming、dispatching-parallel-agents、using-superpowers、writing-plans、executing-plans）
+
+  * (弃用) 通过CC Switch 安装[vscode-mcp](https://github.com/tjx666/vscode-mcp)
 
 ```json
 {
@@ -54,7 +56,7 @@ tags:
 }
 ```
 
-* 通过CC Switch 安装[excel-master](https://github.com/guillehr2/Excel-MCP-Server-Master)
+  * 通过CC Switch 安装[excel-master](https://github.com/guillehr2/Excel-MCP-Server-Master)
 
 ```json
 
@@ -71,12 +73,111 @@ tags:
 
 ```
 
-* [所有配置链接](https://geminicli.com/docs/reference/configuration/)
+  * 通过CC Switch 安装[vscode-mcp-servr](https://marketplace.visualstudio.com/items?itemName=JuehangQin.vscode-mcp-server)
 
-### clibot(for Discord/Wechat)
+```json
 
-* 安装[Go](https://go.dev/dl/)
-* 安装clibot
+  {
+    "vscode-mcp-server": {
+        "command": "npx",
+        "args": ["mcp-remote@next", "http://localhost:3000/mcp"]
+    }
+  }
+
+```
+
+  * Unity MCP
+
+```bash
+  # 同意官方的许可协议会自动安装com.unity.ai.assistant
+
+```
+
+### cc-connect(for Discord/Wechat)
+
+  * 安装
+
+```bash
+# 安装cc-connect（wechat需要使用beta版本cc-connect@beta)
+npm install -g cc-connect
+# 创建配置文件
+# 创建C:\Users\Gumc\.cc-connect
+# 将官方的config.example.toml复制到.cc-connect/config.toml
+
+
+```
+
+  * [cc-connect配置文件]
+
+```conf
+  # 配置config.toml，以下是我的配置(从discord获取token)
+
+  data_dir = ""
+  language = "zh"
+
+  [[projects]]
+    name = "framework"
+    [projects.agent]
+      type = "gemini"
+      [projects.agent.options]
+        mode = "yolo"
+        model = "gemini-3.1-flash-lite-preview"
+        work_dir = "C:\\Users\\Gumc\\Desktop\\WorkSpace\\framework"
+
+    [[projects.platforms]]
+      type = "discord"
+      [projects.platforms.options]
+        token = "token"
+
+  [log]
+    level = "info"
+
+  [speech]
+    enabled = false
+    provider = ""
+    language = ""
+    [speech.openai]
+      api_key = ""
+      base_url = ""
+      model = ""
+    [speech.groq]
+      api_key = ""
+      model = ""
+    [speech.qwen]
+      api_key = ""
+      base_url = ""
+      model = ""
+
+  [display]
+  thinking_messages = true # Show/hide thinking messages (default: true) / 是否显示思考消息（默认 true）
+  thinking_max_len = 1000   # Max chars for thinking messages (default: 300) / 思考消息最大字符数（默认 300）
+  tool_max_len = 1000       # Max chars for tool use messages (default: 500) / 工具调用消息最大字符数（默认 500）
+  tool_messages = true     # Show/hide tool progress messages (default: true) / 是否显示工具进度消息（默认 true）
+
+  [stream_preview]
+  enabled = true            # Enable/disable streaming preview (default: true) / 启用/禁用流式预览（默认 true）
+  interval_ms = 1500        # Min ms between updates (default: 1500) / 更新最小间隔毫秒数（默认 1500）
+  min_delta_chars = 30      # Min new chars before sending update (default: 30) / 发送更新前最少新增字符数（默认 30）
+  max_chars = 2000          # Max preview length (default: 2000) / 预览最大长度（默认 2000）
+
+
+  [rate_limit]
+  max_messages = 5         # Max messages per window; 0 = disabled (default: 20) / 窗口内最大消息数；0 = 禁用（默认 20）
+  # window_secs = 60          # Window size in seconds (default: 60) / 窗口时间秒数（默认 60）
+
+  [cron]
+```
+
+  * [cc-connect使用指南](https://github.com/chenhg5/cc-connect/blob/main/docs/usage.zh-CN.md)
+
+  * 配置开机启动
+
+<!-- ### (已弃用)clibot(for Discord/Wechat)
+
+消息会被截断，所以已弃用
+
+  * 安装[Go](https://go.dev/dl/)
+  * 安装clibot
 
 ```bash
 git clone https://github.com/keepmind9/clibot.git
@@ -102,14 +203,14 @@ whoami                             # 显示你的信息
 status                             # 显示所有会话状态
 echo                               # 显示你的 IM 信息
 help                               # 显示帮助
-```
+``` -->
 
 ## Codex
 
 ### 安装
 
-* Codex桌面版
-* VSCode Codex插件
+  * Codex桌面版
+  * VSCode Codex插件
 
 vscode codex插件如果开启WSL就会使用WSL的配置，需要进入/home/xx/.condex中修改配置，所以不开启WSL
 
@@ -117,7 +218,7 @@ vscode codex插件如果开启WSL就会使用WSL的配置，需要进入/home/xx
 
 ### MCP
 
-* [VSCode MCP](https://github.com/tjx666/vscode-mcp)
+  * [VSCode MCP](https://github.com/tjx666/vscode-mcp)
 
 不支持partial class，但能获取诊断信息，用于获取诊断信息并修复。
 
@@ -165,7 +266,7 @@ startup_timeout_ms = 16_000
 
 ### 安装
 
-* 安装[Claude Code](https://github.com/anthropics/claude-code)
+  * 安装[Claude Code](https://github.com/anthropics/claude-code)
 
   备注：npm安装方式已弃用
 
@@ -181,7 +282,7 @@ startup_timeout_ms = 16_000
   # [System.Environment]::SetEnvironmentVariable('DISABLE_TELEMETRY', '1', 'User')
 ```
 
-* 安装[Claude Code for VS Code](vscode:extension/anthropic.claude-code)
+  * 安装[Claude Code for VS Code](vscode:extension/anthropic.claude-code)
 
   VS Code插件
 
@@ -203,7 +304,7 @@ startup_timeout_ms = 16_000
 
 ### MCP
 
-* [ripgrep](https://github.com/burntsushi/ripgrep)
+  * [ripgrep](https://github.com/burntsushi/ripgrep)
 
 据说claude code底层使用的是ripgrep。不确定claude code内部是否包含了ripgrep，直接安装ripgrep方便使用
 
@@ -212,7 +313,7 @@ startup_timeout_ms = 16_000
 winget install BurntSushi.ripgrep.MSVC
 ```
 
-* [codebase-memory-mcp](https://github.com/DeusData/codebase-memory-mcp)
+  * [codebase-memory-mcp](https://github.com/DeusData/codebase-memory-mcp)
 
 ```bash
 # 安装
@@ -224,14 +325,15 @@ codebase-memory-mcp update
 # 告诉claude测试codebase-memory-mcp的使用会进行项目索引
 ```
 
-* (弃用)[~~Superpowers~~](https://github.com/obra/superpowers)
-* (弃用)~~claude-md-management~~
-* (弃用)~~planning-with-files~~
-* (弃用)~~Remember~~
-* (弃用)LSP
+  * (弃用)[~~Superpowers~~](https://github.com/obra/superpowers)
+  * (弃用)~~claude-md-management~~
+  * (弃用)~~planning-with-files~~
+  * (弃用)~~Remember~~
+  * (弃用)LSP
 
   放弃LSP方案，因为C# LSP无法正确处理partial。
-* (弃用) LSP- [VSC-LSP-MCP](https://github.com/beixiyo/vsc-lsp-mcp)
+
+  * (弃用) LSP- [VSC-LSP-MCP](https://github.com/beixiyo/vsc-lsp-mcp)
 
 使用VSCode LSP的MCP，MCP（模型上下文协议）客户端能够实时访问丰富的 VSCode 上下文信息
 
@@ -245,7 +347,7 @@ codebase-memory-mcp update
   3. .claude/rules/TOOLS.LSP.md要求Claude Code生成对VSCode-MCP的使用。
 ```
 
-* [LSP-VSCode MCP](https://github.com/tjx666/vscode-mcp)
+  * [LSP-VSCode MCP](https://github.com/tjx666/vscode-mcp)
 
 不支持partial class，但能获取诊断信息，用于获取诊断信息并修复。
 
@@ -267,12 +369,12 @@ MCP（模型上下文协议）客户端能够实时访问丰富的 VSCode 上下
   3. .claude/rules/TOOLS.md要求Claude Code生成对VSCode-MCP的使用。
 ```
 
-* [弃用]LSP-Claude Code官方CSharp-lsp
+  * [弃用]LSP-Claude Code官方CSharp-lsp
 
 dotnet安装[csharp-ls](https://github.com/razzmatazz/csharp-language-server)
 Claude Code VS Code插件市场安装csharp-ls Plugin
 
-* (弃用)LSP-[VSCode LSP MCP Server](https://marketplace.visualstudio.com/items?itemName=trademe.vscode-lsp-mcp)(作者：Trad Me)
+  * (弃用)LSP-[VSCode LSP MCP Server](https://marketplace.visualstudio.com/items?itemName=trademe.vscode-lsp-mcp)(作者：Trad Me)
 
 这个最简单，安装vscode插件。
 运行VSCode命令: "LSP MCP: Install for Claude Code"
@@ -296,7 +398,7 @@ uv tool update-shell
 }
 ```
 
-* (弃用)LSP-roslyn-refactor
+  * (弃用)LSP-roslyn-refactor
 
 感觉很慢
 
@@ -308,27 +410,27 @@ uv tool update-shell
 
 ## VSCode插件
 
-* Copilot
+  * Copilot
 
 Copilot Pro无限使用GPT-5 Mini是不错的，可惜只有首月免费。
 
-* Codex插件
+  * Codex插件
 
 某鱼某淘可购买business或Plus也有25元，可能有风险。
 免费额度也很慷慨。
 
-* Gemini Code Assist
+  * Gemini Code Assist
 
 复杂问题使用，Gemini 3的思考和代码能力最强。当然Geimin Code Assist经常会自动切换到Gemini Pro 2.5会降智的。
 一般遇到复杂功能、不确定如何实现的需求或找Bug，则在aistudio使用Gemini 3讨论。如需要与代码交互(如找Bug)则使用Gemini Code Assist或Antigravity。
 
-* Trae
+  * Trae
 
 基本废了，基本作为补全使用，不会用来写代码。
 trae使用梯子通过trae.ai登录海外账号，似乎可以无限使用Gemini 2.5,不过现在经常出错，似乎海外账号不支持vscode插件了。
 目前使用起来很慢，估计很快就可以弃用了。
 
-* Code Web Chat
+  * Code Web Chat
 
 相当于合法通过vscode将上下文发送到web页面，然后获取web页面结果返回到vscode，自动进行editor等操作。
 相比于很多逆向API(违规），这个合规的，自动帮忙提交上下文到网页版后并自动获取结果来对比。
@@ -336,6 +438,6 @@ trae使用梯子通过trae.ai登录海外账号，似乎可以无限使用Gemini
 
 备注：与Code Web Chat类似的有个：[openlink](https://github.com/afumu/openlink)([视频](https://www.bilibili.com/video/BV17Yw3z7EJd/?spm_id_from=333.1391.0.0&vd_source=f355063fe070b37905b1cec42ccf5c6c))，但还需要自己解决gemini外的前端适配和skill。
 
-* Claude Code
+  * Claude Code
 
 除非用Claude官方模型，不然第三方其他AI支持很差。
