@@ -7,11 +7,17 @@ language:   zh-CN
 author:     "Gumc"
 header-img: "assets/img/2015/post-bg-2015.jpg"
 catalog:    true
-visible:    true
+visible:    false
 tags:
     - AI
 ---
 ## AI Coding 必备
+
+### [PowerShell 7](https://learn.microsoft.com/zh-cn/powershell/scripting/install/install-powershell-on-windows)
+
+### [cockpit-tools](https://github.com/jlcodes99/cockpit-tools)
+
+通用 AI IDE 账号管理工具，用于切换不同账号Auth
 
 ### [CC Switch](https://github.com/farion1231/cc-switch)
 
@@ -33,9 +39,13 @@ tags:
 
 似乎AI助手的grep底层使用的都是ripgrep。但如果我们配置了通过vscode进行shell绕过权限，这时候需要支持rg所以这里手动安装。
 
+```bash
+winget install BurntSushi.ripgrep.MSVC
+```
+
 ### cc-connect(for Discord/Wechat等)
 
-* 安装
+  * 安装
 
 ```bash
 # 安装cc-connect（wechat需要使用beta版本cc-connect@beta)
@@ -47,7 +57,7 @@ npm install -g cc-connect
 
 ```
 
-* [cc-connect配置文件]
+  * [cc-connect配置文件]
 
 ```conf
   # 配置config.toml，以下是我的配置(从discord获取token)
@@ -108,8 +118,8 @@ npm install -g cc-connect
   [cron]
 ```
 
-* [cc-connect使用指南](https://github.com/chenhg5/cc-connect/blob/main/docs/usage.zh-CN.md)
-* 配置开机启动
+  * [cc-connect使用指南](https://github.com/chenhg5/cc-connect/blob/main/docs/usage.zh-CN.md)
+  * 配置开机启动
 
 ---
 
@@ -117,7 +127,7 @@ npm install -g cc-connect
 
 ### 安装
 
-* Gemini Code Assist(VSCode插件) 用处不大，仅在头脑风暴时进行。
+  * Gemini Code Assist(VSCode插件) 用处不大，仅在头脑风暴时进行。
 
 只要开启Agent就会显示：There was a problem getting a response.猜测是免费用户会被限制在 Flash 模型中，而Flash 用不来 Agent。
 
@@ -132,15 +142,18 @@ npm install -g cc-connect
 }
 ```
 
-* Gemini Cli （npm安装）
-* [所有配置链接](https://geminicli.com/docs/reference/configuration/)
+  * Gemini Cli （npm安装）
+  * [所有配置链接](https://geminicli.com/docs/reference/configuration/)
 
-### Skill && MCP
+### Skill & MCP
 
-* 复制superpowers的skill到项目skills下（brainstorming、dispatching-parallel-agents、using-superpowers、writing-plans、executing-plans）
-* (弃用) 通过CC Switch 安装[vscode-mcp](https://github.com/tjx666/vscode-mcp)
+  * superpowers
 
-```json
+  复制superpowers的skill到项目.agents/skills下（brainstorming、dispatching-parallel-agents、executing-plans、receiving-code-review、requesting-code-review、subagent-driven-development、using-superpowers、writing-plans、writing-skills）
+
+<!-- * (弃用) 通过CC Switch 安装[vscode-mcp](https://github.com/tjx666/vscode-mcp)
+
+```
 {
     "vscode-mcp": {
       "command": "npx",
@@ -155,9 +168,9 @@ npm install -g cc-connect
       ]
     }
 }
-```
+``` -->
 
-* 通过CC Switch 安装[excel-master](https://github.com/guillehr2/Excel-MCP-Server-Master)
+  * 通过CC Switch 安装[excel-master](https://github.com/guillehr2/Excel-MCP-Server-Master)
 
 ```json
 
@@ -174,7 +187,7 @@ npm install -g cc-connect
 
 ```
 
-* 通过CC Switch 安装[vscode-mcp-servr](https://marketplace.visualstudio.com/items?itemName=JuehangQin.vscode-mcp-server)
+  * 通过CC Switch 安装[vscode-mcp-servr](https://marketplace.visualstudio.com/items?itemName=JuehangQin.vscode-mcp-server)
 
 ```json
 
@@ -187,7 +200,7 @@ npm install -g cc-connect
 
 ```
 
-* [Unity MCP](https://github.com/CoplayDev/unity-mcp)
+  * [Unity MCP](https://github.com/CoplayDev/unity-mcp)
 
 ```bash
 # unity通过github安装：https://github.com/CoplayDev/unity-mcp.git?path=/MCPForUnity#main
@@ -211,6 +224,14 @@ npm install -g cc-connect
 # 让AI自己写markdown,工具的参数见源码：https://github.com/CoplayDev/unity-mcp/tree/beta/Server/src/services/tools
 
 ```
+
+  * [unity-mcp-server](https://github.com/AnkleBreaker-Studio/unity-mcp-server)
+  * [semble](https://github.com/MinishLab/semble)
+  * [code-index-mcp](https://github.com/johnhuang316/code-index-mcp/)
+
+  * [AgentLint](https://github.com/0xmariowu/AgentLint)
+  * [poormansadvisor](https://github.com/leighstillard/poormansadvisor)
+  * [prompt-improver](https://github.com/ndpvt-web/prompt-improver)
 
 <!-- ### (已弃用)clibot(for Discord/Wechat)
 
@@ -249,16 +270,19 @@ help                               # 显示帮助
 
 ### 安装
 
-* Codex桌面版
-* VSCode Codex插件
+  * Codex Cli
+  * ~~Codex桌面版~~
+  * ~~VSCode Codex插件~~
 
 vscode codex插件如果开启WSL就会使用WSL的配置，需要进入/home/xx/.condex中修改配置，所以不开启WSL
 
-### Agents
+  * [codex全部配置](https://developers.openai.com/codex/config-sample)
 
-### MCP
+### Skill & MCP
 
-* [VSCode MCP](https://github.com/tjx666/vscode-mcp)
+  同Gemini Cli
+
+<!-- * [VSCode MCP](https://github.com/tjx666/vscode-mcp)
 
 不支持partial class，但能获取诊断信息，用于获取诊断信息并修复。
 
@@ -272,35 +296,24 @@ command = "bunx"
 args = ["-y", "@vscode-mcp/vscode-mcp-server@latest"]
 env = { "VSCODE_MCP_DISABLED_TOOLS" = "health_check,list_workspaces,open_files" }
 startup_timeout_ms = 16_000
-```
+``` -->
 
 ---
 
 ## Claude Code
 
-备注：为什么弃用，因为对其他AI的支持很弱，anthropic的AI像Claude Sonne才能用起来顺畅。
-
 ### 安装
 
-* 安装[Claude Code](https://github.com/anthropics/claude-code)
-
-  备注：npm安装方式已弃用
+  * 安装[Claude Code](https://github.com/anthropics/claude-code)
 
 ```bash
-  # 管理员权限运行powershell
+  # 管理员权限运行powershell (备注：旧的npm安装方式已弃用)
   irm https://claude.ai/install.ps1 | iex
-
-  # 配置关闭claude code遥感
-  # 永久生效：以下似乎无效，下方vscode settings.json的配置才有效
-  # [Environment]::SetEnvironmentVariable("CLAUDE_TELEMETRY", "off", "User")
-  # [Environment]::SetEnvironmentVariable("CLAUDE_NO_TELEMETRY", "1", "User")
-  # [Environment]::SetEnvironmentVariable("ANTHROPIC_NO_TELEMETRY", "1", "User")
-  # [System.Environment]::SetEnvironmentVariable('DISABLE_TELEMETRY', '1', 'User')
 ```
 
-* 安装[Claude Code for VS Code](vscode:extension/anthropic.claude-code)
+  * ~~安装[Claude Code for VS Code](vscode:extension/anthropic.claude-code)~~
 
-  VS Code插件
+  ~~VS Code插件~~
 
 ```json
 # VSCode的Setting.json必须显性禁用所有非核心功能的网络请求，包括遥测上报和自动更新检查。不然会一直等待遥感失败，导致等到几分钟才能进入AI的请求。
@@ -318,18 +331,11 @@ startup_timeout_ms = 16_000
 
 ### CALUDE.md
 
-### MCP
+### Skill & MCP
 
-* [ripgrep](https://github.com/burntsushi/ripgrep)
+  同Gemini Cli
 
-据说claude code底层使用的是ripgrep。不确定claude code内部是否包含了ripgrep，直接安装ripgrep方便使用
-
-```bash
-# 安装
-winget install BurntSushi.ripgrep.MSVC
-```
-
-* [codebase-memory-mcp](https://github.com/DeusData/codebase-memory-mcp)
+<!-- * [codebase-memory-mcp](https://github.com/DeusData/codebase-memory-mcp)
 
 ```bash
 # 安装
@@ -341,14 +347,14 @@ codebase-memory-mcp update
 # 告诉claude测试codebase-memory-mcp的使用会进行项目索引
 ```
 
-* (弃用)[~~Superpowers~~](https://github.com/obra/superpowers)
-* (弃用)~~claude-md-management~~
-* (弃用)~~planning-with-files~~
-* (弃用)~~Remember~~
-* (弃用)LSP
+  * (弃用)[~~Superpowers~~](https://github.com/obra/superpowers)
+  * (弃用)~~claude-md-management~~
+  * (弃用)~~planning-with-files~~
+  * (弃用)~~Remember~~
+  * (弃用)LSP
 
   放弃LSP方案，因为C# LSP无法正确处理partial。
-* (弃用) LSP- [VSC-LSP-MCP](https://github.com/beixiyo/vsc-lsp-mcp)
+  * (弃用) LSP- [VSC-LSP-MCP](https://github.com/beixiyo/vsc-lsp-mcp)
 
 使用VSCode LSP的MCP，MCP（模型上下文协议）客户端能够实时访问丰富的 VSCode 上下文信息
 
@@ -362,7 +368,7 @@ codebase-memory-mcp update
   3. .claude/rules/TOOLS.LSP.md要求Claude Code生成对VSCode-MCP的使用。
 ```
 
-* [LSP-VSCode MCP](https://github.com/tjx666/vscode-mcp)
+  * [LSP-VSCode MCP](https://github.com/tjx666/vscode-mcp)
 
 不支持partial class，但能获取诊断信息，用于获取诊断信息并修复。
 
@@ -384,12 +390,12 @@ MCP（模型上下文协议）客户端能够实时访问丰富的 VSCode 上下
   3. .claude/rules/TOOLS.md要求Claude Code生成对VSCode-MCP的使用。
 ```
 
-* [弃用]LSP-Claude Code官方CSharp-lsp
+  * [弃用]LSP-Claude Code官方CSharp-lsp
 
 dotnet安装[csharp-ls](https://github.com/razzmatazz/csharp-language-server)
 Claude Code VS Code插件市场安装csharp-ls Plugin
 
-* (弃用)LSP-[VSCode LSP MCP Server](https://marketplace.visualstudio.com/items?itemName=trademe.vscode-lsp-mcp)(作者：Trad Me)
+  * (弃用)LSP-[VSCode LSP MCP Server](https://marketplace.visualstudio.com/items?itemName=trademe.vscode-lsp-mcp)(作者：Trad Me)
 
 这个最简单，安装vscode插件。
 运行VSCode命令: "LSP MCP: Install for Claude Code"
@@ -413,39 +419,39 @@ uv tool update-shell
 }
 ```
 
-* (弃用)LSP-roslyn-refactor
+  * (弃用)LSP-roslyn-refactor
 
-感觉很慢
+感觉很慢 -->
 
-### Hook
+### OpenCode
 
 ## Antigravity
 
-复杂功能特别是需要分析现有的代码进行实现，则使用Antigravity。
+复杂功能特别是需要分析现有的代码且使用Gemini 3 Pro时，则使用Antigravity。
 
-## VSCode插件
+## VSCode插件(暂时不使用)
 
-* Copilot
+  * Copilot
 
 Copilot Pro无限使用GPT-5 Mini是不错的，可惜只有首月免费。
 
-* Codex插件
+  * Codex插件
 
 某鱼某淘可购买business或Plus也有25元，可能有风险。
 免费额度也很慷慨。
 
-* Gemini Code Assist
+  * Gemini Code Assist
 
 复杂问题使用，Gemini 3的思考和代码能力最强。当然Geimin Code Assist经常会自动切换到Gemini Pro 2.5会降智的。
 一般遇到复杂功能、不确定如何实现的需求或找Bug，则在aistudio使用Gemini 3讨论。如需要与代码交互(如找Bug)则使用Gemini Code Assist或Antigravity。
 
-* Trae
+  * Trae
 
 基本废了，基本作为补全使用，不会用来写代码。
 trae使用梯子通过trae.ai登录海外账号，似乎可以无限使用Gemini 2.5,不过现在经常出错，似乎海外账号不支持vscode插件了。
 目前使用起来很慢，估计很快就可以弃用了。
 
-* Code Web Chat
+  * Code Web Chat
 
 相当于合法通过vscode将上下文发送到web页面，然后获取web页面结果返回到vscode，自动进行editor等操作。
 相比于很多逆向API(违规），这个合规的，自动帮忙提交上下文到网页版后并自动获取结果来对比。
@@ -453,6 +459,46 @@ trae使用梯子通过trae.ai登录海外账号，似乎可以无限使用Gemini
 
 备注：与Code Web Chat类似的有个：[openlink](https://github.com/afumu/openlink)([视频](https://www.bilibili.com/video/BV17Yw3z7EJd/?spm_id_from=333.1391.0.0&vd_source=f355063fe070b37905b1cec42ccf5c6c))，但还需要自己解决gemini外的前端适配和skill。
 
-* Claude Code
+  * Claude Code
 
 除非用Claude官方模型，不然第三方其他AI支持很差。
+
+## AI思考
+
+1. 经常只改动他知道的，不理解上下文和改动的代码的涉及意图：
+    例如：原本代码逻辑是A, AI加了个逻辑if判断后跳转到B，后面觉得B并不合适需要去掉，AI会基于B的判断去改为判断后走A逻辑。而不是按原来那样，直接就走A逻辑了。
+    例如：Tween动画，需要调用OnComplete，原本的逻辑是加了个包装器在OnComplete后也进行RemoveTween。但如果不需要RemoveTween,AI只会删掉RemoveTween，而不会理解到包装器也是为了OnComplete而存在的。需要把包装器也删掉。
+    我加了文档，不确定最后是否会按文档来，慢慢等待测试情况。
+
+2. ✅ AI的大部分时间花费在找代码,要通过read去读取。想想我们自己是如何理解代码的，1个是整套代码框架有基本理解。2是vscode直接搜索能很快匹配大部分代码信息。但AI这个过程会很慢，特别遇到高峰期基本30分钟干不了人10分钟的事情。
+    测试<https://github.com/MinishLab/semble> 和 <https://github.com/johnhuang316/code-index-mcp>, 结合用感觉还可以，似乎理解变快，但经常回退到Grep。
+
+3. cli无法自动匹配任务去使用模型，例如简单的模型和复杂的模型
+    skill可以设定模型。
+      子代理模式，但目前似乎还没发挥子代理的优势，因为spec和plan还是使用haiku，而且superpowers作用不大，头脑风暴似乎没什么意义。
+
+4. 花很多时间在决策和修正AI，AI的方案总是不理想，需要给它提供正确的信息和方案。所以所有时间都在给AI做决策和修正Ai的错误方案上。
+      我觉得有几个问题，1是弱AI会有很大问题，得不断加无穷无尽的限制，还是不够聪明。2.即使聪明的，也还是会给出错误决策。就像重建新的Tutorial系统，说了旧系统会删掉，他还是用了旧系统的功能。说了需要跑完全部测试才能停下来，还是跑不完测的（是否没有测试的规矩）
+      * ✅ 或者能否不要把AI当做一次性完成的工具，他就是新人，需要不断纠正。而你的工作就是让AI新人帮你干活。不要期待他在没有约束和纠正的情况下干好。你的工作就是约束和纠正AI新人。不要为此生气，气坏了没得赔。
+      * ⬜️ Unity似乎没有正确的测试方法。
+
+      * 我觉得应该Antigravity给计划，讲这个计划落盘。
+        我审核通过后没问题再让gpt-5.4-mini进行落盘。
+
+5. 没有免费AI
+    想法1：使用Gemma 31B + ds2API测试效果解决5
+    想法2：使用Gemma 31B + GPT5.4-mini合作检查方案并且一个执行一个审查看效果解决4
+    目前使用 gpt-5.4-mini然后用coder-spark做审查，还行但是还是用不到coder-spark的能力，推理思考还是很弱。还可以使用gemma31b做审查。
+
+    想法3: 使用类似<https://github.com/ypollak2/llm-router的功能来做匹配模型，解决3>
+    想法4：RAG本地向量索引是否能优化2。解决2。trae是如何实现的？
+    想法5： 如何解决1？C# .Net是否有好的方案。
+
+6. AI还是不够聪明，我让他重新做一个系统，他确在做一个系统去引用旧系统，或者把旧系统作为入口引导到新系统。
+
+备用：
+改进Todo：
+<https://github.com/lethain/library-mcp/tree/main>
+以下两个不确定是否有作用：
+<https://github.com/Horilla/claudectx>
+<https://github.com/azkhh/cchubber> 可以作为开启启动

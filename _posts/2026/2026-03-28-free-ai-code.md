@@ -7,7 +7,7 @@ language:   zh-CN
 author:     "Gumc"
 header-img: "assets/img/2015/post-bg-2015.jpg"
 catalog:    true
-visible:    true
+visible:    false
 tags:
     - AI
 ---
@@ -162,4 +162,4 @@ tags:
 
 ## Image
 
-* [copilot.microsoft](https://copilot.microsoft.com/) 据说每次免费图片不限制
+  * [copilot.microsoft](https://copilot.microsoft.com/) 据说每次免费图片不限制
