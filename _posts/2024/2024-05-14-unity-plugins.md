@@ -105,7 +105,7 @@ tags:
 
 ##### Security
 
-  * [付费] [Anti-Cheat Toolkit](https://assetstore.unity.com/packages/tools/utilities/anti-cheat-toolkit-2023-202695#releases) 反作弊 / [[Github](https://github.com/deathcrykr/TapStar/tree/main/Assets/Plugins/CodeStage/AntiCheatToolkit)]
+  * [付费] [Anti-Cheat Toolkit](https://assetstore.unity.com/packages/tools/utilities/anti-cheat-toolkit-2023-202695#releases) 反作弊
 
 ##### Camera && Input
 
