@@ -17,7 +17,7 @@ tags:
 
 ## 查看代理端口
 
-* Clash用户：
+  * Clash用户：
 
 ```
 打开Clash
@@ -26,7 +26,7 @@ tags:
 你的代理地址将是：http://127.0.0.1:[端口号]
 ```
 
-* Shadowsocks用户：
+  * Shadowsocks用户：
 
 ```
 打开Shadowsocks
@@ -34,7 +34,7 @@ tags:
 你的代理地址将是：http://127.0.0.1:1080
 ```
 
-* V2ray用户
+  * V2ray用户
 
 ```
 打开v2rayN
@@ -49,9 +49,9 @@ tags:
 
 ## Windows用户
 
-* 创建以下脚本
+  * 创建以下脚本
 
-```bash
+```bat
 @echo off
 
 REM Unity Hub Proxy Launch Script
@@ -63,19 +63,34 @@ REM Set proxy environment variables
 REM IMPORTANT: Change these addresses to match YOUR proxy configuration
 set HTTP_PROXY=http://127.0.0.1:10808
 set HTTPS_PROXY=http://127.0.0.1:10808
-
 REM Optional: Set additional proxy variables for completeness
 set http_proxy=%HTTP_PROXY%
 set https_proxy=%HTTPS_PROXY%
 
-REM Display current proxy settings
-echo ??HTTP??: %HTTP_PROXY%
-echo ??HTTPS??: %HTTPS_PROXY%
+REM ========== UPM Cache Paths ==========
+REM Set global cache root directory
+set UPM_CACHE_ROOT=D:\Caches\Unity
+
+REM Set specific cache paths (higher priority than UPM_CACHE_ROOT)
+set UPM_NPM_CACHE_PATH=D:\Caches\Unity\NpmCache
+set UPM_CACHE_PATH=D:\Caches\Unity\PackageCache
+set ASSETSTORE_CACHE_PATH=D:\Caches\Unity\AssetStoreCache
+set UPM_GIT_LFS_CACHE_PATH=D:\Caches\Unity\GitLFSCache
+
+REM ========== Display Current Settings ==========
+echo Proxy HTTP: %HTTP_PROXY%
+echo Proxy HTTPS: %HTTPS_PROXY%
+echo UPM_CACHE_ROOT: %UPM_CACHE_ROOT%
+echo UPM_NPM_CACHE_PATH: %UPM_NPM_CACHE_PATH%
+echo UPM_CACHE_PATH: %UPM_CACHE_PATH%
+echo ASSETSTORE_CACHE_PATH: %ASSETSTORE_CACHE_PATH%
+echo UPM_GIT_LFS_CACHE_PATH: %UPM_GIT_LFS_CACHE_PATH%
 
 REM Launch Unity Hub
 REM IMPORTANT: Change this path to YOUR Unity Hub location
 echo Launching Unity Hub...
-start "" "D:\ProgramFiles\Unity Hub\Unity Hub.exe"
+REM start "" "D:\ProgramFiles\Unity Hub\Unity Hub.exe"
+powershell -Command "Start-Process 'D:\ProgramFiles\Unity Hub\Unity Hub.exe'"
 
 REM Optional: Wait a moment before closing the command window
 @REM timeout /t 3 /nobreak >nul
@@ -85,33 +100,64 @@ echo You can now close this window or press any key to exit.
 pause
 ```
 
-* 更改代理端口
+  * 更改代理端口
   将端口10808该为你的代理端口号
-* 更改Unity Hub路径
+  * 更改Unity Hub路径
   将D:\ProgramFiles\Unity Hub\Unity Hub.exe替换为你的Unity Hub路径
-* 保存脚本
+  * 保存脚本
   打开Windows的记事本，复制以上代码，修改后点击**文件**-**另存为**-**在"保存类型"下拉菜单中，选择 “所有文件 (.)”**-命名你的文件launch_unity_hub.cmd-保存到桌面（方便访问）
-* 双击运行launch_unity_hub.bat，就会自动打开Unity Hub
+  * 双击运行launch_unity_hub.bat，就会自动打开Unity Hub
+  * 如需要清除旧的Cache
+
+```bat
+rmdir /S /Q %LOCALAPPDATA%\Unity\cache
+rmdir /S /Q %LOCALAPPDATA%\Unity\cache\packages
+rmdir /S /Q "%APPDATA%\Unity\Asset Store-5.x"
+```
 
 ## Mac用户
 
 在终端运行以下代码生成launchUnityHub.command (注意：端口和Unity Hub路径记得修改)，
 
 ```bash
-echo '#!/usr/bin/env bash
-# *** NOTE: Add the next 3 lines only if you’re not using Automatic Proxy Configuration
+#!/usr/bin/env bash
+
+# ========== Proxy Settings ==========
 export HTTP_PROXY=http://127.0.0.1:10808
 export HTTPS_PROXY=http://127.0.0.1:10808
-#export NO_PROXY=<licensing_server_name_or_IP_address>
-export http_proxy=http://127.0.0.1:10808
-export https_proxy=http://127.0.0.1:10808
+export http_proxy=$HTTP_PROXY
+export https_proxy=$HTTPS_PROXY
 
-# *** NOTE: Add the following line only if your web proxy uses SSL inspection
-#export NODE_EXTRA_CA_CERTS=<path_to_pem_file>
-nohup "/Applications/Unity Hub.app/Contents/MacOS/Unity Hub" &>/dev/null &' > launchUnityHub.command
+# ========== UPM Cache Paths (macOS) ==========
+# 缓存根目录（可自定义，例如 ~/Library/Caches/Unity 即${HOME}/Library/Caches/Unity）
+export UPM_CACHE_ROOT="/Volumes/HDD/Cache/Unity"
 
+# 具体缓存子目录（若 UPM_CACHE_ROOT 已设置，Unity 会优先使用子目录变量）
+export UPM_NPM_CACHE_PATH="${UPM_CACHE_ROOT}/NpmCache"
+export UPM_CACHE_PATH="${UPM_CACHE_ROOT}/PackageCache"
+export ASSETSTORE_CACHE_PATH="${UPM_CACHE_ROOT}/AssetStoreCache"
+export UPM_GIT_LFS_CACHE_PATH="${UPM_CACHE_ROOT}/GitLFSCache"
+
+# ========== (可选) 打印当前设置，便于调试 ==========
+echo "Proxy HTTP: $HTTP_PROXY"
+echo "Proxy HTTPS: $HTTPS_PROXY"
+echo "UPM_CACHE_ROOT: $UPM_CACHE_ROOT"
+echo "UPM_NPM_CACHE_PATH: $UPM_NPM_CACHE_PATH"
+echo "UPM_CACHE_PATH: $UPM_CACHE_PATH"
+echo "ASSETSTORE_CACHE_PATH: $ASSETSTORE_CACHE_PATH"
+echo "UPM_GIT_LFS_CACHE_PATH: $UPM_GIT_LFS_CACHE_PATH"
+
+# ========== Launch Unity Hub ==========
+nohup "/Applications/Unity Hub.app/Contents/MacOS/Unity Hub" &>/dev/null &
 ```
 
-* 授权
+  * 授权
   `chmod +x launchUnityHub.command`
-* 同样双击运行
+  * 同样双击运行
+  * 如需要清除旧的Cache:
+
+```sh
+rm -rf ~/Library/Unity/cache/packages
+rm -rf ~/Library/Unity/cache
+rm -rf ~/Library/Unity/Asset\ Store-5.x/
+```
