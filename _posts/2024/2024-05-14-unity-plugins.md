@@ -103,6 +103,9 @@ tags:
   * ~~[Level Editor](https://github.com/taesiri/Tokyo?tab=readme-ov-file) 游戏内2D关卡编辑器~~
   * [付费] [Maintainer](https://assetstore.unity.com/packages/tools/utilities/maintainer-32199#content) 查找项目中丢失的资源或脚本 / [[Github](https://github.com/DavidCampbellIII/DiabetesSimulator/tree/main)]
 
+  * Tiled Map Editor
+    * [Unity hex tile editor](https://github.com/RoryDungan/HexTiles)
+
 ##### Security
 
   * [付费] [Anti-Cheat Toolkit](https://assetstore.unity.com/packages/tools/utilities/anti-cheat-toolkit-2023-202695#releases) 反作弊
