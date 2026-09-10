@@ -83,7 +83,7 @@ tags:
   * ScrollView
     * ~~[FancyScrollView](https://github.com/setchi/FancyScrollView) 滑动列表~~ 弃用，Cell大小必须一致
     * ~~[付费] [SuperScrollView](https://assetstore.unity.com/packages/tools/gui/ugui-super-scrollview-86572?srsltid=AfmBOoodciq35G5bSf8SPLn_Iy_Ur0qrU515UeWIJC4gCwYjs2JCKoZi#content) / [[Github](https://github.com/Lusbi/WalkBrave/tree/master/SuperScrollView)] 弃用~~
-    * [[付费] EnhancedScroller](https://assetstore.unity.com/packages/tools/gui/enhancedscroller-36378?srsltid=AfmBOoqoM7NkuMp_c7J0xOFSxoSHWKsqmH0QI2ObGWdN3W2-RoqW9XyL#releases) / [[Github without Demo](https://github.com/SeonghunChoi/Playing_Card/blob/main/Assets/EnhancedScroller%20v2/ChangeLog.txt)]/[[demo](https://github.com/HungNT-Packages/HungNT-EnhancedScroller)]
+    * [[付费] EnhancedScroller](https://assetstore.unity.com/packages/tools/gui/enhancedscroller-36378?srsltid=AfmBOoqoM7NkuMp_c7J0xOFSxoSHWKsqmH0QI2ObGWdN3W2-RoqW9XyL#releases) / [[Github without Demo](<https://github.com/SeonghunChoi/Playing_Card/blob/main/Assets/EnhancedScroller%20v2/ChangeLog.txt>)]/[[demo](https://github.com/HungNT-Packages/HungNT-EnhancedScroller)]
   * UI Theme
     * ~~[付费] [UI Theme](https://assetstore.unity.com/packages/tools/gui/ui-themes-163888#releases) / [[Github](https://github.com/sgho0915/SYSnetA_GSEng/tree/master)]~~
     * [UI Themes](https://arturnista.itch.io/ui-themes)
@@ -102,13 +102,14 @@ tags:
   * ~~[MAST - Modular Asset Staging Tool](https://assetstore.unity.com/packages/tools/level-design/mast-modular-asset-staging-tool-154939) 3d关卡编辑器(比TileMap好用)~~
   * ~~[Level Editor](https://github.com/taesiri/Tokyo?tab=readme-ov-file) 游戏内2D关卡编辑器~~
   * [付费] [Maintainer](https://assetstore.unity.com/packages/tools/utilities/maintainer-32199#content) 查找项目中丢失的资源或脚本 / [[Github](https://github.com/DavidCampbellIII/DiabetesSimulator/tree/main)]
-
   * Tiled Map Editor
+
     * [Unity hex tile editor](https://github.com/RoryDungan/HexTiles)
 
 ##### Security
 
   * [付费] [Anti-Cheat Toolkit](https://assetstore.unity.com/packages/tools/utilities/anti-cheat-toolkit-2023-202695#releases) 反作弊
+  * [BitMono](https://github.com/bitmono-project/BitMono)
 
 ##### Camera && Input
 
@@ -158,7 +159,7 @@ tags:
     * [付费] [UModeler](https://assetstore.unity.com/packages/tools/modeling/umodeler-80868#description) / [Github](https://github.com/bkostrowiecki/tk-jam-2023/tree/5f475070861b3e9ddbb210055495aaafca2f5555)
     * [Mesh Tools Bundle - Extract, Double-Sided, Material Painter](https://assetstore.unity.com/packages/tools/modeling/mesh-tools-bundle-extract-double-sided-material-painter-246929) / [[Github](https://github.com/ShinSeongChang/MetaLoadRefactor/tree/main/MetaLordRefactor_SSC/Assets/ImportAsset/Kamgam)]网格分离上色等
     * ~~[Mesh Optimizer](https://assetstore.unity.com/packages/tools/modeling/mesh-optimizer-154517) 优化后会有问题，棉会变为平面~~
-    * [付费][Mesh Simplify](https://assetstore.unity.com/packages/tools/modeling/mesh-simplify-43658#content) / [[Github](https://github.com/Bhawesh02/Car-Physics/blob/8c4f5ea7f7f6bfb4cf28aa3d6bbf71bbf3d4b810/Car_Physics/Assets/Ultimate%20Game%20Tools/MeshSimplify/!Readme.txt)] Mesh简化
+    * [付费][Mesh Simplify](https://assetstore.unity.com/packages/tools/modeling/mesh-simplify-43658#content) / [[Github](<https://github.com/Bhawesh02/Car-Physics/blob/8c4f5ea7f7f6bfb4cf28aa3d6bbf71bbf3d4b810/Car_Physics/Assets/Ultimate%20Game%20Tools/MeshSimplify/!Readme.txt>)] Mesh简化
 
 ##### Debug
 
@@ -197,7 +198,7 @@ tags:
 
 ##### URP
 
-  * [付费] [Lux URP Essentials](https://assetstore.unity.com/packages/vfx/shaders/lux-urp-essentials-150355) / [[Github 1.98.1](https://github.com/masterrey/LookAway/blob/master/Assets/Store/Lux%20URP%20Essentials/ChangeLog.txt)] Lux URP着色器
+  * [付费] [Lux URP Essentials](https://assetstore.unity.com/packages/vfx/shaders/lux-urp-essentials-150355) / [[Github 1.98.1](<https://github.com/masterrey/LookAway/blob/master/Assets/Store/Lux%20URP%20Essentials/ChangeLog.txt>)] Lux URP着色器
   * [付费] [Amplify Shader Pack](https://assetstore.unity.com/packages/vfx/shaders/amplify-shader-pack-202484#description) / [[Github](https://github.com/CorneliusTheLion/ShaderLab/blob/main/Assets/Samples/AmplifyShaderPack/ChangeLog.txt)] 对URP提供支持,180个精选着色器 [[效果图](https://wiki.amplify.pt/index.php?title=Unity_Products:Amplify_Shader_Pack/URP)]
   * [付费] [Toony Colors Pro 2](https://assetstore.unity.com/packages/vfx/shaders/toony-colors-pro-2-8105) / [[Github](https://github.com/nsanfo/Capybara-Springs)] 风格化的着色器和工具
   * [付费] [COLR – Coloring Redefined](https://assetstore.unity.com/packages/vfx/shaders/colr-coloring-redefined-57591#description) 颜色着色器（无灯光所以高效，休闲游戏推荐使用）/ [Github]
@@ -231,7 +232,7 @@ tags:
   * [隐私协议生成工具](https://app-privacy-policy-generator.firebaseapp.com/#)
   * [UnityAppIcon](https://github.com/shellyHBG/UnityAppIcon) Unity设置AppIcon
   * ?[角色创建器](https://github.com/cmaher/Shelley)
-  * ？[实用Unity插件](https://github.com/dkbozkurt/My_Useful_Unity_Codes/tree/main/Assets%20to%20Must%20Have)
+  * ？[实用Unity插件](<https://github.com/dkbozkurt/My_Useful_Unity_Codes/tree/main/Assets%20to%20Must%20Have>)
   * [PBR 纹理打包成一个纹理贴图](https://github.com/PreyK/Unigine-Shading-Map-Generator)
 
 ## 教程
